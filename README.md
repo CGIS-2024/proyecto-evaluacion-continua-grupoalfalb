@@ -10,3 +10,4 @@ En este Readme.md deberá describir:
 - Requisitos funcionales
 - Modelado conceptual en UML.
 - Manual de usuario con capturas.
+Prueba
