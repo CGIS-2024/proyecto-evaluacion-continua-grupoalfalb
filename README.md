@@ -11,8 +11,8 @@
 
 ## Usuarios del sistema
 - Administrador general 
-- Personal sanitario (Veterinario y auxiliar de clínica)
-- Cliente(dueño)
+- Encargado de almacen
+- Enfermero
 
  Requisitos de información
 - Requisitos funcionales
