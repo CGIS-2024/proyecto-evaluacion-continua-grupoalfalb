@@ -43,8 +43,8 @@ restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 
   
 ## Requisitos funcionales
-**RF1**: El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
-**RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
+-**RF1**: El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
+-**RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
 **RF3**: El sistema debe permitir la definición y programación de menús diarios, semanales o mensuales, teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
 **RF4**: Debe haber una funcionalidad para registrar las entradas y salidas de alimentos en el almacén, manteniendo actualizado el inventario en todo momento.
 **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas.
