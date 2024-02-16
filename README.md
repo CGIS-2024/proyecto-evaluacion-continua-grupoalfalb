@@ -34,11 +34,11 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 
 ## Requisitos de información
-- RI1: Información de acceso: El sistema deberá almacenar la información de acceso de todos los usuarios: correo y contraseña
-- RI2: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
-- RI3: Información del almacén: El sistema deberá almacenar información sobre el almacén de alimentos con atributos como: Disponibilidad, cantidad, fecha de almacenaje, fecha de caducidad. Para cada alimento.
-- RI4: Información del paciente: El sistema deberá almacenar información sobre los pacientes del hospital: Nombre, edad, género, alergias alimentarias, preferencias alimentarias.
-- RI5: Planes de alimentación: El sistema deberá almacenar información sobre los diferentes planes de alimentación: Alimentos recomendados, alimentos prohibidos, horario comidas, 
+- **RI1**: Información de acceso: El sistema deberá almacenar la información de acceso de todos los usuarios: correo y contraseña
+- **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
+- **RI3**: Información del almacén: El sistema deberá almacenar información sobre el almacén de alimentos con atributos como: Disponibilidad, cantidad, fecha de almacenaje, fecha de caducidad. Para cada alimento.
+- **RI4**: Información del paciente: El sistema deberá almacenar información sobre los pacientes del hospital: Nombre, edad, género, alergias alimentarias, preferencias alimentarias.
+- **RI5**: Planes de alimentación: El sistema deberá almacenar información sobre los diferentes planes de alimentación: Alimentos recomendados, alimentos prohibidos, horario comidas, 
 restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 
   
