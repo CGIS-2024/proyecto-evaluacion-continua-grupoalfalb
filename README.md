@@ -75,7 +75,7 @@ restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 
 ## Modelado conceptual en UML
 
-![Modelado conceptual en UML](images\UML.drawio.png)
+![Modelado conceptual en UML](images/UML.drawio.png)
 
 
 
