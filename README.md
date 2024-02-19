@@ -47,10 +47,10 @@ restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 - **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
 - **RF3**: El sistema debe permitir la definición y programación de menús diarios, semanales o mensuales, teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
 - **RF4**: Debe haber una funcionalidad para registrar las entradas y salidas de alimentos en el almacén, manteniendo actualizado el inventario en todo momento.
-- **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas. (Los pacientes no tienen acceso al sistema)
+- **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas. 
 - **RF6**: Se debe registrar el consumo de alimentos por parte de los pacientes para llevar un seguimiento de su ingesta dietética y cumplimiento de las prescripciones.
 - **RF7**: El sistema debe permitir la generación de informes sobre el consumo de alimentos, la eficiencia en la gestión del inventario y el cumplimiento de las dietas.
-- **RF8**: Los usuarios deben poder gestionar sus perfiles dentro del sistema, incluyendo la actualización de información personal y la configuración de preferencias. (Pacientes o personal clínico?)
+- **RF8**: Los usuarios deben poder gestionar sus perfiles dentro del sistema, incluyendo la actualización de información personal y la configuración de preferencias. 
 
 
 ## Requisitos No Funcionales
