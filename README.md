@@ -33,8 +33,8 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - Encargado de almacén
 
 
-## Requisitos de información
-- **RI1**: Información de acceso: El sistema deberá almacenar la información de acceso de todos los usuarios: correo y contraseña
+## Requisitos de información (El sistema debe....)
+- **RI1**: Usuarios: El sistema deberá almacenar la información de acceso de todos los usuarios: correo y contraseña
 - **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
 - **RI3**: Información del almacén: El sistema deberá almacenar información sobre el almacén de alimentos con atributos como: Disponibilidad, cantidad, fecha de almacenaje, fecha de caducidad. Para cada alimento.
 - **RI4**: Información del paciente: El sistema deberá almacenar información sobre los pacientes del hospital: Nombre, edad, género, alergias alimentarias, preferencias alimentarias.
@@ -42,7 +42,7 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 
   
-## Requisitos funcionales
+## Requisitos funcionales (Como ROL, quiero ver..... )
 - **RF1**: El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
 - **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
 - **RF3**: El sistema debe permitir la definición y programación de menús diarios, semanales o mensuales, teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
