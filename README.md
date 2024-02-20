@@ -4,24 +4,24 @@
 
 # Gestión de comedor de hospital
 ## Integrantes
-- Alfonso Ibáñez Rodríguez
+- Alfonso Ibáñez Rodríguez: [@alibauez](https://github.com/alibauez)
 - Alberto García Mármol
 
 
 ## Dominio
 
-El sistema de gestión del comedor en un hospital es una herramienta indispensable para asegurar una atención integral y personalizada a los pacientes en cuanto a su alimentación y nutrición. Es importante garantizar que cada paciente reciba la cantidad adecuada de alimentos según sus necesidades dietéticas individuales, alergias, dolencias alimentarias y/o médicas.
+El sistema de gestión del comedor en un hospital es una herramienta indispensable para asegurar una atención integral y personalizada a los pacientes en cuanto a su alimentación y nutrición. Es importante garantizar que cada paciente reciba la cantidad adecuada de macronutrientes según sus necesidades dietéticas individuales, alergias, dolencias alimentarias y/o médicas.
 
-El proceso de gestión del comedor involucra múltiples actividades, desde la planificación y preparación de menús hasta la distribución de las comidas y el seguimiento del cumplimiento de las dietas prescritas. Estas actividades son llevadas a cabo por diferentes profesionales y personal médico en el hospital, incluyendo dietistas, personal de cocina, encargados de almacén, etc.
+El proceso de gestión del comedor involucra múltiples actividades, desde la planificación y preparación de menús hasta la distribución de las comidas y el seguimiento del cumplimiento de las dietas prescritas. Estas actividades son llevadas a cabo por diferentes profesionales y personal médico en el hospital.
 
-Los principales desafíos que enfrenta el sistema de gestión del comedor en este incluyen la necesidad de optimizar la cantidad de alimentos necesarios para cada paciente, minimizar errores en la distribución de comidas, garantizar la seguridad alimentaria y cumplir con las restricciones dietéticas de los pacientes.
+Los principales desafíos que enfrenta el sistema de gestión del comedor incluyen la necesidad de optimizar la cantidad de alimentos necesarios para cada paciente, minimizar errores en la distribución de comidas, garantizar la seguridad alimentaria y cumplir con las restricciones dietéticas de los pacientes.
 
 Además, el sistema debe ser capaz de adaptarse a las necesidades cambiantes de los pacientes, como dietas especiales para pacientes en recuperación de cirugías o procedimientos médicos, así como también permitir la inclusión de preferencias dietéticas religiosas y alergias alimentarias.
 
-La aplicación propuesta tiene como objetivo abordar estos desafíos proporcionando una plataforma centralizada y fácil de usar e intuitiva para todo tipo de personas, que permita a los diferentes usuarios del sistema colaborar eficientemente en la gestión del comedor hospitalario. Al permitir la introducción de datos sobre alergias y dolencias alimentarias por parte del dietista, así como la elaboración de planes personalizados para cada paciente, el sistema garantizará una atención nutricional adecuada y segura para todos los pacientes. Además, al facilitar la gestión del inventario y la programación de dietas especiales, el sistema ayudará a optimizar los recursos y mejorar la experiencia general de los pacientes.
+La aplicación propuesta tiene como objetivo abordar estos desafíos proporcionando una plataforma centralizada y fácil de usar e intuitiva para todo tipo de personas, que permita a los diferentes usuarios del sistema colaborar eficientemente en la gestión del comedor hospitalario. Al permitir la introducción de datos sobre alergias y dolencias alimentarias por parte del dietista, así como la elaboración de planes personalizados para cada paciente, el sistema garantizará una atención nutricional adecuada y segura para todos los pacientes.
 
 ## OBJETIVOS:
-- Facilitar la gestión del comedor, y optimizar la cantidad de comida específica a necesitar para cada paciente y evitar errores 
+- Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores 
 - Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
 - Permitir que el sistema pueda elaborar un plan personalizado para cada paciente.
 - Mejorar la eficiencia en la gestión de inventario: Implementar herramientas que permitan al encargado de almacén monitorear y gestionar el inventario de alimentos de manera más eficiente, asegurando un abastecimiento oportuno y evitando desperdicios.
