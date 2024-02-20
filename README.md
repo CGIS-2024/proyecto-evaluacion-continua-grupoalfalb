@@ -20,6 +20,7 @@ Además, el sistema debe ser capaz de adaptarse a las necesidades cambiantes de 
 
 La aplicación propuesta tiene como objetivo abordar estos desafíos proporcionando una plataforma centralizada y fácil de usar e intuitiva para todo tipo de personas, que permita a los diferentes usuarios del sistema colaborar eficientemente en la gestión del comedor hospitalario. Al permitir la introducción de datos sobre alergias y dolencias alimentarias por parte del dietista, así como la elaboración de planes personalizados para cada paciente, el sistema garantizará una atención nutricional adecuada y segura para todos los pacientes.
 
+
 ## OBJETIVOS:
 - Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores 
 - Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
@@ -30,39 +31,36 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - Administrador 
 - Paciente
 - Dietista
+  
 
-## Requisitos de información (El sistema debe....)
-### Todos los usuarios:
-- **RI1**: El sistema deberá almacenar la información de acceso los usuarios del sistema: correo electrónico y contraseña.
-
-- **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
-
-### Menú del día
-- **RI3**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas.
-
-### Plato
-- **RI4**: El sistema deberá almacenar información sobre cada plato: tipo (primero, segundo o postre), nombre, alérgenos..
-
-
-### Información nutricional
-- **RI5**: El sistema deberá almacenar información nutricional sobre cada plato: grasas, carbohidratos, proteinas, sodio y contenido energético.
+## Requisitos de información
+- **RI001. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género..(añadir mas)
+- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: NUSHA, fecha de contratación..(añadir mas)
+- **RI003. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización..(añadir mas)
+- **RI004. Información sobre el menú del día**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas.
+- **RI005. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: tipo (primero, segundo o postre), nombre, alérgenos..
+- **RI006. Información sobre la información nutricional**: El sistema deberá almacenar información nutricional sobre cada plato: grasas, carbohidratos, proteinas, sodio y contenido energético.
 
   
-## Requisitos funcionales (Como ROL, quiero ver..... ) HAY QUE PONERLOS COMO EL RF6 
-- **RF1**: Como usuario, quiero crear, editar y eliminar perfiles.
-- **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
+## Requisitos funcionales
+- **RF1**: Para todos los usuarios: Queremos que el sistema nos permita  registrarnos con el correo electrónico y con una contraseña y acceder al sistema.
+- **RF2**: Como usuario principal, quiero crear, editar y eliminar perfiles.
+- **RF3**: Como dietista, quiero poder diseñar planes de alimentación personalizados para cada paciente, basandome en su estado de salud, alergias alimentarias y preferencias dietéticas.
+- **RF4**: Como dietista, quiero tener un listado con las diferentes restricciones alimentarias de los pacientes que gestiono.
+- **RF5**: Como dietista, quiero ver el contenido energético completo de un menú.
+- **RF6**: Como dietista, quiero consultar los alérgenos de un plato
+- **RF7**: Como dietista, quiero filtrar los platos que tienen una determinada característica (cierto alérgeno, demasiadas kcal...)
+- **RF8**: Como dietista, quiero ver todos los pacientes que gestiono sus planes de alimentación.
+- **RF9**: Como paciente, quiero poder realizar solicitudes de alimentos especiales a través del sistema, indicando mis preferencias o restricciones dietéticas. 
+- **RF10**: Como paciente, quiero ver un histórico de mis ingestas alimentarias con un resumen nutricional.
+  
 
-- **RF3**: El sistema debe permitir la definición y programación de menús teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
-
-- **RF5**: Como paciente, quiero poder realizar solicitudes de alimentos especiales a través del sistema, indicando mis preferencias o restricciones dietéticas. 
-
-- **RF6**: Como paciente, quiero ver un histórico de mis ingestas alimentarias con un resumen nutricional.
-
-- **RF7**: Como dietista, quiero tener un listado con las diferentes restricciones alimentarias de los pacientes que gestiono.
-
-- **RF8**: 
-
-
+## Reglas de Negocio
+- **RN1**: Los dietistas solo podrán tener a su cargo a 25 pacientes.
+- **RN2**: Los dietistas solo pueden acceder y modificar los planes de alimentación de los pacientes asignados a su cuidado y no a los pacientes de otro dietista.
+- **RN3**: Un menu tiene que contener un primer plato, un segundo y postre.
+- **RN4**: Un menu no podrá contener cierto alérgeno si el paciente tiene alergia a este.
+- **RN5**: El dietista es el único usuario que podrá crear y editar el menú del día.
 
 
 ## Requisitos No Funcionales 
@@ -75,15 +73,6 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - **RNF7**: Debe ser fácilmente mantenible y actualizable para permitir la incorporación de nuevas funcionalidades y corrección de errores de manera oportuna.
 - **RNF8**: El sistema debe evitar la creación de un nuevo usuario con un email ya en uso.
 
-
-## Reglas de Negocio
-- **RN1**: Los pacientes deben proporcionar consentimiento explícito para el uso y procesamiento de su información personal y médica dentro del sistema.
-- **RN2**: Los dietistas solo pueden acceder y modificar los planes de alimentación de los pacientes asignados a su cuidado.
-- **RN3**: El personal del comedor debe seguir estrictamente las instrucciones y restricciones dietéticas establecidas en los planes de alimentación de los pacientes.
-- **RN4**: Los registros de consumo de alimentos deben mantenerse actualizados y ser precisos para proporcionar una visión precisa del cumplimiento de las dietas prescritas.
-- **RN5**: Los registros de acceso y acciones realizadas dentro del sistema deben ser rastreables para garantizar la responsabilidad y transparencia en el uso del sistema.
-- **RN6**: El sistema debe cumplir con todas las regulaciones y estándares relevantes en cuanto a seguridad alimentaria, protección de datos y atención médica.
- 
 
 ## Modelado conceptual en UML
 
