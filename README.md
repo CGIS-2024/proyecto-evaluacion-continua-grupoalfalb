@@ -5,7 +5,7 @@
 # Gestión de comedor de hospital
 ## Integrantes
 - Alfonso Ibáñez Rodríguez: [@alibauez](https://github.com/alibauez)
-- Alberto García Mármol
+- Alberto García Mármol: [@albgarmar2502](https://github.com/albgarmar2502)
 
 
 ## Dominio
@@ -24,20 +24,19 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores 
 - Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
 - Permitir que el sistema pueda elaborar un plan personalizado para cada paciente.
-- Mejorar la eficiencia en la gestión de inventario: Implementar herramientas que permitan al encargado de almacén monitorear y gestionar el inventario de alimentos de manera más eficiente, asegurando un abastecimiento oportuno y evitando desperdicios.
 
 
 ## Usuarios del sistema
 - Administrador 
-- Dietista 
-- Encargado de almacén
-
+- Paciente
+- Dietista
 
 ## Requisitos de información (El sistema debe....)
-- **RI1**: Usuarios: El sistema deberá almacenar la información de acceso de todos los usuarios: correo y contraseña
+### Todos los usuarios:
+- **RI1**: El sistema deberá almacenar la información de acceso de todos los usuarios del sistema: correo electrónico y contraseña.
 - **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
-- **RI3**: Información del almacén: El sistema deberá almacenar información sobre el almacén de alimentos con atributos como: Disponibilidad, cantidad, fecha de almacenaje, fecha de caducidad. Para cada alimento.
 - **RI4**: Información del paciente: El sistema deberá almacenar información sobre los pacientes del hospital: Nombre, edad, género, alergias alimentarias, preferencias alimentarias.
+
 - **RI5**: Planes de alimentación: El sistema deberá almacenar información sobre los diferentes planes de alimentación: Alimentos recomendados, alimentos prohibidos, horario comidas, 
 restricciones dietéticas, instrucciones específicas, alimentos disponibles.
 
