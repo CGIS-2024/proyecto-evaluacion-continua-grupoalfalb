@@ -34,6 +34,7 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 ## Requisitos de información (El sistema debe....)
 ### Todos los usuarios:
 - **RI1**: El sistema deberá almacenar la información de acceso los usuarios del sistema: correo electrónico y contraseña.
+
 - **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
 
 ### Menú del día
@@ -51,18 +52,17 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - **RF1**: Como usuario, quiero crear, editar y eliminar perfiles.
 - **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
 
-
-
-POR AQUI VOY ---------------------------------------------
-
-
-
 - **RF3**: El sistema debe permitir la definición y programación de menús teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
 
-- **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas. 
-- **RF6**: Como paciente, quiero ver un hist´rico de mis ingestas alimentarias.
-- **RF7**: El sistema debe permitir la generación de informes sobre el consumo de alimentos, 
-- **RF8**: Los usuarios deben poder gestionar sus perfiles dentro del sistema, incluyendo la actualización de información personal y la configuración de preferencias. 
+- **RF5**: Como paciente, quiero poder realizar solicitudes de alimentos especiales a través del sistema, indicando mis preferencias o restricciones dietéticas. 
+
+- **RF6**: Como paciente, quiero ver un histórico de mis ingestas alimentarias con un resumen nutricional.
+
+- **RF7**: Como dietista, quiero tener un listado con las diferentes restricciones alimentarias de los pacientes que gestiono.
+
+- **RF8**: 
+
+
 
 
 ## Requisitos No Funcionales 
@@ -73,6 +73,7 @@ POR AQUI VOY ---------------------------------------------
 - **RNF5**: Debe ser compatible con diferentes dispositivos y navegadores web para permitir el acceso desde múltiples plataformas y dispositivos.
 - **RNF6**: El tiempo de respuesta del sistema debe ser rápido y eficiente, asegurando una experiencia de usuario fluida.
 - **RNF7**: Debe ser fácilmente mantenible y actualizable para permitir la incorporación de nuevas funcionalidades y corrección de errores de manera oportuna.
+- **RNF8**: El sistema debe evitar la creación de un nuevo usuario con un email ya en uso.
 
 
 ## Reglas de Negocio
@@ -80,9 +81,8 @@ POR AQUI VOY ---------------------------------------------
 - **RN2**: Los dietistas solo pueden acceder y modificar los planes de alimentación de los pacientes asignados a su cuidado.
 - **RN3**: El personal del comedor debe seguir estrictamente las instrucciones y restricciones dietéticas establecidas en los planes de alimentación de los pacientes.
 - **RN4**: Los registros de consumo de alimentos deben mantenerse actualizados y ser precisos para proporcionar una visión precisa del cumplimiento de las dietas prescritas.
-- **RN5**: El personal del almacén debe garantizar que los alimentos almacenados cumplan con los estándares de calidad y seguridad alimentaria establecidos.
-- **RN6**: Los registros de acceso y acciones realizadas dentro del sistema deben ser rastreables para garantizar la responsabilidad y transparencia en el uso del sistema.
-- **RN7**: El sistema debe cumplir con todas las regulaciones y estándares relevantes en cuanto a seguridad alimentaria, protección de datos y atención médica.
+- **RN5**: Los registros de acceso y acciones realizadas dentro del sistema deben ser rastreables para garantizar la responsabilidad y transparencia en el uso del sistema.
+- **RN6**: El sistema debe cumplir con todas las regulaciones y estándares relevantes en cuanto a seguridad alimentaria, protección de datos y atención médica.
  
 
 ## Modelado conceptual en UML
