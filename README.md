@@ -48,8 +48,15 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
   
 ## Requisitos funcionales (Como ROL, quiero ver..... ) HAY QUE PONERLOS COMO EL RF6 
-- **RF1**: Como usuario, El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
+- **RF1**: Como usuario, quiero crear, editar y eliminar perfiles.
 - **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
+
+
+
+POR AQUI VOY ---------------------------------------------
+
+
+
 - **RF3**: El sistema debe permitir la definición y programación de menús teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
 
 - **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas. 
