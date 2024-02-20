@@ -33,26 +33,32 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 ## Requisitos de información (El sistema debe....)
 ### Todos los usuarios:
-- **RI1**: El sistema deberá almacenar la información de acceso de todos los usuarios del sistema: correo electrónico y contraseña.
+- **RI1**: El sistema deberá almacenar la información de acceso los usuarios del sistema: correo electrónico y contraseña.
 - **RI2**: Información de usuario: El sistema deberá almacenar una cierta información sobre cada usuario: nombre, edad, fecha de nacimiento, DNI. 
-- **RI4**: Información del paciente: El sistema deberá almacenar información sobre los pacientes del hospital: Nombre, edad, género, alergias alimentarias, preferencias alimentarias.
 
-- **RI5**: Planes de alimentación: El sistema deberá almacenar información sobre los diferentes planes de alimentación: Alimentos recomendados, alimentos prohibidos, horario comidas, 
-restricciones dietéticas, instrucciones específicas, alimentos disponibles.
+### Menú del día
+- **RI3**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas.
+
+### Plato
+- **RI4**: El sistema deberá almacenar información sobre cada plato: tipo (primero, segundo o postre), nombre, alérgenos..
+
+
+### Información nutricional
+- **RI5**: El sistema deberá almacenar información nutricional sobre cada plato: grasas, carbohidratos, proteinas, sodio y contenido energético.
 
   
-## Requisitos funcionales (Como ROL, quiero ver..... )
-- **RF1**: El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
+## Requisitos funcionales (Como ROL, quiero ver..... ) HAY QUE PONERLOS COMO EL RF6 
+- **RF1**: Como usuario, El sistema debe permitir la creación, edición y eliminación de perfiles de pacientes, incluyendo información sobre alergias alimentarias, dolencias médicas y preferencias dietéticas.
 - **RF2**: El sistema debe poder diseñar planes de alimentación personalizados para cada paciente, basados en su estado de salud, alergias alimentarias y preferencias dietéticas.
-- **RF3**: El sistema debe permitir la definición y programación de menús diarios, semanales o mensuales, teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
-- **RF4**: Debe haber una funcionalidad para registrar las entradas y salidas de alimentos en el almacén, manteniendo actualizado el inventario en todo momento.
+- **RF3**: El sistema debe permitir la definición y programación de menús teniendo en cuenta las necesidades dietéticas y preferencias de los pacientes.
+
 - **RF5**: Los pacientes deben poder realizar solicitudes de alimentos especiales a través del sistema, indicando sus preferencias o restricciones dietéticas. 
-- **RF6**: Se debe registrar el consumo de alimentos por parte de los pacientes para llevar un seguimiento de su ingesta dietética y cumplimiento de las prescripciones.
-- **RF7**: El sistema debe permitir la generación de informes sobre el consumo de alimentos, la eficiencia en la gestión del inventario y el cumplimiento de las dietas.
+- **RF6**: Como paciente, quiero ver un hist´rico de mis ingestas alimentarias.
+- **RF7**: El sistema debe permitir la generación de informes sobre el consumo de alimentos, 
 - **RF8**: Los usuarios deben poder gestionar sus perfiles dentro del sistema, incluyendo la actualización de información personal y la configuración de preferencias. 
 
 
-## Requisitos No Funcionales
+## Requisitos No Funcionales 
 - **RNF1**: La interfaz de usuario debe ser intuitiva y fácil de usar para facilitar la adopción por parte de los usuarios, independientemente de su nivel de habilidad técnica.
 - **RNF2**: El sistema debe ser seguro y proteger la privacidad de la información del paciente, cumpliendo con los estándares de seguridad y regulaciones de protección de datos.
 - **RNF3**: El sistema debe estar siempre disponible para garantizar un acceso continuo y sin interrupciones a las funciones del sistema durante todo el día.
