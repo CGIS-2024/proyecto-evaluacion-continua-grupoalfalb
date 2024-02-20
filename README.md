@@ -22,7 +22,7 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 
 ## OBJETIVOS:
-- Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores 
+- Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores.
 - Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
 - Permitir que el sistema pueda elaborar un plan personalizado para cada paciente.
 
