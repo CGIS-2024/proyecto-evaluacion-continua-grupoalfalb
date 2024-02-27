@@ -76,7 +76,7 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 ## Modelado conceptual en UML
 
-![Modelado conceptual en UML](images/UML.drawio.png)
+![Modelado conceptual en UML](images/UML_def_20_feb.drawio.png)
 
 
 
