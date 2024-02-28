@@ -13,7 +13,9 @@ class PlatoController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', Plato::class);
+        $platos = Plato::paginate(5);
+        return view('/platos/index', ['platos' => $platos]);
     }
 
     /**
