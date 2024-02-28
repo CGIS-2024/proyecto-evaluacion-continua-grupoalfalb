@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plato extends Model
 {
-    use HasFactory;
+    protected $fillable = ['nombre', 'tipo', 'descripcion', 'ingredientes', 'peso', 'calorias', 'proteinas', 'grasas', 'carbohidratos', 'fibra', 'azucares', 'alergenos'];
+
+
 }

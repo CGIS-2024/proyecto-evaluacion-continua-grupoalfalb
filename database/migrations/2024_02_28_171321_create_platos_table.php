@@ -14,6 +14,18 @@ return new class extends Migration
         Schema::create('platos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
+            $table->string('tipo'); //supongo que pondremos tipo selectivo(primero, segundo y postre)
+            $table->string('descripcion');
+            $table->string('ingredientes');
+            $table->double('peso');
+            $table->double('calorias');
+            $table->double('proteinas');
+            $table->double('grasas');
+            $table->double('carbohidratos');
+            $table->double('fibra');
+            $table->double('azucares');
+            $table->string('alergenos'); //tambien lo pondremos para elegir
         });
     }
 
