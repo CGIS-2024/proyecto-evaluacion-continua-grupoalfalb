@@ -17,7 +17,7 @@ class DietistaController extends Controller
         $dietistas = Dietista::paginate(5);
         return view('/dietistas/index', ['dietistas' => $dietistas]);
     }
-    }
+    
 
     /**
      * Show the form for creating a new resource.
@@ -40,6 +40,8 @@ class DietistaController extends Controller
      */
     public function show(Dietista $dietista)
     {
+        $this->authorize('view', $dietista);
+        return view('dietistas/show', ['dietista' => $dietista]);
         
     }
 
@@ -48,7 +50,8 @@ class DietistaController extends Controller
      */
     public function edit(Dietista $dietista)
     {
-        
+        $this->authorize('update', $dietista);
+        return view('dietistas/edit', ['dietista' => $dietista]);
     }
 
     /**
@@ -64,6 +67,12 @@ class DietistaController extends Controller
      */
     public function destroy(Dietista $dietista)
     {
-        //
+        $this->authorize('delete', $dietista);
+        if($dietista->delete())
+            session()->flash('success', 'Dietista borrado correctamente.');
+        else
+            session()->flash('warning', 'El dietista no pudo borrarse.');
+        return redirect()->route('dietistas.index');
+
     }
 }
