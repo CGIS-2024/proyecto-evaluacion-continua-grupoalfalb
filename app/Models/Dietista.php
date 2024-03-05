@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Dietista extends Model
 {
-    protected $fillable = ['NUSHA', 'fecha_contratacion'];
+    protected $fillable = ['nusha', 'fecha_contratacion'];
 }

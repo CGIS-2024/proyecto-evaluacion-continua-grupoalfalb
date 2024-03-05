@@ -18,7 +18,7 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->string('fecha_nacimiento');
-            $table->string('dni');
+            $table->string('dni')->unique();
             $table->string('direccion');
             $table->string('genero');
             $table->rememberToken();
