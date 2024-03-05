@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('platos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->softDeletes();
             $table->string('nombre');
             $table->string('tipo'); //supongo que pondremos tipo selectivo(primero, segundo y postre)
             $table->string('descripcion');
