@@ -13,7 +13,10 @@ class DietistaController extends Controller
      */
     public function index()
     {
-        //
+        $this->authorize('viewAny', Dietista::class);
+        $dietistas = Dietista::paginate(5);
+        return view('/dietistas/index', ['dietistas' => $dietistas]);
+    }
     }
 
     /**
@@ -37,7 +40,7 @@ class DietistaController extends Controller
      */
     public function show(Dietista $dietista)
     {
-        //
+        
     }
 
     /**
@@ -45,7 +48,7 @@ class DietistaController extends Controller
      */
     public function edit(Dietista $dietista)
     {
-        //
+        
     }
 
     /**
