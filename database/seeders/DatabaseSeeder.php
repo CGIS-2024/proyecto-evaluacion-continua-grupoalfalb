@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      * Seed the application's database.
      */
     public function run(): void
-    {
+    { //ESTO ESTA MAL HAY QUE METERLO EN USERSEEDER
         DB::table('users')->insert([
             [
                 'name' => "Administrador Alfonso",

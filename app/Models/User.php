@@ -57,5 +57,21 @@ class User extends Authenticatable
     }
 
 
+    //Tipo de usuario que accede
+
+    public function getTipoUsuarioAttribute(){
+        $tipos_usuario = [1 => trans('Paciente'), 2 => trans('Administrador')];
+        return $tipos_usuario[$this->tipo_usuario_id];
+    }
+
+    public function getEsPacienteAttribute(){
+        return $this->tipo_usuario_id == 1;
+    }
+
+
+    public function getEsAdministradorAttribute(){
+        return $this->tipo_usuario_id == 2;
+    }
+
 
 }
