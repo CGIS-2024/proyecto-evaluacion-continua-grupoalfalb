@@ -5,6 +5,8 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 
 class DietistaSeeder extends Seeder
 {
@@ -20,7 +22,7 @@ class DietistaSeeder extends Seeder
                 'user_id' => 3,
 
             ]
-            
+
             ],
         );
     }
