@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    use HasFactory;
+    protected $fillable = ['instrucciones_especificas', 'fecha'];
+
+    public function dietista(){
+        return $this->belongsTo(Dietista::class);
+    }
 }

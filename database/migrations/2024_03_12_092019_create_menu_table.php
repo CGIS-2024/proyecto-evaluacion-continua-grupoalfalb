@@ -11,20 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('dietistas', function (Blueprint $table) {
+        Schema::create('menu', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('nusha');
-            $table->string('fecha_contratacion');//TODO: Cambiar a tipo datetime
-            $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
-
+            $table->string('fecha');
+            $table->string('instrucciones_especificas');
         });
     }
 
+    /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('dietistas');
+        Schema::dropIfExists('menu');
     }
 };
