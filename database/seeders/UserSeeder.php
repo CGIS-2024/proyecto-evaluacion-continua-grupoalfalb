@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
             [
                 'name' => "Administrador Alberto",
                 'apellidos' => 'Garcia Marmol',
-                'fecha_nacimiento' => '',
+                'fecha_nacimiento' => '04/08/2002',
                 'dni' => '12345678A',
                 'direccion' => 'Direccion prueba 1',
                 'genero' => 'Hombre',
@@ -56,7 +56,6 @@ class UserSeeder extends Seeder
                 'email' => "diet2@admidietista.com",
                 'password' => Hash::make('12345678'),
             ],
-
         ]);
     }
 }
