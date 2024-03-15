@@ -15,7 +15,7 @@ class DietistaSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('dietista')->insert([
+        DB::table('dietistas')->insert([
             [
                 'nusha' => "AN1234567890",
                 'fecha_contratacion' => "24/7/2023",
