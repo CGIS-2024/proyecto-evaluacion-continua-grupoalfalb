@@ -18,8 +18,11 @@ class MenuSeeder extends Seeder
             [
                 'instrucciones_especificas' => "Menu para un minuvalido",
                 'fecha' => "12/03/2024",
-            ]
             ],
-        );
+            [
+                'instrucciones_especificas' => "Menu 2",
+                'fecha' => "13/03/2024",
+            ],
+        ]);
     }
 }

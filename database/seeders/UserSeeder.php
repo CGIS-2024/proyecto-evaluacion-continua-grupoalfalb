@@ -46,6 +46,16 @@ class UserSeeder extends Seeder
                 'email' => "diet1@admidietista.com",
                 'password' => Hash::make('12345678'),
             ],
+            [
+                'name' => "Dietista 2",
+                'apellidos' => 'Gutierrez',
+                'fecha_nacimiento' => '08/01/1994',
+                'dni' => '12345670Z',
+                'direccion' => 'Direccion prueba 2',
+                'genero' => "Hombre",
+                'email' => "diet2@admidietista.com",
+                'password' => Hash::make('12345678'),
+            ],
 
         ]);
     }
