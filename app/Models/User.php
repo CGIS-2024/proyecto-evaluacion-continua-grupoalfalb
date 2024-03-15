@@ -57,6 +57,12 @@ class User extends Authenticatable
     }
 
 
+    public function dietista()
+    {
+        return $this->hasOne(Dietista::class);
+    }
+
+
     //Tipo de usuario que accede
 
     public function getTipoUsuarioAttribute(){

@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('nusha');
-            $table->string('fecha_contratacion');//TODO: Cambiar a tipo datetime
+            $table->string('fecha_contratacion');
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
 
         });
