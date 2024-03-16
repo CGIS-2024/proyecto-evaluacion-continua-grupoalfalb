@@ -3,6 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Menu;
+use App\Http\Requests\Menu\StoreMenuRequest;
+use App\Http\Requests\Menu\UpdateMenuRequest;
+
 
 class MenuController extends Controller
 {
@@ -42,8 +46,10 @@ class MenuController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Cita $cita)
+    public function edit(Menu $menu)
     {
+        $this->authorize('update', $menu);
+        return view('menus/edit', ['menu' => $menu]);
 
     }
 

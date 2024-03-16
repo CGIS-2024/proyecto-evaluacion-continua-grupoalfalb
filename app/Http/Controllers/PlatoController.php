@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StorePlatoRequest;
 use App\Http\Requests\UpdatePlatoRequest;
 use App\Models\Plato;
+use Illuminate\Http\Request;
+
 
 class PlatoController extends Controller
 {

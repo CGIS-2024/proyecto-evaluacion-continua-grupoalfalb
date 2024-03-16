@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Http\Request;
 use App\Http\Requests\StoreDietistaRequest;
 use App\Http\Requests\UpdateDietistaRequest;
 use App\Models\Dietista;
@@ -17,7 +18,7 @@ class DietistaController extends Controller
         $dietistas = Dietista::paginate(5);
         return view('/dietistas/index', ['dietistas' => $dietistas]);
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
@@ -42,7 +43,7 @@ class DietistaController extends Controller
     {
         $this->authorize('view', $dietista);
         return view('dietistas/show', ['dietista' => $dietista]);
-        
+
     }
 
     /**
