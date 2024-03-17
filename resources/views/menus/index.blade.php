@@ -9,7 +9,9 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex items-center mt-4 ml-2">
-                    <!-- Eliminado el formulario para crear un nuevo menú -->
+                    <a href="{{ route('menus.index') }}" class="ml-4 text-blue-600 hover:text-blue-800">
+                        {{ __('Ver Menús') }}
+                    </a>
                 </div>
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="min-w-max w-full table-auto">
