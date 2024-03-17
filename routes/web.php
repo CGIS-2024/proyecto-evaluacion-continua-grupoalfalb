@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\MenuController;
+use App\Http\Controllers\DietistaController;
+
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -35,8 +38,6 @@ Route::middleware(['auth'])->group(function () {
         'dietistas' => DietistaController::class,
     ]);
 });
-
-
 
 
 require __DIR__.'/auth.php';
