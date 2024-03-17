@@ -49,13 +49,12 @@
                 <div class="p-6">
                     <div class="flex items-center">
                         <div class="text-lg leading-7 font-semibold text-center block" style="width: 100%">
-                            <a target="_blank" href="https://github.com/DamianUS/cgis-2021" class="underline text-gray-900 dark:text-white">Proyecto citas de ejemplo de CGIS 2021/22</a>
                         </div>
                     </div>
 
                     <div class="">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-                            Si pinchas en el título, te llevará al proyecto almacenado en Github. Puedes acceder a la documentación de Laravel 9 <a target="_blank" href="https://laravel.com/docs" class="underline text-gray-900 dark:text-white">aquí</a>. Utiliza los enlaces de la esquina superior derecha para acceder.
+                            Bienvenidos a la página de inicio del proyecto de gestión alimentaria de comedor hospitalario.
                         </div>
                     </div>
                 </div>
