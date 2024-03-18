@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
         'dietistas' => DietistaController::class,
     ]);
 
-Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
+Route::get('/menus', [MenuController::class, 'index'])->name('menus.index'); //otra forma de ruta para el index del menu
 
 });
 
