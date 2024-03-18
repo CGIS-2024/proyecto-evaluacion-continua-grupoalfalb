@@ -14,7 +14,7 @@ class MenuSeeder extends Seeder
      */
     public function run(): void
     {
-        DB::table('menu')->insert([
+        DB::table('menus')->insert([
             [
                 'instrucciones_especificas' => "Menu para un minuvalido",
                 'fecha' => "12/03/2024",
