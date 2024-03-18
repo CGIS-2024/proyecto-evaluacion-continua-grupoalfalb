@@ -21,8 +21,12 @@
                     <table class="min-w-max w-full table-auto">
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
+
                             <th class="py-3 px-6 text-left">instrucciones_especificas</th>
                             <th class="py-3 px-6 text-left">fecha</th>
+                            <th></th>
+
+
                         </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
