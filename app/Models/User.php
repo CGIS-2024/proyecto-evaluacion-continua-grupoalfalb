@@ -51,32 +51,46 @@ class User extends Authenticatable
 
     //RELACIONES
 
+    public function dietista()
+    {
+        return $this->hasOne(Dietista::class);
+    }
+
     public function paciente()
     {
         return $this->hasOne(Paciente::class);
     }
 
 
-    public function dietista()
-    {
-        return $this->hasOne(Dietista::class);
-    }
-
-
     //Tipo de usuario que accede
 
+    public function getTipoUsuarioIdAttribute(){
+        if ($this->dietista()->exists()){
+            return 1;
+        }
+        elseif($this->paciente()->exists()){
+            return 2;
+        }
+        else{
+            return 3;
+        }
+    }
+
     public function getTipoUsuarioAttribute(){
-        $tipos_usuario = [1 => trans('Paciente'), 2 => trans('Administrador')];
+        $tipos_usuario = [1 => trans('Dietista'), 2 => trans('Paciente'), 3 => trans('Administrador')];
         return $tipos_usuario[$this->tipo_usuario_id];
     }
 
     public function getEsPacienteAttribute(){
+        return $this->tipo_usuario_id == 2;
+    }
+
+    public function getEsDietistaAttribute(){
         return $this->tipo_usuario_id == 1;
     }
 
-
     public function getEsAdministradorAttribute(){
-        return $this->tipo_usuario_id == 2;
+        return $this->tipo_usuario_id == 3;
     }
 
 
