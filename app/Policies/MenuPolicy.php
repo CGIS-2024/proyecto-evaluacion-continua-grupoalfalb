@@ -29,7 +29,8 @@ class MenuPolicy
      */
     public function create(User $user): bool
     {
-        //
+        return true;
+
     }
 
     /**
@@ -37,7 +38,8 @@ class MenuPolicy
      */
     public function update(User $user, Menu $menu): bool
     {
-        //
+        return true;
+
     }
 
     /**
@@ -45,7 +47,8 @@ class MenuPolicy
      */
     public function delete(User $user, Menu $menu): bool
     {
-        //
+        return true;
+
     }
 
     /**
@@ -53,7 +56,8 @@ class MenuPolicy
      */
     public function restore(User $user, Menu $menu): bool
     {
-        //
+        return true;
+
     }
 
     /**
@@ -61,6 +65,7 @@ class MenuPolicy
      */
     public function forceDelete(User $user, Menu $menu): bool
     {
-        //
+        return true;
+
     }
 }
