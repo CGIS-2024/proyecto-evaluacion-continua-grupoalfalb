@@ -22,7 +22,7 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">instrucciones_especificas</th>
+                            <th class="py-3 px-6 text-left">instrucciones especificas</th>
                             <th class="py-3 px-6 text-left">fecha</th>
                             <th></th>
 

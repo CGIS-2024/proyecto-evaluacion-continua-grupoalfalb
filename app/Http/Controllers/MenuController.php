@@ -14,12 +14,7 @@ class MenuController extends Controller
 
     public function index()
     {
-        $this->authorize('viewAny', Menu::class);
         $menus = Menu::orderBy('fecha', 'desc')->paginate(25);
-        if(Auth::user()->es_dietista)
-            $menus = Auth::user()->dietista->menus()->orderBy('fecha', 'desc')->paginate(25);
-        elseif(Auth::user()->es_paciente)
-            $citas = Auth::user()->paciente->menus()->orderBy('fecha', 'desc')->paginate(25);
         return view('/menus/index', ['menus' => $menus]);
     }
 
