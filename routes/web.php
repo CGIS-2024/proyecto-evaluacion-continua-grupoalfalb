@@ -38,7 +38,7 @@ Route::middleware(['auth'])->group(function () {
         'dietistas' => DietistaController::class,
     ]);
 
-    Route::get('/menus', [CitaController::class, 'index'])->name('citas.index');
+Route::get('/menus', [MenuController::class, 'index'])->name('menus.index');
 
 });
 
