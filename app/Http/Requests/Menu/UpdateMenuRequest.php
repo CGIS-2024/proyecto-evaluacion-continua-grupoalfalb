@@ -11,7 +11,8 @@ class UpdateMenuRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        $menu = Menu::find($this->route('menu'))->first();
+        return $menu && $this->user()->can('update', $menu);
     }
 
     /**
@@ -21,8 +22,12 @@ class UpdateMenuRequest extends FormRequest
      */
     public function rules(): array
     {
+        
+    
         return [
-            //
+            'instrucciones_especificas' => 'required|string|max:255',
+            'fecha' => 'required|string|max:255',
         ];
     }
 }
+
