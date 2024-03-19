@@ -22,8 +22,8 @@ class UpdateMenuRequest extends FormRequest
      */
     public function rules(): array
     {
-        
-    
+
+
         return [
             'instrucciones_especificas' => 'required|string|max:255',
             'fecha' => 'required|string|max:255',
