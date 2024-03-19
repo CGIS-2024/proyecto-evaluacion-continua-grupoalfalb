@@ -11,7 +11,7 @@
                 <div class="flex items-center mt-4 ml-2">
                     <form method="GET" action="{{ route('menus.create') }}">
                         <x-primary-button type="subit" class="ml-4">
-                            @if(Auth::user()->es_dietista)
+                            @if(Auth::user()->es_administrador || Auth::user()->es_dietista)
                                 {{ __('Crear Menu') }}
                             @endif
                         </x-primary-button>
