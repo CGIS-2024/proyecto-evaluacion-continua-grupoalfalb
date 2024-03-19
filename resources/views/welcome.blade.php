@@ -46,18 +46,20 @@
     <div class="max-w-6xl mx-auto sm:px-6 lg:px-8">
         <div class="mt-8 bg-white dark:bg-gray-800 overflow-hidden shadow sm:rounded-lg">
             <div style="padding:1em 25em;">
-                <img  style="width:100%;" src="https://www.informatica.us.es/docs/imagen-etsii/logo-ETSII-US-Vertical-Color.png">
+                <img  style="width:100%;" src="https://www.murcia.com/noticias/fotos/1118036793w2.jpg">
             </div>
             <div class="grid grid-cols-1 md:grid-cols-1">
                 <div class="p-6">
                     <div class="flex items-center">
                         <div class="text-lg leading-7 font-semibold text-center block" style="width: 100%">
+                            <a target="_blank" href="https://github.com/CGIS-2024/proyecto-evaluacion-continua-grupoalfalb" class="underline text-gray-900 dark:text-white">Proyecto Gestión Comedor</a>
                         </div>
                     </div>
 
                     <div class="">
                         <div class="mt-2 text-gray-600 dark:text-gray-400 text-sm">
                             Bienvenidos a la página de inicio del proyecto de gestión alimentaria de comedor hospitalario.
+                            Si pinchas en el título, te llevará al proyecto almacenado en Github. Utiliza los enlaces de la esquina superior derecha para acceder.
                         </div>
                     </div>
                 </div>
