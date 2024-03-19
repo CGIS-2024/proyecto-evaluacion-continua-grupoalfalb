@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Http\Requests\Menu\StoreMenuRequest;
 use App\Http\Requests\Menu\UpdateMenuRequest;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Dietista;
 
 
 class MenuController extends Controller
@@ -24,22 +25,21 @@ class MenuController extends Controller
     public function create()
     {
         $this->authorize('create', Menu::menu);
-        $medicos = Medico::all();
-        $pacientes = Paciente::all();
-        if(Auth::user()->es_medico)
-            return view('citas/create', ['medico' => Auth::user()->medico, 'pacientes' => $pacientes]);
-        elseif(Auth::user()->es_paciente)
-            return view('citas/create', ['paciente' => Auth::user()->paciente, 'medicos' => $medicos]);
-        return view('citas/create', ['pacientes' => $pacientes, 'medicos' => $medicos]);
-
+        $dietistas = Dietista::all();
+        if(Auth::user()->es_dietista)
+            return view('menus/create', ['dietista' => Auth::user()->dietista]);
+        return view('menus/create', ['dietista' => $dietistas]);
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCitaRequest $request)
+    public function store(StoreMenuRequest $request)
     {
-
+        $menu = new Menu($request->validated());
+        $menu->save();
+        session()->flash('success', 'Menu creado correctamente.');
+        return redirect()->route('menus.index');
     }
 
     /**
@@ -57,8 +57,11 @@ class MenuController extends Controller
     public function edit(Menu $menu)
     {
         $this->authorize('update', $menu);
-        return view('menus/edit', ['menu' => $menu]);
-
+        $dietistas = Dietista::all();
+        if(Auth::user()->es_dietista){
+            return view('menus/edit', ['menu' => $menu, 'dietista' => Auth::user()->dietista]);
+        }
+        return view('menus/edit', ['menu' => $menu, 'dietista' => $dietistas]);
     }
 
     /**
@@ -66,7 +69,10 @@ class MenuController extends Controller
      */
     public function update(UpdateCitaRequest $request, Cita $cita)
     {
-
+        $menu->fill($request->validated());
+        $menu->save();
+        session()->flash('success', 'Menu modificado correctamente.');
+        return redirect()->route('menus.index');
     }
 
     /**
