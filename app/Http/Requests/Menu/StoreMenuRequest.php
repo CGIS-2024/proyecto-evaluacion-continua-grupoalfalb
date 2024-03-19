@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Menu;
 
 use App\Models\Menu;
 use Illuminate\Foundation\Http\FormRequest;
