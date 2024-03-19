@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
-use App\Http\Requests\Menu\StoreMenuRequest;
+use App\Http\Requests\Menu\StoreMmenuRequest;
 use App\Http\Requests\Menu\UpdateMenuRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Dietista;
@@ -30,7 +30,7 @@ class MenuController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreMenuRequest $request)
+    public function store(StoreMmenuRequest $request)
     {
         $menu = new Menu($request->validated());
         $menu->save();
