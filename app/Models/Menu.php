@@ -12,4 +12,7 @@ class Menu extends Model
     public function dietista(){
         return $this->belongsTo(Dietista::class);
     }
+    protected $casts = [
+        'fecha' => 'datetime:Y-m-d H:i',
+    ];
 }
