@@ -12,7 +12,6 @@ use App\Models\Dietista;
 
 class MenuController extends Controller
 {
-
     public function index()
     {
         $menus = Menu::orderBy('fecha', 'desc')->paginate(25);
@@ -67,7 +66,7 @@ class MenuController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCitaRequest $request, Cita $cita)
+    public function update(UpdateMenuRequest $request, Menu $menu)
     {
         $menu->fill($request->validated());
         $menu->save();
