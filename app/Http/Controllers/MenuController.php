@@ -23,6 +23,14 @@ class MenuController extends Controller
      */
     public function create()
     {
+        $this->authorize('create', Menu::menu);
+        $medicos = Medico::all();
+        $pacientes = Paciente::all();
+        if(Auth::user()->es_medico)
+            return view('citas/create', ['medico' => Auth::user()->medico, 'pacientes' => $pacientes]);
+        elseif(Auth::user()->es_paciente)
+            return view('citas/create', ['paciente' => Auth::user()->paciente, 'medicos' => $medicos]);
+        return view('citas/create', ['pacientes' => $pacientes, 'medicos' => $medicos]);
 
     }
 
