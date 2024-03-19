@@ -24,7 +24,7 @@ class MenuController extends Controller
      */
     public function create()
     {
-        $this->authorize('create', Menu::menu);
+        $this->authorize('create', Menu::class);
         $dietistas = Dietista::all();
         if(Auth::user()->es_dietista)
             return view('menus/create', ['dietista' => Auth::user()->dietista]);
