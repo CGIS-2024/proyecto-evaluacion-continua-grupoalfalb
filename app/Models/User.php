@@ -63,6 +63,7 @@ class User extends Authenticatable
 
 
     //Tipo de usuario que accede
+    //HEMOS HECHO MODIFICACIONES MOMENTANEAS PARA PODER ACCEDER SIN PROBLEMA COMO ADMINISTRADOR, POR AHORA HE ANULADO TODO LO DE PACIENTE
 
     public function getTipoUsuarioIdAttribute(){
         if ($this->dietista()->exists()){
