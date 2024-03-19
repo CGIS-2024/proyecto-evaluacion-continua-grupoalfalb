@@ -63,34 +63,36 @@ class User extends Authenticatable
 
 
     //Tipo de usuario que accede
+    //HEMOS HECHO MODIFICACIONES MOMENTANEAS PARA PODER ACCEDER SIN PROBLEMA COMO ADMINISTRADOR, POR AHORA HE ANULADO TODO LO DE PACIENTE
 
     public function getTipoUsuarioIdAttribute(){
         if ($this->dietista()->exists()){
             return 1;
         }
-        elseif($this->paciente()->exists()){
+        else {
             return 2;
         }
-        else{
-            return 3;
-        }
+       // else{
+         //   return 3;
+        //}
     }
 
     public function getTipoUsuarioAttribute(){
-        $tipos_usuario = [1 => trans('Dietista'), 2 => trans('Paciente'), 3 => trans('Administrador')];
+        $tipos_usuario = [1 => trans('Dietista'), 2 => trans('Administrador')];
+        //, 3 => trans('Administrador')
         return $tipos_usuario[$this->tipo_usuario_id];
     }
 
-    public function getEsPacienteAttribute(){
-        return $this->tipo_usuario_id == 2;
-    }
+    //public function getEsPacienteAttribute(){
+      //  return $this->tipo_usuario_id == 2;
+    //}
 
     public function getEsDietistaAttribute(){
         return $this->tipo_usuario_id == 1;
     }
 
     public function getEsAdministradorAttribute(){
-        return $this->tipo_usuario_id == 3;
+        return $this->tipo_usuario_id == 2;
     }
 
 
