@@ -11,7 +11,7 @@ class StoreMenuRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can('create', Menu::class);
     }
 
     /**
@@ -22,7 +22,8 @@ class StoreMenuRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'instrucciones_especificas' => 'required|string|max:255',
+            'fecha' => 'required|string|max:255',
         ];
     }
 }
