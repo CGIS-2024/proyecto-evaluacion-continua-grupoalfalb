@@ -2,7 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Menu;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreMenuRequest extends FormRequest
 {
