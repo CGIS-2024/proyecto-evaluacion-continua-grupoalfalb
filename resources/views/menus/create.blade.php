@@ -38,7 +38,7 @@
                             <x-input-label for="fecha" :value="__('Fecha')" />
 
                             <x-text-input id="fecha" class="block mt-1 w-full"
-                                     type="string"
+                                     type="datetime-local"
                                      name="fecha"
                                      :value="old('fecha')"
                                      required />
