@@ -14,7 +14,8 @@ class PacienteController extends Controller
      */
     public function index()
     {
-        //
+        $pacientes = Paciente::paginate(25);
+        return view('/pacientes/index', ['paceintes' => $pacientes]);
     }
 
     /**
@@ -22,7 +23,8 @@ class PacienteController extends Controller
      */
     public function create()
     {
-        //
+        $this->authorize('create', Paciente::class);
+        return view('pacientes/create');
     }
 
     /**
@@ -30,7 +32,10 @@ class PacienteController extends Controller
      */
     public function store(StorePacienteRequest $request)
     {
-        //
+        $paciente = new Paciente($request->validated());
+        $paciente->save();
+        session()->flash('success', 'Paciente creado correctamente.');
+        return redirect()->route('pacientes.index');
     }
 
     /**
@@ -38,7 +43,8 @@ class PacienteController extends Controller
      */
     public function show(Paciente $paciente)
     {
-        //
+        $this->authorize('view', $paciente);
+        return view('pacientes/show', ['paciente' => $paciente]);
     }
 
     /**
@@ -46,7 +52,12 @@ class PacienteController extends Controller
      */
     public function edit(Paciente $paciente)
     {
-        //
+        $this->authorize('update', $paciente);
+        $dietistas = Dietista::all();
+        if(Auth::user()->es_dietista){
+            return view('pacientes/edit', ['paciente' => $paciente, 'dietista' => Auth::user()->dietista]);
+        }
+        return view('pacientes/edit', ['paciente' => $paciente, 'dietista' => $dietistas]);
     }
 
     /**
@@ -54,7 +65,10 @@ class PacienteController extends Controller
      */
     public function update(UpdatePacienteRequest $request, Paciente $paciente)
     {
-        //
+        $paciente->fill($request->validated());
+        $paciente->save();
+        session()->flash('success', 'Paciente modificado correctamente.');
+        return redirect()->route('paciente.index');
     }
 
     /**
@@ -62,6 +76,11 @@ class PacienteController extends Controller
      */
     public function destroy(Paciente $paciente)
     {
-        //
+        $this->authorize('delete', $paciente);
+        if($paciente->delete())
+            session()->flash('success', 'Paciente borrado correctamente.');
+        else
+            session()->flash('warning', 'El paciente no pudo borrarse.');
+        return redirect()->route('paciente.index');
     }
 }

@@ -25,7 +25,7 @@ class PlatoController extends Controller
      */
     public function create()
     {
-        //ESTE AUN NO
+        
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Paciente;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +11,7 @@ class UpdatePacienteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can('create', paciente::class);
     }
 
     /**
@@ -22,7 +22,11 @@ class UpdatePacienteRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'alergias_alimentarias' => 'required|string|max:255',
+            'preferencias_alimentarias' => 'required|string|max:255',
+            'motivo_hospitalizacion' => 'required|string|max:255',
+            'nuhsa' => 'required|integer|digits:12',
+            
         ];
     }
 }
