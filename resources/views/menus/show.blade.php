@@ -36,7 +36,7 @@
                             <x-input-label for="fecha" :value="__('fecha')" />
 
                             <x-text-input id="fecha" class="block mt-1 w-full"
-                                     type="string"
+                                     type="datetime-local"
                                      name="fecha"
                                      disabled
                                      :value="$menu->fecha"

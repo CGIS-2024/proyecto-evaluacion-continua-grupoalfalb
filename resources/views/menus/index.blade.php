@@ -11,7 +11,7 @@
                 <div class="flex items-center mt-4 ml-2">
                     <form method="GET" action="{{ route('menus.create') }}">
                         <x-primary-button type="subit" class="ml-4">
-                            @if(Auth::user()->es_dietista)
+                            @if(Auth::user()->es_administrador || Auth::user()->es_dietista)
                                 {{ __('Crear Menu') }}
                             @endif
                         </x-primary-button>
@@ -40,7 +40,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$menu->fecha}}</span>
+                                        <span class="font-medium">{{$menu->fecha->format('d/m/Y H:i')}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
@@ -77,8 +77,8 @@
                                         </div>
                                     </div>
                                 </td>
-                                    
-                                
+
+
 
 
                             </tr>
