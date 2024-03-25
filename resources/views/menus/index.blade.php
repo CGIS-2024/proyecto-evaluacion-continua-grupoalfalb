@@ -53,9 +53,6 @@
                                                 </svg>
                                             </a>
                                         </div>
-
-
-
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{route('menus.edit', $menu->id)}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">

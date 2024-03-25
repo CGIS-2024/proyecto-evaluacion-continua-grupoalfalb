@@ -23,8 +23,6 @@
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
                             <th class="py-3 px-6 text-left">alergias_alimentarias</th>
-                            <th class="py-3 px-6 text-left">preferencias_alimentarias</th>
-                            <th class="py-3 px-6 text-left">motivo_hospitalizacion</th>
                             <th class="py-3 px-6 text-left">nuhsa</th>
                             <th></th>
 
@@ -34,7 +32,7 @@
                         <tbody class="text-gray-600 text-sm font-light">
 
                         @foreach ($pacientes as $paciente)
-                            <tr class="border-b border-gray-200">
+                        <tr class="border-b border-gray-200">
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$paciente->alergias_alimentarias}}</span>
@@ -42,17 +40,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->preferencias_alimentarias}}</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->motivo_hospitalizacion}}</span>
-                                    </div>
-                                </td>
-                                <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->motivo_hospitalizacion}}</span>
+                                        <span class="font-medium">{{$paciente->nuhsa}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center">
@@ -65,9 +53,6 @@
                                                 </svg>
                                             </a>
                                         </div>
-
-
-
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <a href="{{route('pacientes.edit', $paciente->id)}}">
                                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
