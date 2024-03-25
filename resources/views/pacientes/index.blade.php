@@ -98,7 +98,7 @@
 
                         </tbody>
                     </table>
-                    {{ $menus->links() }}
+                    {{ $pacientes->links() }}
                 </div>
             </div>
         </div>

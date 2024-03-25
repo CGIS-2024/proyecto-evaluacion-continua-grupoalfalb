@@ -12,10 +12,13 @@ class PacienteController extends Controller
     /**
      * Display a listing of the resource.
      */
+
+    
+
     public function index()
     {
         $pacientes = Paciente::paginate(25);
-        return view('/pacientes/index', ['paceintes' => $pacientes]);
+        return view('/pacientes/index', ['pacientes' => $pacientes]);
     }
 
     /**

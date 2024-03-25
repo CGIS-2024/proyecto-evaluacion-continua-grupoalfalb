@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\DietistaController;
+use App\Http\Controllers\PacienteController;
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
@@ -36,6 +37,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resources([
         'menus' => MenuController::class,
         'dietistas' => DietistaController::class,
+        'pacientes' => PacienteController::class,
     ]);
 
 });
