@@ -12,6 +12,9 @@ class Menu extends Model
     public function dietista(){
         return $this->belongsTo(Dietista::class);
     }
+    public function platos(){
+        return $this->belongsToMany(Plato::class)->using(MenuPlato::class)->withPivot('comida');
+    }
     protected $casts = [
         'fecha' => 'datetime:Y-m-d H:i',
     ];
