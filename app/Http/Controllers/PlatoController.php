@@ -25,7 +25,8 @@ class PlatoController extends Controller
      */
     public function create()
     {
-        
+        $this->authorize('create', Plato::class);
+        return view('plato/create'); 
     }
 
     /**
@@ -33,7 +34,10 @@ class PlatoController extends Controller
      */
     public function store(StorePlatoRequest $request)
     {
-        //
+        $plato = new Plato($request->validated());
+        $plato->save();
+        session()->flash('success', 'Plato creado correctamente.');
+        return redirect()->route('platos.index');
     }
 
     /**
@@ -49,7 +53,8 @@ class PlatoController extends Controller
      */
     public function edit(Plato $plato)
     {
-        //
+        $this->authorize('update', $plato);
+        return view('platos/edit', ['plato' => $plato]);
     }
 
     /**
@@ -57,7 +62,11 @@ class PlatoController extends Controller
      */
     public function update(UpdatePlatoRequest $request, Plato $plato)
     {
-        //
+        $this->authorize('update', $plato);
+        $plato->fill($request->validated());
+        $plato->save();
+        session()->flash('success', 'Plato modificado correctamente.');
+        return redirect()->route('platos.index');
     }
 
     /**
@@ -65,6 +74,11 @@ class PlatoController extends Controller
      */
     public function destroy(Plato $plato)
     {
-        //
+        $this->authorize('delete', $plato);
+        if($plato->delete())
+            session()->flash('success', 'Plato borrado correctamente.');
+        else
+            session()->flash('warning', 'No pudo borrarse el Plato.');
+        return redirect()->route('platos.index');
     }
 }
