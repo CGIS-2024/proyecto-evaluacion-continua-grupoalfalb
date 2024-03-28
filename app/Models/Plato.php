@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plato extends Model
 {
-    protected $fillable = ['tipo', 'nombre',  'alérgenos', 'grasas', 'carbohidratos', 'proteínas', 'sodio', 'contenido_energético'];
+    protected $fillable = ['tipo', 'nombre',  'alergenos', 'grasas', 'carbohidratos', 'proteinas', 'sodio', 'contenido_energetico'];
     
     public function menus(){
         return $this->belongsToMany(Menu::class)->using(MenuPlato::class)->withPivot('comida');

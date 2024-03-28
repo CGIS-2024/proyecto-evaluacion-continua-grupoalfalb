@@ -11,7 +11,7 @@ class UpdatePlatoRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can('create', Plato::class);
     }
 
     /**
@@ -22,7 +22,14 @@ class UpdatePlatoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'tipo' => 'required|string|max:255',
+            'nombre' => 'required|string|max:255',
+            'alergenos' => 'required|string|max:255',
+            'grasas' => 'required|numeric',
+            'carbohidratos' => 'required|numeric',
+            'proteínas' => 'required|numeric',
+            'sodio' => 'required|numeric',
+            'contenido_energetico' => 'required|string|max:255',
         ];
     }
 }
