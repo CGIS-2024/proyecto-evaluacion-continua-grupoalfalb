@@ -26,7 +26,7 @@ class StorePacienteRequest extends FormRequest
             'alergias_alimentarias' => 'required|string|max:255',
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
-            'nuhsa' => 'required|integer|digits:12',
+            'nuhsa' => 'required|String|max:12',
             
         ];
     }

@@ -17,13 +17,13 @@ class DietistaSeeder extends Seeder
     {
         DB::table('dietistas')->insert([
             [
-                'nusha' => "AN1234567890",
+                'nuhsa' => "AN1234567890",
                 'fecha_contratacion' => "24/7/2023",
                 'user_id' => 3,
 
             ],
             [
-                'nusha' => "AN1234987654",
+                'nuhsa' => "AN1234987654",
                 'fecha_contratacion' => "12/9/2023",
                 'user_id' => 4,
 
