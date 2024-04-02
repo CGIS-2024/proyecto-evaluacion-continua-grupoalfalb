@@ -12,5 +12,5 @@ class Plato extends Model
     public function menus(){
         return $this->belongsToMany(Menu::class)->using(MenuPlato::class)->withPivot('comida');
     }
-
+    
 }

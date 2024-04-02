@@ -21,14 +21,14 @@ class PacienteSeeder extends Seeder
                 'alergias_alimentarias' => "Huevo",
                 'preferencias_alimentarias' => 'Pisa',
                 'motivo_hospitalizacion' => 'Pulmones',
-                'nuhsa' => '197503210123',
+                'nuhsa' => 'AN2748382739',
 
             ],
             [
-                'alergias_alimentarias' => "Huevo",
-                'preferencias_alimentarias' => 'Pisa',
-                'motivo_hospitalizacion' => 'Pulmones',
-                'nuhsa' => '197503210123'
+                'alergias_alimentarias' => "Queso",
+                'preferencias_alimentarias' => 'Pasta',
+                'motivo_hospitalizacion' => 'Pecho',
+                'nuhsa' => 'AN1728495834'
             ],
         ]);
     }
