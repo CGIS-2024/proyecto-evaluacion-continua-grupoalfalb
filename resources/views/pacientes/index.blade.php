@@ -22,10 +22,10 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">alergias alimentarias</th>
-                            <th class="py-3 px-6 text-left">preferencias alimentarias</th>
-                            <th class="py-3 px-6 text-left">motivo hospitalizacion</th>
-                            <th class="py-3 px-6 text-left">nuhsa</th>
+                            <th class="py-3 px-6 text-left">Nombre</th>
+                            <th class="py-3 px-6 text-left">Apellidos</th>
+                            <th class="py-3 px-6 text-left">DNI</th>
+                           
 
 
                             <th></th>
@@ -44,19 +44,15 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->preferencias_alimentarias}}</span>
+                                        <span class="font-medium">{{$paciente->user->apellidos}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->motivo_hospitalizacion}}</span>
+                                        <span class="font-medium">{{$paciente->user->dni}}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span class="font-medium">{{$paciente->nuhsa}}</span>
-                                    </div>
-                                </td>
+                                
 
 
 
