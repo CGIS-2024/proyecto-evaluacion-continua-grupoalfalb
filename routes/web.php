@@ -38,6 +38,8 @@ Route::middleware(['auth'])->group(function () {
         'menus' => MenuController::class,
         'dietistas' => DietistaController::class,
         'pacientes' => PacienteController::class,
+        'platos' => PlatoController::class,
+
     ]);
 
 });
