@@ -57,10 +57,8 @@ class PacienteController extends Controller
     {
         $this->authorize('update', $paciente);
         
-        if(Auth::user()->es_dietista){
-            return view('pacientes/edit', ['paciente' => $paciente, 'dietista' => Auth::user()->dietista]);
-        }
-        return view('pacientes/edit', ['paciente' => $paciente, 'dietista' => $dietistas]);
+        
+        return view('pacientes/edit', ['paciente' => $paciente]);
     }
 
     /**
