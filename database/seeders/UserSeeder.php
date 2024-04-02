@@ -56,6 +56,27 @@ class UserSeeder extends Seeder
                 'email' => "ccheredia@dietista.com",
                 'password' => Hash::make('12345678'),
             ],
+            [
+                'name' => "Juan",
+                'apellidos' => 'Pérez Gómez',
+                'fecha_nacimiento' => '30/04/1995',
+                'dni' => '33926194S',
+                'direccion' => 'C/Reina Mercedes, 4, 6A',
+                'genero' => "Hombre",
+                'email' => "juanpe@paciente.com",
+                'password' => Hash::make('12345678'),
+            ],
+            [
+                'name' => "María",
+                'apellidos' => 'López García',
+                'fecha_nacimiento' => '15/09/1988',
+                'dni' => '48573928T',
+                'direccion' => 'Avda. Constitución, 20, 3B',
+                'genero' => "Mujer",
+                'email' => "marialg@paciente.com",
+                'password' => Hash::make('12345678'),
+            ]
+
         ]);
     }
 }

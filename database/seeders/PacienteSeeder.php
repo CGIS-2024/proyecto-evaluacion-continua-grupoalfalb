@@ -15,20 +15,22 @@ class PacienteSeeder extends Seeder
      */
     public function run(): void
     {
-        
+
         DB::table('pacientes')->insert([
             [
                 'alergias_alimentarias' => "Huevo",
                 'preferencias_alimentarias' => 'Pisa',
                 'motivo_hospitalizacion' => 'Pulmones',
                 'nuhsa' => 'AN2748382739',
+                'user_id' => 5,
 
             ],
             [
                 'alergias_alimentarias' => "Queso",
                 'preferencias_alimentarias' => 'Pasta',
                 'motivo_hospitalizacion' => 'Pecho',
-                'nuhsa' => 'AN1728495834'
+                'nuhsa' => 'AN1728495834',
+                'user_id' => 6,
             ],
         ]);
     }
