@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Menus') }}
+            {{ __('Platos') }}
         </h2>
     </x-slot>
 
@@ -9,10 +9,10 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="flex items-center mt-4 ml-2">
-                    <form method="GET" action="{{ route('menus.create') }}">
+                    <form method="GET" action="{{ route('platos.create') }}">
                         <x-primary-button type="subit" class="ml-4">
                             @if(Auth::user()->es_administrador || Auth::user()->es_dietista)
-                                {{ __('Crear Menu') }}
+                                {{ __('Crear Plato') }}
                             @endif
                         </x-primary-button>
                     </form>
@@ -22,8 +22,10 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">instrucciones especificas</th>
-                            <th class="py-3 px-6 text-left">fecha</th>
+                            <th class="py-3 px-6 text-left">nombre</th>
+                            <th class="py-3 px-6 text-left">tipo</th>
+                            <th class="py-3 px-6 text-left">tipo</th>
+
                             <th></th>
 
 
