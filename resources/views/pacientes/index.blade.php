@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pacientes') }}
+            {{ __('Mis Pacientes') }}
         </h2>
     </x-slot>
 
@@ -22,8 +22,12 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">alergias_alimentarias</th>
+                            <th class="py-3 px-6 text-left">alergias alimentarias</th>
+                            <th class="py-3 px-6 text-left">preferencias alimentarias</th>
+                            <th class="py-3 px-6 text-left">motivo hospitalizacion</th>
                             <th class="py-3 px-6 text-left">nuhsa</th>
+
+
                             <th></th>
 
 
@@ -40,9 +44,23 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
+                                        <span class="font-medium">{{$paciente->preferencias_alimentarias}}</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">{{$paciente->motivo_hospitalizacion}}</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
                                         <span class="font-medium">{{$paciente->nuhsa}}</span>
                                     </div>
                                 </td>
+
+
+
+
                                 <td class="py-3 px-6 text-center">
                                     <div class="flex item-center justify-end">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
