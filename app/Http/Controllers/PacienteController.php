@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePacienteRequest;
-use App\Http\Requests\UpdatePacienteRequest;
+use App\Http\Requests\Paciente\StorePacienteRequest;
+use App\Http\Requests\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
 
