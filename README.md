@@ -35,7 +35,7 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 ## Requisitos de información
 - **RI001. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género..(añadir mas)
-- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: NUSHA, fecha de contratación..(añadir mas)
+- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa, fecha de contratación..(añadir mas)
 - **RI003. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización..(añadir mas)
 - **RI004. Información sobre el menú del día**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y la fecha.
 - **RI005. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, tipo (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
