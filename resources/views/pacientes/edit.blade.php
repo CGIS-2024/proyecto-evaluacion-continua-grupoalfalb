@@ -66,7 +66,7 @@
                         <div class="mt-4">
                             <x-input-label for="nuhsa" :value="__('nuhsa')"/>
 
-                            <x-text-input id="preferencnuhsaias_alimentarias" class="block mt-1 w-full"
+                            <x-text-input id="nuhsa" class="block mt-1 w-full"
                                           type="integer"
                                           name="nuhsa"
                                           :value="$paciente->nuhsa"
