@@ -3,6 +3,8 @@
 namespace App\Http\Requests\Paciente;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Paciente;
+use Illuminate\Validation\Rule;
 
 class StorePacienteRequest extends FormRequest
 {
@@ -21,13 +23,13 @@ class StorePacienteRequest extends FormRequest
      */
     public function rules(): array
     {
-        
+
         return [
             'alergias_alimentarias' => 'required|string|max:255',
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
             'nuhsa' => 'required|String|max:12',
-            
+
         ];
     }
 }

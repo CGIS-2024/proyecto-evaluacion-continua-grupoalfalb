@@ -3,6 +3,8 @@
 namespace App\Http\Requests\Paciente;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Paciente;
+use Illuminate\Validation\Rule;
 
 class UpdatePacienteRequest extends FormRequest
 {
@@ -26,7 +28,7 @@ class UpdatePacienteRequest extends FormRequest
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
             'nuhsa' => 'required|String|max:12',
-            
+
         ];
     }
 }
