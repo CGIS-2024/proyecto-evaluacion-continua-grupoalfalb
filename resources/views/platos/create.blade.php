@@ -37,6 +37,30 @@
                         </div>
 
                         <div class="mt-4">
+                            <x-input-label for="descripcion" :value="__('Descripcion')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="descripcion" class="block mt-1 w-full"
+                                             type="string"
+                                             name="descripcion"
+                                             :value="old('descripcion')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="tipo" :value="__('Tipo')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="tipo" class="block mt-1 w-full"
+                                             type="string"
+                                             name="tipo"
+                                             :value="old('tipo')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
                             <x-input-label for="alergenos" :value="__('Alergenos')" />
 
                             <div class="flex items-center">
@@ -140,18 +164,6 @@
                                              type="string"
                                              name="ingredientes"
                                              :value="old('ingredientes')"
-                                             required />
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
-                            <x-input-label for="descripcion" :value="__('Descripcion')" />
-
-                            <div class="flex items-center">
-                                <x-text-input id="descripcion" class="block mt-1 w-full"
-                                             type="string"
-                                             name="descripcion"
-                                             :value="old('descripcion')"
                                              required />
                             </div>
                         </div>
