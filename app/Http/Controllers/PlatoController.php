@@ -6,6 +6,8 @@ use App\Http\Requests\StorePlatoRequest;
 use App\Http\Requests\UpdatePlatoRequest;
 use App\Models\Plato;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 
 
 class PlatoController extends Controller

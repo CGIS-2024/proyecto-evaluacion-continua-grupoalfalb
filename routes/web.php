@@ -3,6 +3,8 @@
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\DietistaController;
 use App\Http\Controllers\PacienteController;
+use App\Http\Controllers\PlatoController;
+
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
