@@ -42,6 +42,11 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
+                                        <span class="font-medium">{{$plato->tipo}}</span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
                                         <span class="font-medium">{{$plato->calorias}}</span>
                                     </div>
                                 </td>
