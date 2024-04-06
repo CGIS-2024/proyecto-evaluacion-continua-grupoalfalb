@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Plato;
 
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Plato;
@@ -35,7 +35,6 @@ class UpdatePlatoRequest extends FormRequest
             'peso' => 'required|numeric|min:0',
             'ingredientes' => 'required|string',
             'descripcion' => 'required|string',
-            'instrucciones_especificas' => 'required|string',
         ];
     }
 }
