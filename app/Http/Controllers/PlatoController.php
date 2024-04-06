@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePlatoRequest;
-use App\Http\Requests\UpdatePlatoRequest;
+use App\Http\Requests\Plato\StorePlatoRequest;
+use App\Http\Requests\Plato\UpdatePlatoRequest;
 use App\Models\Plato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +28,7 @@ class PlatoController extends Controller
     public function create()
     {
         $this->authorize('create', Plato::class);
-        return view('plato/create');
+        return view('platos/create');
     }
 
     /**

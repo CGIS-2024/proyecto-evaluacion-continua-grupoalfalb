@@ -25,31 +25,140 @@
                     <form method="POST" action="{{ route('platos.store') }}">
                         @csrf
                         <div class="mt-4">
-                            <x-input-label for="nombre" :value="__('nombre')" />
+                            <x-input-label for="nombre" :value="__('Nombre')" />
 
-                            <x-text-input id="nombre" class="block mt-1 w-full"
-                                     type="string"
-                                     name="instrucciones_especificas"
-                                     :value="old('instrucciones_especificas')"
-                                     required />
+                            <div class="flex items-center">
+                                <x-text-input id="nombre" class="block mt-1 w-full"
+                                             type="double"
+                                             name="nombre"
+                                             :value="old('nombre')"
+                                             required />
+                            </div>
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="fecha" :value="__('Fecha')" />
+                            <x-input-label for="alergenos" :value="__('Alergenos')" />
 
-                            <x-text-input id="fecha" class="block mt-1 w-full"
-                                     type="datetime-local"
-                                     name="fecha"
-                                     :value="old('fecha')"
-                                     required />
+                            <div class="flex items-center">
+                                <x-text-input id="alergenos" class="block mt-1 w-full"
+                                             type="double"
+                                             name="alergenos"
+                                             :value="old('alergenos')"
+                                             required />
+                            </div>
                         </div>
 
+                        <div class="mt-4">
+                            <x-input-label for="grasas" :value="__('Grasas')" />
 
+                            <div class="flex items-center">
+                                <x-text-input id="grasas" class="block mt-1 w-full"
+                                             type="double"
+                                             name="grasas"
+                                             :value="old('grasas')"
+                                             required />
+                            </div>
+                        </div>
 
+                        <div class="mt-4">
+                            <x-input-label for="carbohidratos" :value="__('Carbohidratos')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="carbohidratos" class="block mt-1 w-full"
+                                             type="double"
+                                             name="carbohidratos"
+                                             :value="old('carbohidratos')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="proteinas" :value="__('Proteinas')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="proteinas" class="block mt-1 w-full"
+                                             type="double"
+                                             name="proteinas"
+                                             :value="old('proteinas')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="fibra" :value="__('Fibra')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="fibra" class="block mt-1 w-full"
+                                             type="double"
+                                             name="fibra"
+                                             :value="old('fibra')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="calorias" :value="__('Calorias')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="calorias" class="block mt-1 w-full"
+                                             type="double"
+                                             name="calorias"
+                                             :value="old('calorias')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="azucares" :value="__('Azucares')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="azucares" class="block mt-1 w-full"
+                                             type="double"
+                                             name="azucares"
+                                             :value="old('azucares')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="peso" :value="__('Peso')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="peso" class="block mt-1 w-full"
+                                             type="double"
+                                             name="peso"
+                                             :value="old('peso')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="ingredientes" :value="__('Ingredientes')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="ingredientes" class="block mt-1 w-full"
+                                             type="string"
+                                             name="ingredientes"
+                                             :value="old('ingredientes')"
+                                             required />
+                            </div>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="descripcion" :value="__('Descripcion')" />
+
+                            <div class="flex items-center">
+                                <x-text-input id="descripcion" class="block mt-1 w-full"
+                                             type="string"
+                                             name="descripcion"
+                                             :value="old('descripcion')"
+                                             required />
+                            </div>
+                        </div>
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
-                                <a href={{route('menus.index')}}>
+                                <a href={{route('platos.index')}}>
                                     {{ __('Cancelar') }}
                                 </a>
                             </x-danger-button>
