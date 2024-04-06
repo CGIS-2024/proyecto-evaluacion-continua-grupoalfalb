@@ -26,7 +26,7 @@ class PlatoController extends Controller
     public function create()
     {
         $this->authorize('create', Plato::class);
-        return view('plato/create'); 
+        return view('plato/create');
     }
 
     /**
@@ -45,7 +45,8 @@ class PlatoController extends Controller
      */
     public function show(Plato $plato)
     {
-        //
+        $this->authorize('view', $plato);
+        return view('platos/show', ['plato' => $plato]);
     }
 
     /**
