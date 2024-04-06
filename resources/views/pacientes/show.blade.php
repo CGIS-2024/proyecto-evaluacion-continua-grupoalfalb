@@ -22,7 +22,92 @@
                 <div class="p-6 bg-white border-b border-gray-200">
 
                         <div class="mt-4">
-                            <x-input-label for="alergias_alimentarias" :value="__('alergias alimentarias')" />
+                            <x-input-label for="nombre" :value="__('Nombre')" />
+
+                            <x-text-input id="nombre" class="block mt-1 w-full"
+                                    type="string"
+                                    name="nombre"
+                                    disabled
+                                    :value="$paciente->user->name"
+                                    required />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="apellidos" :value="__('Apellidos')" />
+
+                            <x-text-input id="apellidos" class="block mt-1 w-full"
+                                    type="string"
+                                    name="apellidos"
+                                    disabled
+                                    :value="$paciente->user->apellidos"
+                                    required />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="fecha_nacimiento" :value="__('Fecha nacimiento')" />
+
+                            <x-text-input id="fecha_nacimiento" class="block mt-1 w-full"
+                                    type="string"
+                                    name="fecha_nacimiento"
+                                    disabled
+                                    :value="$paciente->user->fecha_nacimiento"
+                                    required />
+                        </div>
+                        <div class="mt-4">
+                            <x-input-label for="dni" :value="__('DNI')" />
+
+                            <x-text-input id="dni" class="block mt-1 w-full"
+                                    type="string"
+                                    name="dni"
+                                    disabled
+                                    :value="$paciente->user->dni"
+                                    required />
+                        </div>
+                        <div class="mt-4">
+                            <x-input-label for="genero" :value="__('Genero')" />
+
+                            <x-text-input id="direccion" class="block mt-1 w-full"
+                                    type="string"
+                                    name="genero"
+                                    disabled
+                                    :value="$paciente->user->genero"
+                                    required />
+                        </div>
+                        <div class="mt-4">
+                            <x-input-label for="nuhsa" :value="__('NUHSA')" />
+
+                            <x-text-input id="nuhsa" class="block mt-1 w-full"
+                                     type="integer"
+                                     name="nuhsa"
+                                     disabled
+                                     :value="$paciente->nuhsa"
+                                     required />
+                        </div>
+                        <div class="mt-4">
+                            <x-input-label for="direccion" :value="__('Direccion')" />
+
+                            <x-text-input id="direccion" class="block mt-1 w-full"
+                                    type="string"
+                                    name="direccion"
+                                    disabled
+                                    :value="$paciente->user->direccion"
+                                    required />
+                        </div>
+                        <div class="mt-4">
+                            <x-input-label for="motivo_hospitalizacion" :value="__('Motivo hospitalizacion')" />
+
+                            <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full"
+                                     type="string"
+                                     name="motivo_hospitalizacion"
+                                     disabled
+                                     :value="$paciente->motivo_hospitalizacion"
+                                     required />
+                        </div>
+
+
+
+                        <div class="mt-4">
+                            <x-input-label for="alergias_alimentarias" :value="__('Alergias alimentarias')" />
 
                             <x-text-input id="alergias_alimentarias" class="block mt-1 w-full"
                                      type="string"
@@ -33,7 +118,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="preferencias_alimentarias" :value="__('preferencias_alimentarias')" />
+                            <x-input-label for="preferencias_alimentarias" :value="__('Preferencias alimentarias')" />
 
                             <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full"
                                      type="string"
@@ -42,26 +127,8 @@
                                      :value="$paciente->preferencias_alimentarias"
                                      required />
                         </div>
-                        <div class="mt-4">
-                            <x-input-label for="motivo_hospitalizacion" :value="__('motivo_hospitalizacion')" />
 
-                            <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full"
-                                     type="string"
-                                     name="motivo_hospitalizacion"
-                                     disabled
-                                     :value="$paciente->motivo_hospitalizacion"
-                                     required />
-                        </div>
-                        <div class="mt-4">
-                            <x-input-label for="nuhsa" :value="__('nuhsa')" />
 
-                            <x-text-input id="nuhsa" class="block mt-1 w-full"
-                                     type="integer"
-                                     name="nuhsa"
-                                     disabled
-                                     :value="$paciente->nuhsa"
-                                     required />
-                        </div>
 
 
 
