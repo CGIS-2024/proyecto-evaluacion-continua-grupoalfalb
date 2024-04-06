@@ -3,6 +3,8 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Plato;
+use Illuminate\Validation\Rule;
 
 class UpdatePlatoRequest extends FormRequest
 {

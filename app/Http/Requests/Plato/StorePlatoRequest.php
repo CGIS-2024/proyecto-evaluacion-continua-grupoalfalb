@@ -3,13 +3,15 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Models\Plato;
+use Illuminate\Validation\Rule;
 
 class StorePlatoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
      */
-    
+
     public function authorize(): bool
     {
         return $this->user()->can('create', Plato::class);
