@@ -25,14 +25,18 @@ class StorePlatoRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'tipo' => 'required|string|max:255',
             'nombre' => 'required|string|max:255',
             'alergenos' => 'required|string|max:255',
-            'grasas' => 'required|numeric',
-            'carbohidratos' => 'required|numeric',
-            'proteínas' => 'required|numeric',
-            'sodio' => 'required|numeric',
-            'contenido_energetico' => 'required|string|max:255',
+            'grasas' => 'required|numeric|min:0',
+            'carbohidratos' => 'required|numeric|min:0',
+            'proteinas' => 'required|numeric|min:0',
+            'fibra' => 'required|numeric|min:0',
+            'calorias' => 'required|numeric|min:0',
+            'azucares' => 'required|numeric|min:0',
+            'peso' => 'required|numeric|min:0',
+            'ingredientes' => 'required|string',
+            'descripcion' => 'required|string',
+            'instrucciones_especificas' => 'required|string',
         ];
     }
 }

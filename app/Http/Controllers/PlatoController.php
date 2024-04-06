@@ -65,7 +65,6 @@ class PlatoController extends Controller
      */
     public function update(UpdatePlatoRequest $request, Plato $plato)
     {
-        $this->authorize('update', $plato);
         $plato->fill($request->validated());
         $plato->save();
         session()->flash('success', 'Plato modificado correctamente.');
