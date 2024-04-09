@@ -13,7 +13,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //
+        //AQUI ESCRIBO LOS MODELOS QUE QUIERO QUE TENGAN POLICIES
     ];
 
     /**
