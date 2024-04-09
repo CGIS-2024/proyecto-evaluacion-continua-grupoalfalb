@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Paciente\StorePacienteRequest;
 use App\Http\Requests\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
+use App\Models\Dietista;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -23,7 +24,7 @@ class PacienteController extends Controller
      * Display a listing of the resource.
      */
 
-    
+
 
     public function index()
     {
@@ -37,10 +38,12 @@ class PacienteController extends Controller
     public function create()
     {
         $this->authorize('create', Paciente::class);
-        return view('pacientes/create');
+        $dietistas = Dietista::all();
+        return view('pacientes/create', ['dietistas' => $dietistas]);
+
     }
 
-    
+
 
     /**
      * Store a newly created resource in storage.
@@ -70,8 +73,8 @@ class PacienteController extends Controller
     public function edit(Paciente $paciente)
     {
         $this->authorize('update', $paciente);
-        
-        
+
+
         return view('pacientes/edit', ['paciente' => $paciente]);
     }
 

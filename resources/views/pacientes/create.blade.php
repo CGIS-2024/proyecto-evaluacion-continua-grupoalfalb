@@ -105,9 +105,6 @@
                             </x-select>
                         </div>
 
-
-                        
-
                         <div class="mt-4">
                             <x-input-label for="alergias_alimentarias" :value="__('Alergias alimentarias')" />
 
@@ -144,6 +141,30 @@
                                      name="nuhsa"
                                      :value="old('nuhsa')"
                                      required />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="dietista_id" :value="__('Dietista')" />
+
+                            @isset($dietista)
+                                <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                         type="hidden"
+                                         name="dietista_id"
+                                         :value="$dietista->id"
+                                         required />
+                                <x-text-input class="block mt-1 w-full"
+                                         type="text"
+                                         disabled
+                                         value="{{$dietista->user->name}}"
+                                          />
+                            @else
+                            <x-select id="dietista_id" name="dietista_id" required>
+                                <option value="">{{__('Elige un dietista')}}</option>
+                                @foreach ($dietistas as $dietista)
+                                    <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->name}} </option>
+                                @endforeach
+                            </x-select>
+                            @endisset
                         </div>
 
 
