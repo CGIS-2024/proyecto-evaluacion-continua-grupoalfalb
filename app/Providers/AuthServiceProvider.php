@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 // use Illuminate\Support\Facades\Gate;
+use App\Models\Dietista;
+use App\Policies\DietistaPolicy;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -13,7 +15,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array<class-string, class-string>
      */
     protected $policies = [
-        //AQUI ESCRIBO LOS MODELOS QUE QUIERO QUE TENGAN POLICIES
+        Dietista::class => DietistaPolicy::class
     ];
 
     /**
