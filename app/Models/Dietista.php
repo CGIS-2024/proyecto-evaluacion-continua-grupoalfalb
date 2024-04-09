@@ -16,4 +16,8 @@ class Dietista extends Model
     public function user(){
         return $this->belongsTo(User::class);
     }
+
+    public function pacientes(){
+        return $this->hasMany(Paciente::class);
+    }
 }
