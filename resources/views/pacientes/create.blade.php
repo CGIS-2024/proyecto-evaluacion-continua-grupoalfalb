@@ -78,12 +78,20 @@
                         </div>
 
                         <div class="mt-4">
-                                <x-input-label for="password" :value="__('contraseña')" />
+                            <x-input-label for="password" :value="__('Contraseña')" />
 
-                                <x-text-input id="password" class="block mt-1 w-full"
-                                                type="password"
-                                                name="password"
-                                                required />
+                            <x-text-input id="password" class="block mt-1 w-full"
+                                type="password"
+                                name="password"
+                                required autocomplete="new-password" />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="password_confirmation" :value="__('Confirmar Contraseña')" />
+
+                            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+                                type="password"
+                                name="password_confirmation" required />
                         </div>
 
                         <div class="mt-4">

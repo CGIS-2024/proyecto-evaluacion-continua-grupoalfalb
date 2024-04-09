@@ -6,9 +6,19 @@ use App\Http\Requests\Paciente\StorePacienteRequest;
 use App\Http\Requests\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class PacienteController extends Controller
 {
+    private function createUser(Request $request)
+    {
+        $user = new User($request->validated());
+        $user->password = Hash::make($user->password);
+        $user->save();
+        return $user;
+    }
+
     /**
      * Display a listing of the resource.
      */
@@ -30,12 +40,16 @@ class PacienteController extends Controller
         return view('pacientes/create');
     }
 
+    
+
     /**
      * Store a newly created resource in storage.
      */
     public function store(StorePacienteRequest $request)
     {
+        $user = $this->createUser($request);
         $paciente = new Paciente($request->validated());
+        $paciente->user_id = $user->id;
         $paciente->save();
         session()->flash('success', 'Paciente creado correctamente.');
         return redirect()->route('pacientes.index');
