@@ -23,7 +23,7 @@ class PacienteSeeder extends Seeder
                 'motivo_hospitalizacion' => "Pulmones",
                 'nuhsa' => "AN2748382739",
                 'user_id' => 5,
-                'dietista_id' => 3,
+                'dietista_id' => 1,
 
 
             ],
@@ -33,7 +33,7 @@ class PacienteSeeder extends Seeder
                 'motivo_hospitalizacion' => "Pecho",
                 'nuhsa' => "AN1728495834",
                 'user_id' => 6,
-                'dietista_id' => 4,
+                'dietista_id' => 2,
 
             ],
         ]);
