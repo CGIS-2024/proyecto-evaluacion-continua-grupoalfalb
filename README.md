@@ -83,3 +83,12 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 ## Manual de usuario con capturas. 
 - NO ES PARA LA PRIMERA ENTREGA
+
+
+## Policies (Sucio)
+
+Administrador: tiene acceso a todo.
+
+Paciente: solo puede registrarse, editar sus datos personales y ver sus menus.
+
+Dietista: Puede crear y editar platos, menus, podrá editar sus datos personales y solo ver datos del paciente.

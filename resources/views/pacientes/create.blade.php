@@ -25,7 +25,83 @@
                     <form method="POST" action="{{ route('pacientes.store') }}">
                         @csrf
                         <div class="mt-4">
-                            <x-input-label for="alergias_alimentarias" :value="__('alergias_alimentarias')" />
+                                <x-input-label for="name" :value="__('Nombre')" />
+
+                                <x-text-input id="name" class="block mt-1 w-full"
+                                                type="string"
+                                                name="name"
+                                                required />
+                        </div>
+                        <div class="mt-4">
+                                <x-input-label for="apellidos" :value="__('Apellidos')" />
+
+                                <x-text-input id="apellidos" class="block mt-1 w-full"
+                                                type="string"
+                                                name="apellidos"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                                <x-input-label for="fecha_nacimiento" :value="__('Fecha nacimiento')" />
+
+                                <x-text-input id="fecha_nacimiento" class="block mt-1 w-full"
+                                                type="date"
+                                                name="fecha_nacimiento"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                                <x-input-label for="dni" :value="__('DNI')" />
+
+                                <x-text-input id="dni" class="block mt-1 w-full"
+                                                type="string"
+                                                name="dni"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                                <x-input-label for="direccion" :value="__('Dirección')" />
+
+                                <x-text-input id="direccion" class="block mt-1 w-full"
+                                                type="string"
+                                                name="direccion"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                                <x-input-label for="email" :value="__('Email')" />
+
+                                <x-text-input id="email" class="block mt-1 w-full"
+                                                type="email"
+                                                name="email"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                                <x-input-label for="password" :value="__('contraseña')" />
+
+                                <x-text-input id="password" class="block mt-1 w-full"
+                                                type="password"
+                                                name="password"
+                                                required />
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="genero" :value="__('Género')" />
+
+                            <x-select id="genero" name="genero" required>
+                                <option value="">{{__('Elige una opción')}}</option>
+                                <option value="masculino" @if (old('genero') == 'masculino') selected @endif>{{__('Masculino')}}</option>
+                                <option value="femenino" @if (old('genero') == 'femenino') selected @endif>{{__('Femenino')}}</option>
+                                <option value="otro" @if (old('genero') == 'otro') selected @endif>{{__('Otro')}}</option>
+                            </x-select>
+                        </div>
+
+
+                        
+
+                        <div class="mt-4">
+                            <x-input-label for="alergias_alimentarias" :value="__('Alergias alimentarias')" />
 
                             <x-text-input id="alergias_alimentarias" class="block mt-1 w-full"
                                      type="string"
@@ -35,7 +111,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="preferencias_alimentarias" :value="__('preferencias_alimentarias')" />
+                            <x-input-label for="preferencias_alimentarias" :value="__('Preferencias alimentarias')" />
 
                             <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full"
                                      type="String"
@@ -44,7 +120,7 @@
                                      required />
                         </div>
                         <div class="mt-4">
-                            <x-input-label for="motivo_hospitalizacion" :value="__('motivo_hospitalizacion')" />
+                            <x-input-label for="motivo_hospitalizacion" :value="__('Motivo hospitalizacion')" />
 
                             <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full"
                                      type="string"
@@ -53,7 +129,7 @@
                                      required />
                         </div>
                         <div class="mt-4">
-                            <x-input-label for="nuhsa" :value="__('nuhsa')" />
+                            <x-input-label for="nuhsa" :value="__('NUHSA')" />
 
                             <x-text-input id="nuhsa" class="block mt-1 w-full"
                                      type="integer"

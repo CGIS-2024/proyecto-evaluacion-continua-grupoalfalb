@@ -11,6 +11,7 @@ class MenuPlato extends Pivot
 
     protected $casts = [
         //Por que ponemos inicio? si no tenemos ese atributo.. yo creo que no tenemos que castear nada
-        //'inicio' => 'datetime:Y-m-d',
+        //'inicio' => 'datetime:Y-m-d'
+        
     ];
 }
