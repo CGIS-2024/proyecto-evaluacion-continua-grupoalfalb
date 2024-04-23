@@ -140,16 +140,34 @@
                         @endif
 
                         <div class="mt-4">
-                                <x-input-label for="dietista_id" :value="__('Dietista')" />
+                        <x-input-label for="dietista_id" :value="__('Dietista')" />
 
+                        @isset($dietista)
+                            <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                type="hidden"
+                                name="dietista_id"
+                                :value="$dietista->id"
+                                required />
+                            <x-text-input class="block mt-1 w-full"
+                                type="text"
+                                disabled
+                                value="{{$dietista->user->name}}"
+                                />
+                        @else
+                        <x-select id="dietista_id" name="dietista_id" required>
+                            <option value="{{$paciente->dietista_id}}">{{$paciente->dietista->user->name}}</option>
+                            @foreach ($dietistas as $dietista)
+                                @if($paciente->dietista_id != $dietista->id)
+                                    <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->name}} </option>
+                                @endif
+                            @endforeach
+                        </x-select>
+                        @endisset
+                    </div>
 
-                                <x-select id="dietista_id" name="dietista_id" required>
-                                    <option value="">{{__('Elige una opción')}}</option>
-                                    @foreach ($dietistas as $dietista)
-                                        <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->nombre}}</option>
-                                    @endforeach
-                                </x-select>
-                        </div>
+                                
+                          
+                        
 
 
 

@@ -66,7 +66,7 @@
                         <div class="mt-4">
                             <x-input-label for="genero" :value="__('Genero')" />
 
-                            <x-text-input id="direccion" class="block mt-1 w-full"
+                            <x-text-input id="genero" class="block mt-1 w-full"
                                     type="string"
                                     name="genero"
                                     disabled
@@ -128,18 +128,19 @@
                                      required />
                         </div>
 
+                        
+
                         <div class="mt-4">
-                        <x-input-label for="dietista_id" :value="__('Dietista')"/>
+                            <x-input-label for="dietista_id" :value="__('Dietista')" />
 
-
-                        <x-select readonly disabled id="dietista_id" name="dietista_id" required>
-                            <option value="">{{__('Elige una opción')}}</option>
-                            @foreach ($dietistas as $dietista)
-                                <option value="{{$dietista->id}}"
-                                        @if ($paciente->dietista_id == $dietista->id) selected @endif>{{$dietista->nombre}}</option>
-                            @endforeach
-                        </x-select>
-                    </div>
+                            <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                    type="string"
+                                    name="dietista_id"
+                                    disabled
+                                    :value="$paciente->dietista->user->name"
+                                    required />
+                        </div>
+                    
 
 
 

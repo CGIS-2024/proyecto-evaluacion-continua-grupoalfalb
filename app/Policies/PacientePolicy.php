@@ -8,6 +8,12 @@ use Illuminate\Auth\Access\Response;
 
 class PacientePolicy
 {
+
+    private function esPacientePropio(User $user, Paciente $paciente): bool
+    {
+        return $user->es_dietista && $paciente->dietista_id == $user->dietista->id;
+    }
+
     /**
      * Determine whether the user can view any models.
      */
@@ -21,7 +27,7 @@ class PacientePolicy
      */
     public function view(User $user, Paciente $paciente): bool
     {
-        return true;
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente);
 
     }
 
@@ -30,7 +36,7 @@ class PacientePolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -39,7 +45,7 @@ class PacientePolicy
      */
     public function update(User $user, Paciente $paciente): bool
     {
-        return true;
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente);
 
     }
 
@@ -48,7 +54,7 @@ class PacientePolicy
      */
     public function delete(User $user, Paciente $paciente): bool
     {
-        return true;
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente);
 
     }
 
@@ -72,11 +78,11 @@ class PacientePolicy
 
     public function attach_menu(User $user, Paciente $paciente)
     {
-        return $user->es_administrador ; //$this->esCitaPropiaDeMedico($user, $cita)
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente); //$this->esCitaPropiaDeMedico($user, $cita)
     }
 
     public function detach_menu(User $user, Paciente $paciente)
     {
-        return $user->es_administrador ;
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente);
     }
 }
