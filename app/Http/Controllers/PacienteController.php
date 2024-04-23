@@ -131,7 +131,7 @@ class PacienteController extends Controller
 
     public function detach_menu(Paciente $paciente, Menu $menu)
     {
-        $paciente->menu()->detach($menu->id);
+        $paciente->menus()->detach($menu->id);
         return redirect()->route('pacientes.edit', $paciente->id);
     }
 }
