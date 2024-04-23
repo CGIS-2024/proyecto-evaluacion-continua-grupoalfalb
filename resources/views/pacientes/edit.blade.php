@@ -206,7 +206,7 @@
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    
+
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center justify-center">
@@ -224,11 +224,11 @@
                                     </div>
                                 </td>
 
-                                
 
 
-                                    
-                                
+
+
+
                             </tr>
                         @endforeach
 
@@ -277,7 +277,7 @@
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
-                                <a href={{route('dietistas.index')}}>
+                                <a href={{route('pacientes.index')}}>
                                     {{ __('Cancelar') }}
                                 </a>
                             </x-danger-button>

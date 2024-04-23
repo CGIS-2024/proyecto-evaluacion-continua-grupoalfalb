@@ -42,7 +42,9 @@ class PacienteController extends Controller
     {
         $this->authorize('create', Paciente::class);
         $dietistas = Dietista::all();
-        return view('pacientes/create', ['dietistas' => $dietistas]);
+        $menus = Menu::all();
+
+        return view('pacientes/create', ['dietistas' => $dietistas, 'menus' => $menus]);
 
     }
 
@@ -120,8 +122,11 @@ class PacienteController extends Controller
         ]);
 
         // Redirige a la vista de edición del paciente con los menús
-        return redirect()->route('pacientes.edit', $paciente->id)->with('menus', $menus);
+        return redirect()->route('pacientes.edit', $paciente->id);
     }
+
+
+
 
 
     public function detach_menu(Paciente $paciente, Menu $menu)

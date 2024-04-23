@@ -69,4 +69,14 @@ class PacientePolicy
         return true;
 
     }
+
+    public function attach_menu(User $user, Paciente $paciente)
+    {
+        return $user->es_administrador ; //$this->esCitaPropiaDeMedico($user, $cita)
+    }
+
+    public function detach_menu(User $user, Paciente $paciente)
+    {
+        return $user->es_administrador ;
+    }
 }
