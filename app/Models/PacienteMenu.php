@@ -10,7 +10,6 @@ class PacienteMenu extends Pivot
 {
 
     protected $casts = [
-        'fecha' => 'datetime:Y-m-d'
-
+        'fecha' => 'datetime:Y-m-d H:i'
     ];
 }
