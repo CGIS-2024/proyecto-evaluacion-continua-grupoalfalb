@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    protected $fillable = ['instrucciones_especificas', 'fecha'];
+    protected $fillable = ['instrucciones_especificas'];
 
     public function dietista(){
         return $this->belongsTo(Dietista::class);
@@ -15,7 +15,8 @@ class Menu extends Model
     public function platos(){
         return $this->belongsToMany(Plato::class)->using(MenuPlato::class)->withPivot('comida');
     }
-    protected $casts = [
-        'fecha' => 'datetime:Y-m-d H:i',
-    ];
+    public function pacientes(){
+        return $this->belongsToMany(Paciente::class)->using(PacienteMenu::class)->withPivot('fecha');
+    }
+
 }
