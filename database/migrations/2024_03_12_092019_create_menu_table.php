@@ -14,7 +14,6 @@ return new class extends Migration
         Schema::create('menus', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->dateTime('fecha');
             $table->string('instrucciones_especificas');
         });
     }

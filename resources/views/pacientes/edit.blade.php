@@ -205,18 +205,12 @@
                                             class="font-medium">{{$menu->instrucciones_especificas}}</span>
                                     </div>
                                 </td>
-                                <td class="py-3 px-6 text-center whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span
-                                            class="font-medium">{{$menu->pivot->fecha->format('d/m/Y')}} </span>
-                                    </div>
-
-                                <td class="py-3 px-6 text-center">
+                                
                                     <div class="flex item-center justify-center">
 
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
                                             <form id="detach-form-{{$paciente->id}}-{{$menu->id}}" method="POST"
-                                                  action="{{ route('menus.detachMenu', [$paciente->id, $menu->id]) }}">
+                                                  action="{{ route('pacientes.detachMenu', [$paciente->id, $menu->id]) }}">
                                                 @csrf
                                                 @method('delete')
                                                 <a class="cursor-pointer"

@@ -17,11 +17,11 @@ class MenuSeeder extends Seeder
         DB::table('menus')->insert([
             [
                 'instrucciones_especificas' => "Menú vegetariano para cena",
-                'fecha' => '2024-03-18 14:15:00',
+                
             ],
             [
                 'instrucciones_especificas' => "Menu rico en fibra para almuerzo",
-                'fecha' => "2024-03-13 19:25:00",
+                
             ],
         ]);
     }

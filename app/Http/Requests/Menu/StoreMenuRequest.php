@@ -25,7 +25,7 @@ class StoreMenuRequest extends FormRequest
     {
         return [
             'instrucciones_especificas' => 'required|string|max:255',
-            'fecha' => 'required|date|after:yesterday'
+            
         ];
     }
 }
