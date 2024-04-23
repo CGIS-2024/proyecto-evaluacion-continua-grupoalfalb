@@ -6,6 +6,9 @@ use App\Http\Requests\Paciente\StorePacienteRequest;
 use App\Http\Requests\Paciente\UpdatePacienteRequest;
 use App\Models\Paciente;
 use App\Models\Dietista;
+use App\Models\Menu;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
@@ -75,8 +78,8 @@ class PacienteController extends Controller
     {
         $this->authorize('update', $paciente);
         $dietistas = Dietista::all();
-
-        return view('pacientes/edit', ['paciente' => $paciente, 'dietistas' => $dietistas]);
+        $menus = Menu::all();
+        return view('pacientes/edit', ['paciente' => $paciente, 'dietistas' => $dietistas, 'menus' => $menus]);
     }
 
     /**
@@ -105,18 +108,21 @@ class PacienteController extends Controller
 
     public function attach_menu(Request $request, Paciente $paciente)
     {
-        // Valido en el controlador directamente en vez de en una form request separada porque necesito validar añadiendo un nombre al bag de errores.
-        // Necesito añadir un nombre al bag de attach porque la vista de edit tiene 2 formularios, cada uno pudiento tener errores de validación, así que asociamos un nombre a uno de ellos para poder diferenciar
-        // En la vista accederemos a los errores de validación de este formulario a través del nombre del bag
+        // Valida los datos del formulario
         $this->validateWithBag('attach', $request, [
             'menu_id' => 'required',
             'fecha' => 'required|date',
         ]);
+
+        // Asocia el menú al paciente
         $paciente->menus()->attach($request->menu_id, [
             'fecha' => $request->fecha
         ]);
-        return redirect()->route('pacientes.edit', $paciente->id);
+
+        // Redirige a la vista de edición del paciente con los menús
+        return redirect()->route('pacientes.edit', $paciente->id)->with('menus', $menus);
     }
+
 
     public function detach_menu(Paciente $paciente, Menu $menu)
     {

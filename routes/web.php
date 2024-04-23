@@ -20,12 +20,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/pacientes/{paciente}/attach-menu', [PacienteController::class, 'attach_menu'])
-        ->name('pacientes.attachMenu')
-        ->middleware('can:attach_menu,paciente');
-    Route::delete('/pacientes/{paciente}/detach-menu/{menu}', [PacienteController::class, 'detach_menu'])
-        ->name('pacientes.detachMenu')
-        ->middleware('can:detach_menu,paciente');
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -43,6 +38,12 @@ Route::middleware('auth')->group(function () {
 
 
 Route::middleware(['auth'])->group(function () {
+    Route::post('/pacientes/{paciente}/attach-menu', [PacienteController::class, 'attach_menu'])
+        ->name('pacientes.attachMenu')
+        ->middleware('can:attach_menu,paciente');
+    Route::delete('/pacientes/{paciente}/detach-menu/{menu}', [PacienteController::class, 'detach_menu'])
+        ->name('pacientes.detachMenu')
+        ->middleware('can:detach_menu,paciente');
     Route::resources([
         'menus' => MenuController::class,
         'dietistas' => DietistaController::class,

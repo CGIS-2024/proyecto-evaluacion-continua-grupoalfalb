@@ -205,7 +205,7 @@
                                             class="font-medium">{{$menu->instrucciones_especificas}}</span>
                                     </div>
                                 </td>
-                                
+
                                     <div class="flex item-center justify-center">
 
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -236,6 +236,62 @@
             </div>
         </div>
     </div>
+
+    @if(!Auth::user()->es_dietista)
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
+                    Añadir menu
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <!-- Errores de validación en servidor. Fíjate cómo accedo al bag "attach" que hemos realizado en el método attach_medicamento de CitaController con validateWithBag -->
+                    <x-input-error class="mb-4" :messages="$errors->attach->all()"/>
+                    <form method="POST" action="{{ route('pacientes.attachMenu', [$paciente->id]) }}">
+                        @csrf
+
+                        <div class="mt-4">
+                            <x-input-label for="menu_id" :value="__('Menu')"/>
+
+                            <x-select id="menu_id" name="menu_id" required>
+                                <option value="">{{__('Elige un menu')}}</option>
+                                @foreach ($menus as $menu)
+                                    <option value="{{$menu->id}}"
+                                            @if (old('menu_id') == $menu->id) selected @endif>{{$menu->instrucciones_especificas}}
+                                    </option>
+                                @endforeach
+                            </x-select>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="fecha" :value="__('Fecha del menu')"/>
+
+                            <x-text-input id="fecha" class="block mt-1 w-full"
+                                          type="date"
+                                          name="fecha"
+                                          :value="old('fecha')"
+                                          required/>
+                        </div>
+
+                        <div class="flex items-center justify-end mt-4">
+                            <x-danger-button type="button">
+                                <a href={{route('dietistas.index')}}>
+                                    {{ __('Cancelar') }}
+                                </a>
+                            </x-danger-button>
+                            <x-primary-button class="ml-4">
+                                {{ __('Guardar') }}
+                            </x-primary-button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+@endif
+
+
+
 
 
 </x-app-layout>

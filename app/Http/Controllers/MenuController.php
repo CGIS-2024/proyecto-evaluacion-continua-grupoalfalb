@@ -14,7 +14,7 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::orderBy('desc')->paginate(25);
+        $menus = Menu::paginate(25);
         return view('/menus/index', ['menus' => $menus]);
     }
 
