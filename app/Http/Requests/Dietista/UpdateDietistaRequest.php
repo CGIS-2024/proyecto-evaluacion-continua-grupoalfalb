@@ -2,6 +2,9 @@
 
 namespace App\Http\Requests;
 
+use App\Models\Paciente;
+use Illuminate\Validation\Rule;
+
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateDietistaRequest extends FormRequest
@@ -11,7 +14,7 @@ class UpdateDietistaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can('create', dietista::class);
     }
 
     /**
@@ -22,7 +25,8 @@ class UpdateDietistaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nuhsa' => 'required|string|max:12',
+            'fecha_contratacion' => 'required|date',
         ];
     }
 }

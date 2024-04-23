@@ -1,6 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
+use App\Models\Menu;
+use Illuminate\Validation\Rule;
+
+
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -11,7 +15,7 @@ class StoreDietistaRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return $this->user()->can('create', Dietista::class);
     }
 
     /**
@@ -22,7 +26,17 @@ class StoreDietistaRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'name' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'fecha_nacimiento' => 'required|date',
+            'dni' => 'required|string|max:255',
+            'direccion' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'password' => 'required|string|confirmed|min:8',
+            'genero' => 'required|string|max:255',
+            'nuhsa' => 'required|string|max:12',
+            'fecha_contratacion' => 'required|date',
+
         ];
     }
 }
