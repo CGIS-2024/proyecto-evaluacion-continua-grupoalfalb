@@ -38,7 +38,7 @@ class PacienteSeeder extends Seeder
             ],
         ]);
 
-        DB::table('paciente_menu')->insert([
+        DB::table('menu_paciente')->insert([
             [
                 'paciente_id' => 1,
                 'menu_id' => 1,

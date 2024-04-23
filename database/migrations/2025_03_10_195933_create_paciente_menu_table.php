@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('paciente_menu', function (Blueprint $table) {
+        Schema::create('menu_paciente', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
             $table->date('fecha');
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('paciente_menu');
+        Schema::dropIfExists('menu_paciente');
     }
 };
