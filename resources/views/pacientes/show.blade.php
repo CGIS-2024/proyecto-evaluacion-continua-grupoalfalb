@@ -128,6 +128,17 @@
                                      required />
                         </div>
 
+                        <div class="mt-4">
+                            <x-input-label for="dietista_id" :value="__('Dietista')" />
+
+                            <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                    type="string"
+                                    name="dietista_id"
+                                    disabled
+                                    :value="$paciente->dietista_id"
+                                    required />
+                        </div>
+
 
 
 

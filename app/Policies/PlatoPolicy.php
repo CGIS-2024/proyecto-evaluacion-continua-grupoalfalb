@@ -13,7 +13,7 @@ class PlatoPolicy
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -22,7 +22,7 @@ class PlatoPolicy
      */
     public function view(User $user, Plato $plato): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -31,7 +31,7 @@ class PlatoPolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -40,7 +40,7 @@ class PlatoPolicy
      */
     public function update(User $user, Plato $plato): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -49,7 +49,7 @@ class PlatoPolicy
      */
     public function delete(User $user, Plato $plato): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 

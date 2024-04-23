@@ -13,7 +13,7 @@ class DietistaPolicy
      */
     public function viewAny(User $user): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -22,7 +22,7 @@ class DietistaPolicy
      */
     public function view(User $user, Dietista $dietista): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -31,7 +31,7 @@ class DietistaPolicy
      */
     public function create(User $user): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -40,7 +40,7 @@ class DietistaPolicy
      */
     public function update(User $user, Dietista $dietista): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
@@ -49,7 +49,7 @@ class DietistaPolicy
      */
     public function delete(User $user, Dietista $dietista): bool
     {
-        return true;
+        return $user->es_administrador;
 
     }
 
