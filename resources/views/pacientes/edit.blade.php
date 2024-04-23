@@ -35,7 +35,7 @@
                                 <x-text-input id="name" class="block mt-1 w-full"
                                           type="string"
                                           name="name"
-                                          :value="$paciente->name"
+                                          :value="$paciente->user->name"
                                           required/>
                             </div>
                             <div class="mt-4">
@@ -44,7 +44,7 @@
                                 <x-text-input id="apellidos" class="block mt-1 w-full"
                                           type="string"
                                           name="apellidos"
-                                          :value="$paciente->apellidos"
+                                          :value="$paciente->user->apellidos"
                                           required/>
                             </div>
                             <div class="mt-4">
@@ -53,7 +53,7 @@
                                 <x-text-input id="fecha_nacimiento" class="block mt-1 w-full"
                                           type="string"
                                           name="fecha_nacimiento"
-                                          :value="$paciente->fecha_nacimiento"
+                                          :value="$paciente->user->fecha_nacimiento"
                                           required/>
                             </div>
                             <div class="mt-4">
@@ -62,7 +62,7 @@
                                 <x-text-input id="dni" class="block mt-1 w-full"
                                           type="string"
                                           name="dni"
-                                          :value="$paciente->dni"
+                                          :value="$paciente->user->dni"
                                           required/>
                             </div>
                             <div class="mt-4">
@@ -71,7 +71,7 @@
                                 <x-text-input id="direccion" class="block mt-1 w-full"
                                           type="string"
                                           name="direccion"
-                                          :value="$paciente->direccion"
+                                          :value="$paciente->user->direccion"
                                           required/>
                             </div>
                             <div class="mt-4">
@@ -80,18 +80,10 @@
                                 <x-text-input id="email" class="block mt-1 w-full"
                                           type="string"
                                           name="email"
-                                          :value="$paciente->email"
+                                          :value="$paciente->user->email"
                                           required/>
                             </div>
-                            <div class="mt-4">
-                                <x-input-label for="password" :value="__('Contraseña')"/>
-
-                                <x-text-input id="password" class="block mt-1 w-full"
-                                          type="string"
-                                          name="password"
-                                          :value="$paciente->password"
-                                          required/>
-                            </div>
+                            
                             <div class="mt-4">
                             <x-input-label for="genero" :value="__('Género')" />
 
@@ -154,7 +146,7 @@
                                 <x-select id="dietista_id" name="dietista_id" required>
                                     <option value="">{{__('Elige una opción')}}</option>
                                     @foreach ($dietistas as $dietista)
-                                    <option value="{{$dietista->id}}" @if ($paciente->dietista_id == $dietista->id) selected @endif>{{$dietista->nombre}}</option>
+                                        <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->nombre}}</option>
                                     @endforeach
                                 </x-select>
                         </div>
