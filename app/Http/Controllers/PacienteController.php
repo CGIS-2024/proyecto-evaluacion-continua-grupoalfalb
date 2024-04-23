@@ -64,7 +64,8 @@ class PacienteController extends Controller
     public function show(Paciente $paciente)
     {
         $this->authorize('view', $paciente);
-        return view('pacientes/show', ['paciente' => $paciente]);
+        $dietistas = Dietista::all();
+        return view('pacientes/show', ['paciente' => $paciente, 'dietistas' => $dietistas]);
     }
 
     /**
@@ -73,9 +74,9 @@ class PacienteController extends Controller
     public function edit(Paciente $paciente)
     {
         $this->authorize('update', $paciente);
+        $dietistas = Dietista::all();
 
-
-        return view('pacientes/edit', ['paciente' => $paciente]);
+        return view('pacientes/edit', ['paciente' => $paciente, 'dietistas' => $dietistas]);
     }
 
     /**
