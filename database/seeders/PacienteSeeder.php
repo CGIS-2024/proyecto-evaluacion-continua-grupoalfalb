@@ -37,5 +37,22 @@ class PacienteSeeder extends Seeder
 
             ],
         ]);
+
+        DB::table('paciente_menu')->insert([
+            [
+                'paciente_id' => 1,
+                'menu_id' => 1,
+                'fecha' => '2021-05-31',
+                
+                
+            ],
+            [
+                'paciente_id' => 2,
+                'menu_id' => 2,
+                'fecha' => '2022-03-25',
+                
+            ],
+            
+        ]);
     }
 }
