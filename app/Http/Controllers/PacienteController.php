@@ -102,4 +102,25 @@ class PacienteController extends Controller
             session()->flash('warning', 'El paciente no pudo borrarse.');
         return redirect()->route('pacientes.index');
     }
+
+    public function attach_menu(Request $request, Paciente $paciente)
+    {
+        // Valido en el controlador directamente en vez de en una form request separada porque necesito validar añadiendo un nombre al bag de errores.
+        // Necesito añadir un nombre al bag de attach porque la vista de edit tiene 2 formularios, cada uno pudiento tener errores de validación, así que asociamos un nombre a uno de ellos para poder diferenciar
+        // En la vista accederemos a los errores de validación de este formulario a través del nombre del bag
+        $this->validateWithBag('attach', $request, [
+            'menu_id' => 'required',
+            'fecha' => 'required|date',
+        ]);
+        $paciente->menus()->attach($request->menu_id, [
+            'fecha' => $request->fecha
+        ]);
+        return redirect()->route('pacientes.edit', $paciente->id);
+    }
+
+    public function detach_menu(Paciente $paciente, Menu $menu)
+    {
+        $paciente->menu()->detach($menu->id);
+        return redirect()->route('pacientes.edit', $paciente->id);
+    }
 }
