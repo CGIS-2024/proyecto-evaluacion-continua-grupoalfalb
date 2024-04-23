@@ -147,6 +147,18 @@
                             </div>
                         @endif
 
+                        <div class="mt-4">
+                                <x-input-label for="dietista_id" :value="__('Dietista')" />
+
+
+                                <x-select id="dietista_id" name="dietista_id" required>
+                                    <option value="">{{__('Elige una opción')}}</option>
+                                    @foreach ($dietistas as $dietista)
+                                    <option value="{{$dietista->id}}" @if ($paciente->dietista_id == $dietista->id) selected @endif>{{$dietista->nombre}}</option>
+                                    @endforeach
+                                </x-select>
+                        </div>
+
                         
 
 
