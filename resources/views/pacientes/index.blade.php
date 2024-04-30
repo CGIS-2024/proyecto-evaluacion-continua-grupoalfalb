@@ -37,7 +37,7 @@
                         
                         
                         @foreach ($pacientes as $paciente)
-                            @if ($paciente->dietista_id == Auth::user()->dietista->id)
+                            @if ($paciente->dietista_id == Auth::user()->dietista->id || Auth::user()->es_administrador)
                                 <tr class="border-b border-gray-200">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
