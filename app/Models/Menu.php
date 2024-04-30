@@ -19,4 +19,8 @@ class Menu extends Model
         return $this->belongsToMany(Paciente::class)->using(MenuPaciente::class)->withPivot('fecha');
     }
 
+
+
+
+
 }
