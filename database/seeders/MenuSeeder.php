@@ -17,12 +17,30 @@ class MenuSeeder extends Seeder
         DB::table('menus')->insert([
             [
                 'instrucciones_especificas' => "Menú vegetariano para cena",
-                
+
             ],
             [
                 'instrucciones_especificas' => "Menu rico en fibra para almuerzo",
-                
+
             ],
         ]);
+
+        DB::table('menu_plato')->insert([
+            [
+                'menu_id' => 1,
+                'plato_id' => 1,
+                'comida' => 'Primer plato',
+
+
+            ],
+            [
+                'plato_id' => 2,
+                'menu_id' => 2,
+                'comida' => 'Segundo plato',
+            ],
+
+        ]);
+
+
     }
 }

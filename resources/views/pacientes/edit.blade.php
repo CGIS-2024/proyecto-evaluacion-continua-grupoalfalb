@@ -83,7 +83,7 @@
                                           :value="$paciente->user->email"
                                           required/>
                             </div>
-                            
+
                             <div class="mt-4">
                             <x-input-label for="genero" :value="__('Género')" />
 
@@ -163,18 +163,7 @@
                             @endforeach
                         </x-select>
                         @endisset
-                    </div>
-
-                                
-                          
-                        
-
-
-
-
-
-
-
+                        </div>
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
                                 <a href={{route('pacientes.index')}}>
@@ -236,11 +225,11 @@
                                     </div>
                                 </td>
 
-                                
 
 
-                                    
-                                
+
+
+
                             </tr>
                         @endforeach
 
@@ -302,7 +291,7 @@
             </div>
         </div>
     </div>
-@endif
+    @endif
 
 
 
