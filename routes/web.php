@@ -44,6 +44,18 @@ Route::middleware(['auth'])->group(function () {
     Route::delete('/pacientes/{paciente}/detach-menu/{menu}', [PacienteController::class, 'detach_menu'])
         ->name('pacientes.detachMenu')
         ->middleware('can:detach_menu,paciente');
+
+
+    Route::post('/menus/{menu}/attach-plato', [MenuController::class, 'attach_plato'])
+        ->name('menus.attachPlato')
+        ->middleware('can:attach_plato,menu');
+    Route::delete('/menus/{menu}/detach-plato/{plato}', [MenuController::class, 'detach_plato'])
+        ->name('menus.detachPlato')
+        ->middleware('can:detach_plato,menu');
+
+
+
+
     Route::resources([
         'menus' => MenuController::class,
         'dietistas' => DietistaController::class,
