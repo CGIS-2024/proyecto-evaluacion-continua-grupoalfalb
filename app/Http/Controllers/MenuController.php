@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Menu;
+use App\Models\Plato;
 use App\Http\Requests\Menu\StoreMenuRequest;
 use App\Http\Requests\Menu\UpdateMenuRequest;
 use Illuminate\Support\Facades\Auth;
@@ -54,10 +55,12 @@ class MenuController extends Controller
     {
         $this->authorize('update', $menu);
         $dietistas = Dietista::all();
+        $menus = Menu::all();
+
         if(Auth::user()->es_dietista){
             return view('menus/edit', ['menu' => $menu, 'dietista' => Auth::user()->dietista]);
         }
-        return view('menus/edit', ['menu' => $menu, 'dietista' => $dietistas]);
+        return view('menus/edit', ['menu' => $menu, 'dietistas' => $dietistas, 'menus' => $menus]);
     }
 
     /**

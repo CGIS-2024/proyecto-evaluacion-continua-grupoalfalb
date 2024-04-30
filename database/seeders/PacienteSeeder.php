@@ -43,16 +43,16 @@ class PacienteSeeder extends Seeder
                 'paciente_id' => 1,
                 'menu_id' => 1,
                 'fecha' => '2024/04/24 15:30',
-                
-                
+
+
             ],
             [
                 'paciente_id' => 2,
                 'menu_id' => 2,
                 'fecha' => '2023/03/12 15:30',
-                
+
             ],
-            
+
         ]);
     }
 }

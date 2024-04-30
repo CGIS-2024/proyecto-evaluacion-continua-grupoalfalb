@@ -89,7 +89,7 @@
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center justify-center">
                                         <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
-                                            <form id="detach-form-{{$menu->id}}-{{$plato->id}}" method="POST" action="{{ route('menus.detachPlato', [$menus->id, $plato->id]) }}">
+                                            <form id="detach-form-{{$menu->id}}-{{$plato->id}}" method="POST" action="{{ route('menus.detachPlato', [$menu->id, $plato->id]) }}">
                                                     @csrf
                                                     @method('delete')
                                                     <a class="cursor-pointer" onclick="getElementById('detach-form-{{$menu->id}}-{{$plato->id}}').submit();">
