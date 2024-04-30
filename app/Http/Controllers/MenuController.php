@@ -15,9 +15,15 @@ class MenuController extends Controller
 {
     public function index()
     {
-        $menus = Menu::paginate(25);
+        $this->authorize('viewAny', Menu::class);
+        $menus = Menu::all();
+        if(Auth::user()->es_dietista)
+            $menus = Auth::user()->dietista->menus()->paginate(25);
+        elseif(Auth::user()->es_paciente)
+            $menus = Auth::user()->paciente->menus()->paginate(25);
         return view('/menus/index', ['menus' => $menus]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -44,9 +50,12 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
+        $menusConPivote = Auth::user()->paciente->menus()->where('menu_paciente.fecha', Carbon::now())->first()->pivot->fecha->format('d/m/Y');
+        dd($menusConPivote);
         $this->authorize('view', $menu);
         return view('menus/show', ['menu' => $menu]);
     }
+
 
     /**
      * Show the form for editing the specified resource.
