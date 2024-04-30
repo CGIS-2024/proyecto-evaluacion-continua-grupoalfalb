@@ -31,6 +31,8 @@
                                      :value="$menu->instrucciones_especificas"
                                      required />
                         </div>
+                        
+                        
 
                         
 

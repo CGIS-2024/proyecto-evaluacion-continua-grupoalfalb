@@ -16,7 +16,7 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                     
-                    @if(Auth::user()->es_administrador || Auth::user()->es_dietista)
+                    @if(!Auth::user()->es_paciente)
                         <x-nav-link :href="route('pacientes.index')" :active="request()->routeIs('pacientes.index')">
                             {{ __('Pacientes') }}
                         </x-nav-link>
@@ -24,9 +24,11 @@
                     <x-nav-link :href="route('menus.index')" :active="request()->routeIs('menus.index')">
                         {{ __('Menús') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('platos.index')" :active="request()->routeIs('platos.index')">
-                        {{ __('Platos') }}
-                    </x-nav-link>
+                    @if(!Auth::user()->es_paciente)
+                        <x-nav-link :href="route('platos.index')" :active="request()->routeIs('platos.index')">
+                            {{ __('Platos') }}
+                        </x-nav-link>
+                    @endif
                 </div>
             </div>
 
