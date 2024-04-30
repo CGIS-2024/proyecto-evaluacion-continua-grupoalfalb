@@ -83,4 +83,27 @@ class MenuController extends Controller
             session()->flash('warning', 'El menu no pudo borrarse.');
         return redirect()->route('menus.index');
     }
+
+
+    public function attach_plato(Request $request, Menu $menu)
+    {
+        // Valido en el controlador directamente en vez de en una form request separada porque necesito validar añadiendo un nombre al bag de errores.
+        // Necesito añadir un nombre al bag de attach porque la vista de edit tiene 2 formularios, cada uno pudiento tener errores de validación, así que asociamos un nombre a uno de ellos para poder diferenciar
+        // En la vista accederemos a los errores de validación de este formulario a través del nombre del bag
+        $this->validateWithBag('attach', $request, [
+            'plato_id' => 'required',
+            'comida' => 'string'
+
+        ]);
+        $menu->platos()->attach($request->plato_id, [
+            'comida' => $request->comida
+        ]);
+        return redirect()->route('menus.edit', $menu->id);
+    }
+
+    public function detach_plato(Menu $menu, Plato $plato)
+    {
+        $menu->platos()->detach($plato->id);
+        return redirect()->route('menus.edit', $menu->id);
+    }
 }
