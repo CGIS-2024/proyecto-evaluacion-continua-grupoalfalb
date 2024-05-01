@@ -16,7 +16,7 @@ class MenuController extends Controller
     public function index()
     {
         $this->authorize('viewAny', Menu::class);
-        $menus = Menu::all();
+        $menus = Menu::paginate(25); //AQUI SI PONEMOS  $menus = Menu::all(); no funciona, pero con paginate si, porqq????
         if(Auth::user()->es_dietista)
             $menus = Auth::user()->dietista->menus()->paginate(25);
         elseif(Auth::user()->es_paciente)
