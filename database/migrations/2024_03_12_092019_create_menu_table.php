@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('instrucciones_especificas');
+            $table->foreignId('dietista_id')->constrained()->onDelete('cascade');
+
         });
     }
 

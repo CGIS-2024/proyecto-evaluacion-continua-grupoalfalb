@@ -117,6 +117,49 @@
         </div>
     </div>
 
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
+                    Añadir plato al menú
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <!-- Errores de validación en servidor. Fíjate cómo accedo al bag "attach" que hemos realizado en el método attach_medicamento de CitaController con validateWithBag -->
+                    <x-input-error class="mb-4" :messages="$errors->attach->all()"/>
+                    <form method="POST" action="{{ route('menus.attachPlato', [$menu->id]) }}">
+                        @csrf
+
+                        <div class="mt-4">
+                            <x-input-label for="plato_id" :value="__('Plato')"/>
+
+                            <x-select id="plato_id" name="plato_id" required>
+                                <option value="">{{__('Elige un plato')}}</option>
+                                @foreach ($platos as $plato)
+                                    <option value="{{$plato->id}}"
+                                            @if (old('plato_id') == $plato->id) selected @endif>{{$plato->nombre}}
+
+                                    </option>
+                                @endforeach
+                            </x-select>
+                        </div>
+
+
+                        <div class="flex items-center justify-end mt-4">
+                            <x-danger-button type="button">
+                                <a href={{route('dietistas.index')}}>
+                                    {{ __('Cancelar') }}
+                                </a>
+                            </x-danger-button>
+                            <x-primary-button class="ml-4">
+                                {{ __('Guardar') }}
+                            </x-primary-button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
 
 

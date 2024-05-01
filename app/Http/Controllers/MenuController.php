@@ -65,11 +65,13 @@ class MenuController extends Controller
         $this->authorize('update', $menu);
         $dietistas = Dietista::all();
         $menus = Menu::all();
+        $platos = Plato::all();
+
 
         if(Auth::user()->es_dietista){
-            return view('menus/edit', ['menu' => $menu, 'dietista' => Auth::user()->dietista]);
+            return view('menus/edit', ['menu' => $menu, 'platos' => $platos, 'dietista' => Auth::user()->dietista]);
         }
-        return view('menus/edit', ['menu' => $menu, 'dietistas' => $dietistas, 'menus' => $menus]);
+        return view('menus/edit', ['menu' => $menu, 'dietistas' => $dietistas, 'menus' => $menus, 'platos' => $platos]);
     }
 
     /**
