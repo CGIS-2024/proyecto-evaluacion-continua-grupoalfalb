@@ -168,6 +168,18 @@
                             </div>
                         </div>
 
+                        <div class="mt-4">
+                            <x-input-label for="categoriaplato_id" :value="__('Categoria plato')" />
+
+
+                            <x-select id="categoriaplato_id" name="categoriaplato_id" required>
+                                <option value="">{{__('Elige un tipo de plato')}}</option>
+                                @foreach ($categoriaplatos as $categoriaplato)
+                                <option value="{{$categoriaplato->id}}" @if (old('categoriaplato_id') == $categoriaplato->id) selected @endif>{{$categoriaplato->nombre}}</option>
+                                @endforeach
+                            </x-select>
+                        </div>
+
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
                                 <a href={{route('platos.index')}}>

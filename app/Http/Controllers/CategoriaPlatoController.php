@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreCategoriaPlatoRequest;
-use App\Http\Requests\UpdateCategoriaPlatoRequest;
-use App\Models\CategoriaPlato;
+use App\Http\Requests\StoreCategoriaplatoRequest;
+use App\Http\Requests\UpdateCategoriaplatoRequest;
+use App\Models\Categoriaplato;
 
-class CategoriaPlatoController extends Controller
+class CategoriaplatoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +27,7 @@ class CategoriaPlatoController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreCategoriaPlatoRequest $request)
+    public function store(StoreCategoriaplatoRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class CategoriaPlatoController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(CategoriaPlato $categoriaPlato)
+    public function show(Categoriaplato $Categoriaplato)
     {
         //
     }
@@ -43,7 +43,7 @@ class CategoriaPlatoController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(CategoriaPlato $categoriaPlato)
+    public function edit(Categoriaplato $Categoriaplato)
     {
         //
     }
@@ -51,7 +51,7 @@ class CategoriaPlatoController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateCategoriaPlatoRequest $request, CategoriaPlato $categoriaPlato)
+    public function update(UpdateCategoriaplatoRequest $request, Categoriaplato $Categoriaplato)
     {
         //
     }
@@ -59,7 +59,7 @@ class CategoriaPlatoController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CategoriaPlato $categoriaPlato)
+    public function destroy(Categoriaplato $Categoriaplato)
     {
         //
     }

@@ -11,10 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('categoria_platos', function (Blueprint $table) {
+        Schema::create('categoriaplatos', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->enum('nombre', ['Primer Plato', 'Segundo Plato', 'Postre']);
+            $table->string('nombre');
         });
     }
 
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('categoria_platos');
+        Schema::dropIfExists('categoriaplatos');
     }
 };

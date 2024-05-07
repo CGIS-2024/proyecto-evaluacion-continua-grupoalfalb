@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoriaPlato extends Model
+class Categoriaplato extends Model
 {
     protected $fillable = ['nombre'];
 
-    public function menus(){
-        return $this->hasMany(Menu::class);
+    public function platos(){
+        return $this->hasMany(Plato::class);
     }
 }
