@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class CategoriaPlato extends Model
+class Alergenos extends Model
 {
-    protected $fillable = ['nombre'];
+    use HasFactory;
 }
