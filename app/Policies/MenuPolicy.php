@@ -11,6 +11,12 @@ class MenuPolicy
     /**
      * Determine whether the user can view any models.
      */
+
+    private function esMenuPropio(User $user, Menu $menu): bool
+    {
+        return $user->es_dietista && $menu->dietista_id == $user->dietista->id;
+    }
+
     public function viewAny(User $user): bool
     {
         return true;
@@ -67,5 +73,14 @@ class MenuPolicy
     {
         return true;
 
+    }
+    public function attach_plato(User $user, Menu $menu)
+    {
+        return $user->es_administrador || $this->esMenuPropio($user, $menu); //$this->esCitaPropiaDeMedico($user, $cita)
+    }
+
+    public function detach_plato(User $user, menu $menu)
+    {
+        return $user->es_administrador || $this->esMenuPropio($user, $menu);
     }
 }

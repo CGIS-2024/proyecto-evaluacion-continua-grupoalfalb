@@ -32,7 +32,9 @@ class MenuController extends Controller
     public function create()
     {
         $this->authorize('create', Menu::class);
-        return view('menus/create');
+        $dietistas = Dietista::all();
+        
+        return view('menus/create', ['dietistas' => $dietistas]);
     }
 
     
@@ -41,13 +43,10 @@ class MenuController extends Controller
     {
         
         $dietista_id = Auth::user()->dietista->id;
-        
-    
         // Creamos un nuevo menú y asociamos el dietista_id
         $menu = new Menu($request->validated());
         if(Auth::user()->es_dietista)
             $menu->dietista_id = $dietista_id;
-        
         $menu->save();
     
         session()->flash('success', 'Menú creado correctamente.');

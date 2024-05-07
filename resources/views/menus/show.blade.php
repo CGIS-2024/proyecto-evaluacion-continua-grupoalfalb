@@ -31,6 +31,16 @@
                                      :value="$menu->instrucciones_especificas"
                                      required />
                         </div>
+                        <div class="mt-4">
+                            <x-input-label for="dietista_id" :value="__('Dietista')" />
+
+                            <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                     type="string"
+                                     name="dietista_id"
+                                     disabled
+                                     :value="$menu->dietista->user->name"
+                                     required />
+                        </div>
                         
                         
 
@@ -45,6 +55,38 @@
                                 </a>
                             </x-danger-button>
                         </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
+                    Platos
+                </div>
+                <div class="p-6 bg-white border-b border-gray-200">
+                    <table class="min-w-max w-full table-auto">
+                        <thead>
+                        <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Nombre</th>
+                            
+                        </tr>
+                        </thead>
+                        <tbody class="text-gray-600 text-sm font-light">
+                        @foreach ($menu->platos as $plato)
+                            <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                <td class="py-3 px-6 text-left whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">{{$plato->nombre}} </span>
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
