@@ -9,6 +9,7 @@ use App\Http\Requests\Menu\StoreMenuRequest;
 use App\Http\Requests\Menu\UpdateMenuRequest;
 use Illuminate\Support\Facades\Auth;
 use App\Models\Dietista;
+use Carbon\Carbon;
 
 
 class MenuController extends Controller
@@ -34,24 +35,33 @@ class MenuController extends Controller
         return view('menus/create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     */
+    
+    
     public function store(StoreMenuRequest $request)
     {
+        
+        $dietista_id = Auth::user()->dietista->id;
+        
+    
+        // Creamos un nuevo menú y asociamos el dietista_id
         $menu = new Menu($request->validated());
+        if(Auth::user()->es_dietista)
+            $menu->dietista_id = $dietista_id;
+        
         $menu->save();
-        session()->flash('success', 'Menu creado correctamente.');
+    
+        session()->flash('success', 'Menú creado correctamente.');
         return redirect()->route('menus.index');
     }
+    
 
     /**
      * Display the specified resource.
      */
     public function show(Menu $menu)
     {
-        $menusConPivote = Auth::user()->paciente->menus()->where('menu_paciente.fecha', Carbon::now())->first()->pivot->fecha->format('d/m/Y');
-        dd($menusConPivote);
+        //$menusConPivote = Auth::user()->paciente->menus()->where('menu_paciente.fecha', Carbon::now())->first()->pivot->fecha->format('Y/m/d');
+        
         $this->authorize('view', $menu);
         return view('menus/show', ['menu' => $menu]);
     }

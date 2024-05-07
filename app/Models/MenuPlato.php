@@ -10,7 +10,7 @@ class MenuPlato extends Pivot
 {
 
     protected $casts = [
-
+        
 
     ];
 }
