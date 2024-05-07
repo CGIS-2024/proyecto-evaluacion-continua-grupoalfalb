@@ -10,7 +10,7 @@ class MenuPlato extends Pivot
 {
 
     protected $casts = [
-        
+        //No ponemos el tipo enum, porq no hay que castearlo
 
     ];
 }

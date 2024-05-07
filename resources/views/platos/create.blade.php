@@ -49,18 +49,6 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="tipo" :value="__('Tipo')" />
-
-                            <div class="flex items-center">
-                                <x-text-input id="tipo" class="block mt-1 w-full"
-                                             type="string"
-                                             name="tipo"
-                                             :value="old('tipo')"
-                                             required />
-                            </div>
-                        </div>
-
-                        <div class="mt-4">
                             <x-input-label for="alergenos" :value="__('Alergenos')" />
 
                             <div class="flex items-center">

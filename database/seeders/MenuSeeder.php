@@ -31,14 +31,14 @@ class MenuSeeder extends Seeder
             [
                 'menu_id' => 1,
                 'plato_id' => 1,
-                'comida' => 'Primer plato',
+                'categoriaplato_id' => 1
 
 
             ],
             [
                 'plato_id' => 2,
                 'menu_id' => 2,
-                'comida' => 'Segundo plato',
+                'categoriaplato_id' => 2
             ],
 
         ]);

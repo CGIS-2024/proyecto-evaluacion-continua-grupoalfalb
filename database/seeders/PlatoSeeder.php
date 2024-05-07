@@ -18,7 +18,6 @@ class PlatoSeeder extends Seeder
         DB::table('platos')->insert([
             [
                 'nombre' => "Salmón al horno con verduras",
-                'tipo' => "Plato Principal",
                 'descripcion' => "Filete de salmón al horno acompañado de una selección de verduras asadas, como zanahorias, brócoli y pimientos.",
                 'ingredientes' => "Filete de salmón, zanahorias, brócoli, pimientos, aceite de oliva, sal, pimienta",
                 'peso' => "200",
@@ -32,7 +31,6 @@ class PlatoSeeder extends Seeder
             ],
             [
                 'nombre' => "Arroz con pollo",
-                'tipo' => "Plato Principal",
                 'descripcion' => "Arroz cocido con trozos de pollo tierno y verduras mixtas.",
                 'ingredientes' => "Arroz, pollo, zanahorias, guisantes, cebolla, aceite de oliva, sal, especias",
                 'peso' => "250",

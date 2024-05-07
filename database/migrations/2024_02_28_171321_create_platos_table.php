@@ -16,7 +16,6 @@ return new class extends Migration
             $table->timestamps();
             //$table->softDeletes();
             $table->string('nombre');
-            $table->string('tipo'); //supongo que pondremos tipo selectivo(primero, segundo y postre)
             $table->string('descripcion');
             $table->string('ingredientes');
             $table->double('peso');
