@@ -62,7 +62,9 @@ class PlatoController extends Controller
     {
         $this->authorize('update', $plato);
         $platos = Plato::all();
-        return view('platos/edit', ['plato' => $plato, 'platos' => $platos]);
+        $categoriaplatos = Categoriaplato::all();
+
+        return view('platos/edit', ['plato' => $plato, 'platos' => $platos, 'categoriaplatos' => $categoriaplatos]);
     }
 
     /**
