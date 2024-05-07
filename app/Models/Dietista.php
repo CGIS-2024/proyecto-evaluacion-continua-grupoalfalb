@@ -21,3 +21,4 @@ class Dietista extends Model
         return $this->hasMany(Paciente::class);
     }
 }
+
