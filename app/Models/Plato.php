@@ -10,11 +10,8 @@ class Plato extends Model
     protected $fillable = ['nombre',  'alergenos', 'grasas', 'carbohidratos', 'proteinas', 'fibra', 'calorias', 'azucares', 'peso', 'ingredientes', 'descripcion'];
 
     public function menus(){
-        return $this->belongsToMany(Menu::class)->using(MenuPlato::class)->withPivot('comida');
+        return $this->belongsToMany(Menu::class)->using(MenuPlato::class)->withPivot('categoriaplato_id');
     }
 
-    public function categoria_plato(){
-        return $this->belongsTo(Categoriaplato::class);
-    }
 
 }

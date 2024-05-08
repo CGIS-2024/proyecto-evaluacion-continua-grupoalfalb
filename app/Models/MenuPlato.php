@@ -13,4 +13,8 @@ class MenuPlato extends Pivot
         //No ponemos el tipo enum, porq no hay que castearlo
 
     ];
+
+    public function categoriaplato(){
+        return $this->belongsTo(Categoriaplato::class);
+    }
 }
