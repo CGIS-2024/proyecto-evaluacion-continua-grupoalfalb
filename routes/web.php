@@ -4,6 +4,8 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\DietistaController;
 use App\Http\Controllers\PacienteController;
 use App\Http\Controllers\PlatoController;
+use App\Http\Controllers\CategoriaplatoController;
+
 
 
 use App\Http\Controllers\ProfileController;
@@ -61,6 +63,7 @@ Route::middleware(['auth'])->group(function () {
         'dietistas' => DietistaController::class,
         'pacientes' => PacienteController::class,
         'platos' => PlatoController::class,
+        'categoriaplatos' => CategoriaplatoController::class,
 
     ]);
 
