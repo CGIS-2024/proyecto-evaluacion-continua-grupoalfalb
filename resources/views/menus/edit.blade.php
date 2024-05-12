@@ -30,7 +30,7 @@
                         @method('put')
 
                         <div class="mt-4">
-                            <x-input-label for="instrucciones_especificas" :value="__('instrucciones especificas')"/>
+                            <x-input-label for="instrucciones_especificas" :value="__('Instrucciones especificas')"/>
 
                             <x-text-input id="instrucciones_especificas" class="block mt-1 w-full"
                                           type="string"
