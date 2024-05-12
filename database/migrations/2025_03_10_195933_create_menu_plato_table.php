@@ -18,7 +18,6 @@ return new class extends Migration
             $table->timestamps();
             $table->foreignId('menu_id')->constrained()->onDelete('cascade');
             $table->foreignId('plato_id')->constrained()->onDelete('cascade');
-            $table->foreignId('categoriaplato_id')->constrained()->onDelete('cascade'); //NO SE SI ESTO SE PONE...
 
         });
     }

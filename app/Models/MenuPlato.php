@@ -14,7 +14,4 @@ class MenuPlato extends Pivot
 
     ];
 
-    public function categoriaplato(){
-        return $this->belongsTo(Categoriaplato::class);
-    }
 }

@@ -30,16 +30,12 @@ class MenuSeeder extends Seeder
         DB::table('menu_plato')->insert([
             [
                 'menu_id' => 1,
-                'plato_id' => 1,
-                'categoriaplato_id' => 1
-
+                'plato_id' => 1
 
             ],
             [
                 'plato_id' => 2,
-                'menu_id' => 2,
-                'categoriaplato_id' => 1
-            ],
+                'menu_id' => 2            ],
 
         ]);
 

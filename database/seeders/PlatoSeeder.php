@@ -27,7 +27,9 @@ class PlatoSeeder extends Seeder
                 'carbohidratos' => "10",
                 'fibra' => "4",
                 'azucares' => "3",
-                'alergenos' => "pescado"
+                'alergenos' => "pescado",
+                'categoriaplato_id' => 1
+
             ],
             [
                 'nombre' => "Arroz con pollo",
@@ -40,7 +42,9 @@ class PlatoSeeder extends Seeder
                 'carbohidratos' => "35",
                 'fibra' => "3",
                 'azucares' => "2",
-                'alergenos' => "gluten"
+                'alergenos' => "gluten",
+                'categoriaplato_id' => 1
+
             ],
         ]);
     }

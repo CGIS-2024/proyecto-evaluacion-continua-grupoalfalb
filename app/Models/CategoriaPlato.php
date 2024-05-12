@@ -9,7 +9,7 @@ class Categoriaplato extends Model
 {
     protected $fillable = ['nombre'];
 
-    public function MenuPlatos(){
-        return $this->hasMany(MenuPlato::class);
+    public function Platos(){
+        return $this->hasMany(Plato::class);
     }
 }
