@@ -41,12 +41,6 @@
                                      :value="$menu->dietista->user->name"
                                      required />
                         </div>
-                        
-                        
-
-                        
-
-
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
@@ -71,7 +65,7 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Nombre</th>
-                            
+
                         </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">

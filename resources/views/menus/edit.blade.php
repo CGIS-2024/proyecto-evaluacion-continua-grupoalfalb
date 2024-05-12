@@ -68,7 +68,7 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Nombre </th>
-                            <th class="py-3 px-6 text-left">Comida</th>
+                            <th class="py-3 px-6 text-left">Categoría del Plato</th>
                             <th class="py-3 px-6 text-center">Acciones</th>
                         </tr>
                         </thead>
@@ -83,7 +83,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$plato->pivot->comida}} </span>
+                                        <span class="font-medium">{{$plato->categoriaplato}} </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">

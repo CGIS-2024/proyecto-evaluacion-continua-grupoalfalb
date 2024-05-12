@@ -33,26 +33,26 @@ class MenuController extends Controller
     {
         $this->authorize('create', Menu::class);
         $dietistas = Dietista::all();
-        
+
         return view('menus/create', ['dietistas' => $dietistas]);
     }
 
-    
-    
+
+
     public function store(StoreMenuRequest $request)
     {
-        
+
         $dietista_id = Auth::user()->dietista->id;
         // Creamos un nuevo menú y asociamos el dietista_id
         $menu = new Menu($request->validated());
         if(Auth::user()->es_dietista)
             $menu->dietista_id = $dietista_id;
         $menu->save();
-    
+
         session()->flash('success', 'Menú creado correctamente.');
         return redirect()->route('menus.index');
     }
-    
+
 
     /**
      * Display the specified resource.
@@ -60,7 +60,7 @@ class MenuController extends Controller
     public function show(Menu $menu)
     {
         //$menusConPivote = Auth::user()->paciente->menus()->where('menu_paciente.fecha', Carbon::now())->first()->pivot->fecha->format('Y/m/d');
-        
+
         $this->authorize('view', $menu);
         return view('menus/show', ['menu' => $menu]);
     }
@@ -115,11 +115,9 @@ class MenuController extends Controller
         // En la vista accederemos a los errores de validación de este formulario a través del nombre del bag
         $this->validateWithBag('attach', $request, [
             'plato_id' => 'required',
-            'comida' => 'string'
 
         ]);
         $menu->platos()->attach($request->plato_id, [
-            'comida' => $request->comida
         ]);
         return redirect()->route('menus.edit', $menu->id);
     }

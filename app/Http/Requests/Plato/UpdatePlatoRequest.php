@@ -5,6 +5,8 @@ namespace App\Http\Requests\Plato;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Plato;
 use Illuminate\Validation\Rule;
+use App\Rules\MaxPlatosPorCategoria;
+
 
 class UpdatePlatoRequest extends FormRequest
 {
@@ -36,6 +38,9 @@ class UpdatePlatoRequest extends FormRequest
             'ingredientes' => 'required|string',
             'descripcion' => 'required|string',
             'categoriaplato_id' => 'required|exists:categoriaplatos,id',
+            'primer_plato' => ['required', new MaxPlatosPorCategoria],
+            'segundo_plato' => ['required', new MaxPlatosPorCategoria],
+            'postre' => ['required', new MaxPlatosPorCategoria],
         ];
     }
 }
