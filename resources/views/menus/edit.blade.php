@@ -83,7 +83,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$plato->categoriaplato}} </span>
+                                        <span class="font-medium">{{$plato->categoriaplato_id}} </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">

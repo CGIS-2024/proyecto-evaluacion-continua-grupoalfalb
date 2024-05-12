@@ -118,6 +118,7 @@ class MenuController extends Controller
 
         ]);
         $menu->platos()->attach($request->plato_id, [
+
         ]);
         return redirect()->route('menus.edit', $menu->id);
     }
