@@ -43,14 +43,16 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="tipo" :value="__('Tipo')" />
+                            <x-input-label for="categoriaplato_id" :value="__('Categoría del plato')"/>
 
-                            <x-text-input id="tipo" class="block mt-1 w-full"
-                                         type="string"
-                                         name="tipo"
-                                         disabled
-                                         :value="$plato->tipo"
-                                         required />
+
+                            <x-select readonly disabled id="categoriaplato_id" name="categoriaplato_id" required>
+                                <option value="">{{__('Elige una opción')}}</option>
+                                @foreach ($categoriaplatos as $categoriaplato)
+                                    <option value="{{$categoriaplato->id}}"
+                                            @if ($plato->categoriaplato_id == $categoriaplato->id) selected @endif>{{$categoriaplato->nombre}}</option>
+                                @endforeach
+                            </x-select>
                         </div>
 
                         <div class="mt-4">

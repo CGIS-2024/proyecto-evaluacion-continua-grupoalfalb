@@ -35,7 +35,8 @@ class MenuSeeder extends Seeder
             ],
             [
                 'plato_id' => 2,
-                'menu_id' => 2            ],
+                'menu_id' => 2
+            ],
 
         ]);
 

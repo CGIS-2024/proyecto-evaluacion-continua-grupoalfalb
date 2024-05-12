@@ -52,7 +52,9 @@ class PlatoController extends Controller
     public function show(Plato $plato)
     {
         $this->authorize('view', $plato);
-        return view('platos/show', ['plato' => $plato]);
+        $categoriaplatos = Categoriaplato::all();
+
+        return view('platos/show', ['plato' => $plato, 'categoriaplatos' => $categoriaplatos]);
     }
 
     /**

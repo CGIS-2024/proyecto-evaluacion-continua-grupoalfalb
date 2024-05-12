@@ -137,7 +137,9 @@
                                           name="descripcion"
                                           :value="$plato->descripcion"
                                           required/>
+                            <div class="mt-4">
                         </div>
+
                         <div class="mt-4">
                             <x-input-label for="categoriaplato_id" :value="__('Categoria de plato')" />
 

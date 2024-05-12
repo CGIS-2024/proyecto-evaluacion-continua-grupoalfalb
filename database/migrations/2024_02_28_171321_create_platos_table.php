@@ -26,7 +26,8 @@ return new class extends Migration
             $table->double('fibra');
             $table->double('azucares');
             $table->string('alergenos'); //tambien lo pondremos para elegir
-            $table->foreignId('categoriaplato_id')->constrained()->onDelete('cascade');
+            $table->foreignId('categoriaplato_id')->nullable()->constrained()->onDelete('set null');
+
 
         });
     }

@@ -42,7 +42,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$plato->pivot}}</span>
+                                        <span class="font-medium">{{$plato->categoriaplato ? $plato->categoriaplato->nombre : __('Sin categoria de plato')}}</span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-left whitespace-nowrap">

@@ -36,6 +36,8 @@ class StorePlatoRequest extends FormRequest
             'peso' => 'required|numeric|min:0',
             'ingredientes' => 'required|string',
             'descripcion' => 'required|string',
+            'categoriaplato_id' => 'required|exists:categoriaplatos,id',
+
 
         ];
     }
