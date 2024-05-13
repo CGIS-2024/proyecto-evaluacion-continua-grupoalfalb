@@ -100,7 +100,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="azucares" :value="__('Azucares')" />
+                            <x-input-label for="azucares" :value="__('Azúcares')" />
 
                             <x-text-input id="azucares" class="block mt-1 w-full"
                                           type="double"

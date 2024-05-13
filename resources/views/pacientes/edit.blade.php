@@ -97,7 +97,7 @@
                         @endif
 
                         <div class="mt-4">
-                            <x-input-label for="alergias_alimentarias" :value="__('alergias_alimentarias')"/>
+                            <x-input-label for="alergias_alimentarias" :value="__('Alergias alimentarias')"/>
 
                             <x-text-input id="alergias_alimentarias" class="block mt-1 w-full"
                                           type="string"
@@ -107,7 +107,7 @@
                         </div>
 
                         <div class="mt-4">
-                            <x-input-label for="preferencias_alimentarias" :value="__('preferencias_alimentarias')"/>
+                            <x-input-label for="preferencias_alimentarias" :value="__('Preferencias alimentarias')"/>
 
                             <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full"
                                           type="string"
@@ -118,7 +118,7 @@
 
                         @if(Auth::user()->es_administrador)
                             <div class="mt-4">
-                                <x-input-label for="motivo_hospitalizacion" :value="__('motivo_hospitalizacion')"/>
+                                <x-input-label for="motivo_hospitalizacion" :value="__('Motivo hospitalizacion')"/>
 
                                 <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full"
                                             type="string"
@@ -129,7 +129,7 @@
 
 
                             <div class="mt-4">
-                                <x-input-label for="nuhsa" :value="__('nuhsa')"/>
+                                <x-input-label for="nuhsa" :value="__('NUHSA')"/>
 
                                 <x-text-input id="nuhsa" class="block mt-1 w-full"
                                               type="integer"
@@ -140,7 +140,7 @@
                         @endif
 
                         <div class="mt-4">
-                        <x-input-label for="dietista_id" :value="__('Dietista')" />
+                        <x-input-label for="dietista_id" :value="__('Dietista asignado')" />
 
                         @isset($dietista)
                             <x-text-input id="dietista_id" class="block mt-1 w-full"
