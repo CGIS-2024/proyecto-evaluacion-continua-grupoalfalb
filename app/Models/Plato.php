@@ -14,7 +14,7 @@ class Plato extends Model
     }
 
     public function categoriaplato(){
-        return $this->belongsTo(Categoriaplato::class);
+        return $this->belongsTo(CategoriaPlato::class);
     }
 
 

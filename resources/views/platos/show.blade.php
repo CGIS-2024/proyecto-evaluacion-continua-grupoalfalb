@@ -41,19 +41,18 @@
                                          :value="$plato->descripcion"
                                          required />
                         </div>
-
                         <div class="mt-4">
-                            <x-input-label for="categoriaplato_id" :value="__('Categoría del plato')"/>
+                            <x-input-label for="categoriaplato_id" :value="__('Categoría del plato')" />
 
-
-                            <x-select readonly disabled id="categoriaplato_id" name="categoriaplato_id" required>
-                                <option value="">{{__('Elige una opción')}}</option>
-                                @foreach ($categoriaplatos as $categoriaplato)
-                                    <option value="{{$categoriaplato->id}}"
-                                            @if ($plato->categoriaplato_id == $categoriaplato->id) selected @endif>{{$categoriaplato->nombre}}</option>
-                                @endforeach
-                            </x-select>
+                            <x-text-input id="categoriaplato_id" class="block mt-1 w-full"
+                                         type="string"
+                                         name="categoriaplato_id"
+                                         disabled
+                                         :value="$plato->categoriaplato->nombre"
+                                         required />
                         </div>
+
+                        
 
                         <div class="mt-4">
                             <x-input-label for="ingredientes" :value="__('Ingredientes')" />

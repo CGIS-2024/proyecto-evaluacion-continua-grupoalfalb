@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\Plato\StorePlatoRequest;
 use App\Http\Requests\Plato\UpdatePlatoRequest;
 use App\Models\Plato;
-use App\Models\Categoriaplato;
+use App\Models\CategoriaPlato;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -29,7 +29,7 @@ class PlatoController extends Controller
     public function create()
     {
         $this->authorize('create', Plato::class);
-        $categoriaplatos = Categoriaplato::all();
+        $categoriaplatos = CategoriaPlato::all();
 
         return view('platos/create', ['categoriaplatos' => $categoriaplatos]);
     }
@@ -52,7 +52,7 @@ class PlatoController extends Controller
     public function show(Plato $plato)
     {
         $this->authorize('view', $plato);
-        $categoriaplatos = Categoriaplato::all();
+        $categoriaplatos = CategoriaPlato::all();
 
         return view('platos/show', ['plato' => $plato, 'categoriaplatos' => $categoriaplatos]);
     }
