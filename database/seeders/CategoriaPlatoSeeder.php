@@ -7,7 +7,7 @@ use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
 
-class CategoriaplatoSeeder extends Seeder
+class CategoriaPlatoSeeder extends Seeder
 {
     /**
      * Run the database seeds.

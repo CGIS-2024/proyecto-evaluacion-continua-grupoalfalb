@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Alergenos extends Model
 {
-    use HasFactory;
+    protected $fillable = ['nombre'];
 }
