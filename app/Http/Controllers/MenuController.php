@@ -41,8 +41,9 @@ class MenuController extends Controller
 
     public function store(StoreMenuRequest $request)
     {
-
-        $dietista_id = Auth::user()->dietista->id;
+        if(Auth::user()->es_dietista)
+            $dietista_id = Auth::user()->dietista->id;
+    
         // Creamos un nuevo menú y asociamos el dietista_id
         $menu = new Menu($request->validated());
         if(Auth::user()->es_dietista)

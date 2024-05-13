@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Menu extends Model
 {
-    protected $fillable = ['instrucciones_especificas'];
+    protected $fillable = ['instrucciones_especificas','dietista_id'];
 
     public function dietista(){
         return $this->belongsTo(Dietista::class);

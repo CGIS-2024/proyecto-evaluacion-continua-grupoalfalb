@@ -88,7 +88,7 @@
                             <x-input-label for="genero" :value="__('Género')" />
 
                             <x-select id="genero" name="genero" required>
-                                <option value="">{{__('Elige una opción')}}</option>
+                                
                                 <option value="masculino" @if (old('genero') == 'masculino') selected @endif>{{__('Masculino')}}</option>
                                 <option value="femenino" @if (old('genero') == 'femenino') selected @endif>{{__('Femenino')}}</option>
                                 <option value="otro" @if (old('genero') == 'otro') selected @endif>{{__('Otro')}}</option>
@@ -240,7 +240,7 @@
         </div>
     </div>
 
-    @if(!Auth::user()->es_dietista)
+    
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
@@ -291,7 +291,7 @@
             </div>
         </div>
     </div>
-    @endif
+    
 
 
 

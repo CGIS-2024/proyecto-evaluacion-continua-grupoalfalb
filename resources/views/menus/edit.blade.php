@@ -38,6 +38,32 @@
                                           :value="$menu->instrucciones_especificas"
                                           required/>
                         </div>
+                        @if(Auth::user()->es_administrador)
+                            <div class="mt-4">
+                                <x-input-label for="dietista_id" :value="__('Dietista')"/>
+                                @isset($dietista)
+                                    <x-text-input id="dietista_id" class="block mt-1 w-full"
+                                        type="hidden"
+                                        name="dietista_id"
+                                        :value="$dietista->id"
+                                        required />
+                                    <x-text-input class="block mt-1 w-full"
+                                        type="text"
+                                        disabled
+                                        value="{{$dietista->user->name}}"
+                                        />
+                                @else
+                                <x-select id="dietista_id" name="dietista_id" required>
+                                    <option value="{{$menu->dietista_id}}">{{$menu->dietista->user->name}}</option>
+                                    @foreach ($dietistas as $dietista)
+                                        @if($menu->dietista_id != $dietista->id)
+                                            <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->name}} </option>
+                                        @endif
+                                    @endforeach
+                                </x-select>
+                                @endisset
+                            </div>
+                        @endif
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">

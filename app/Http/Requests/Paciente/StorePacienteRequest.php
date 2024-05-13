@@ -37,6 +37,7 @@ class StorePacienteRequest extends FormRequest
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
             'nuhsa' => 'required|String|max:12',
+            'dietista_id' => 'required|String|max:12',
 
         ];
     }

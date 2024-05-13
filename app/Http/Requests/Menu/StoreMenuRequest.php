@@ -25,6 +25,7 @@ class StoreMenuRequest extends FormRequest
     {
         return [
             'instrucciones_especificas' => 'required|string|max:255',
+            'dietista_id' => 'required|string|max:255',
             
         ];
     }
