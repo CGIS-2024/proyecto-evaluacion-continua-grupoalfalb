@@ -5,6 +5,8 @@ namespace App\Http\Requests\Paciente;
 use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Paciente;
 use Illuminate\Validation\Rule;
+use Illuminate\Support\Facades\Auth;
+
 
 class UpdatePacienteRequest extends FormRequest
 {
@@ -13,7 +15,8 @@ class UpdatePacienteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can('update', Paciente::class);
+        $paciente = Paciente::find($this->route('paciente'))->first();
+        return $paciente && $this->user()->can('update', $paciente);
     }
 
     /**
@@ -23,21 +26,27 @@ class UpdatePacienteRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
-            'name' => 'required|string|max:255',
-            'apellidos' => 'required|string|max:255',
-            'fecha_nacimiento' => 'required|date',
-            'dni' => 'required|string|max:255',
-            'direccion' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
-            'password' => 'required|string|confirmed|min:8',
-            'genero' => 'required|string|max:255',
-            'alergias_alimentarias' => 'required|string|max:255',
-            'preferencias_alimentarias' => 'required|string|max:255',
-            'motivo_hospitalizacion' => 'required|string|max:255',
-            'nuhsa' => 'required|String|max:12',
-            'dietista_id' => 'required|String|max:12',
-
-        ];
+        if(Auth::user()->es_administrador){
+            return [
+                'name' => 'required|string|max:255',
+                'apellidos' => 'required|string|max:255',
+                'fecha_nacimiento' => 'required|date_format:d/m/Y',
+                'dni' => 'required|string|max:255',
+                'direccion' => 'required|string|max:255',
+                'email' => 'required|string|max:255',
+                'genero' => 'required|string|max:255',
+                'alergias_alimentarias' => 'required|string|max:255',
+                'preferencias_alimentarias' => 'required|string|max:255',
+                'motivo_hospitalizacion' => 'required|string|max:255',
+                'nuhsa' => 'required|String|max:12',
+                'dietista_id' => 'required|String|max:12',
+            ];
+        }else{
+            return [
+                'alergias_alimentarias' => 'required|string|max:255',
+                'preferencias_alimentarias' => 'required|string|max:255',
+                'dietista_id' => 'required|String|max:12',
+            ];
+        }
     }
 }

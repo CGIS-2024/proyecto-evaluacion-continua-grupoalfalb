@@ -89,6 +89,9 @@ class PacienteController extends Controller
      */
     public function update(UpdatePacienteRequest $request, Paciente $paciente)
     {
+        $user = $paciente->user;
+        $user->fill($request->validated());
+        $user->save();
         $paciente->fill($request->validated());
         $paciente->save();
         session()->flash('success', 'Paciente modificado correctamente.');
