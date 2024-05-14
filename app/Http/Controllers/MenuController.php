@@ -38,21 +38,30 @@ class MenuController extends Controller
     }
 
 
-
     public function store(StoreMenuRequest $request)
     {
-        if(Auth::user()->es_dietista)
-            $dietista_id = Auth::user()->dietista->id;
-    
-        // Creamos un nuevo menú y asociamos el dietista_id
+        // Crear una nueva instancia de Menu con los datos validados del request
         $menu = new Menu($request->validated());
-        if(Auth::user()->es_dietista)
-            $menu->dietista_id = $dietista_id;
+
+        // Verificar si el usuario autenticado es un dietista
+        if (Auth::user()->es_dietista) {
+            // Asignar el dietista_id del usuario autenticado
+            $menu->dietista_id = Auth::user()->dietista->id;
+        } else if (Auth::user()->es_administrador) {
+            // Verificar si la solicitud contiene un dietista_id
+            $menu->dietista_id = $request->dietista_id;
+        }
+
+        // Guardar el menú en la base de datos
         $menu->save();
 
+        // Crear un mensaje de éxito en la sesión
         session()->flash('success', 'Menú creado correctamente.');
+
+        // Redirigir a la lista de menús
         return redirect()->route('menus.index');
     }
+
 
 
     /**

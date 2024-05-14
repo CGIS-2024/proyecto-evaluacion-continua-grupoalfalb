@@ -38,9 +38,7 @@ class UpdatePlatoRequest extends FormRequest
             'ingredientes' => 'required|string',
             'descripcion' => 'required|string',
             'categoriaplato_id' => 'required|exists:categoriaplatos,id',
-            'primer_plato' => [ new MaxPlatosPorCategoria],
-            'segundo_plato' => [ new MaxPlatosPorCategoria],
-            'postre' => [ new MaxPlatosPorCategoria],
+
         ];
     }
 }
