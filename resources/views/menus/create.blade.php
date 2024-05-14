@@ -35,7 +35,7 @@
                         </div>
                         @if(Auth::user()->es_administrador)
                             <div class="mt-4">
-                                <x-select id="dietista_id" name="Dietista" required>
+                                <x-select id="dietista_id" name="dietista_id" required>
                                     <option value="">{{__('Elige un dietista')}}</option>
                                     @foreach ($dietistas as $dietista)
                                         <option value="{{$dietista->id}}" @if (old('dietista_id') == $dietista->id) selected @endif>{{$dietista->user->name}} </option>
