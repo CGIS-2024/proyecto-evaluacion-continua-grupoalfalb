@@ -46,7 +46,6 @@ class PacientePolicy
     public function update(User $user, Paciente $paciente): bool
     {
         return $user->es_administrador || $this->esPacientePropio($user, $paciente);
-
     }
 
     /**

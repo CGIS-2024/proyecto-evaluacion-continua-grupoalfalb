@@ -13,7 +13,7 @@ class UpdatePacienteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return $this->user()->can('create', paciente::class);
+        return $this->user()->can('update', Paciente::class);
     }
 
     /**
