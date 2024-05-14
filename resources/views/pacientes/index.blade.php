@@ -8,15 +8,17 @@
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="flex items-center mt-4 ml-2">
-                    <form method="GET" action="{{ route('pacientes.create') }}">
-                        <x-primary-button type="subit" class="ml-4">
-                            @if(Auth::user()->es_administrador || Auth::user()->es_dietista)
-                                {{ __('Crear Paciente') }}
-                            @endif
-                        </x-primary-button>
-                    </form>
-                </div>
+                @if(Auth::user()->es_administrador)
+                    <div class="flex items-center mt-4 ml-2">
+                        <form method="GET" action="{{ route('pacientes.create') }}">
+                            <x-primary-button type="subit" class="ml-4">
+                                
+                                    {{ __('Crear Paciente') }}
+                                
+                            </x-primary-button>
+                        </form>
+                    </div>
+                @endif
                 <div class="p-6 bg-white border-b border-gray-200">
                     <table class="min-w-max w-full table-auto">
                         <thead>
