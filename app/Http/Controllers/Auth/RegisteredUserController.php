@@ -3,8 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Models\Especialidad;
-use App\Models\Medico;
+use App\Models\Dietista;
 use App\Models\Paciente;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
@@ -24,27 +23,32 @@ class RegisteredUserController extends Controller
      */
     public function create(): View
     {
-        return view('auth.register');
+        // Obtener la lista de dietistas
+        $dietistas = Dietista::all();
+
+        // Cargar la vista del formulario de registro y pasar la lista de dietistas
+        return view('auth.register', compact('dietistas'));
     }
 
     public function create_dietista()
     {
-        return view('auth.register-medico');
+        return view('auth.register-dietista');
     }
+
 
     private function getReglasValidacionRegistroDietista(){
         return [
             'fecha_contratacion' => 'required|date',
-            'nuhsa' => ['required', 'string', 'max:12', 'min:12', new Nuhsa]
+            'nuhsa' => 'required', //quito por ahora la rule
         ];
     }
 
     private function getReglasValidacionRegistroPaciente(){
-        return ['nuhsa' => ['required', 'string', 'max:12', 'min:12', new Nuhsa],
+        return ['nuhsa' => 'required',
             'alergias_alimentarias' => 'required|string|max:255',
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
-            'dietista_id' => 'required|String|max:12',
+            'dietista_id' => 'required',
     ];
 
 
@@ -59,11 +63,11 @@ class RegisteredUserController extends Controller
             'direccion' => 'required|string|max:255',
             'email' => 'required|string|max:255',
             'password' => 'required|string|confirmed|min:8',
-            'genero' => 'required|string|max:255',
+            'genero' => 'required', //es de tipo option
             'tipo_usuario_id' => 'required|numeric'
         ];
         if(intval($request->tipo_usuario_id) == 1)
-            //Médico
+            //Dietista
             return array_merge($reglasValidacionRegistro, $this->getReglasValidacionRegistroDietista());
         if(intval($request->tipo_usuario_id) == 2)
             //Paciente

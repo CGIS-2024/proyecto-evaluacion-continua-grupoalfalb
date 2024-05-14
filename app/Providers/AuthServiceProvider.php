@@ -11,9 +11,6 @@ use App\Models\Paciente;
 use App\Models\Plato;
 use App\Policies\PacientePolicy;
 use App\Policies\PlatoPolicy;
-
-
-
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 
 class AuthServiceProvider extends ServiceProvider
@@ -28,8 +25,6 @@ class AuthServiceProvider extends ServiceProvider
         Menu::class => MenuPolicy::class,
         Paciente::class => PacientePolicy::class,
         Plato::class => PlatoPolicy::class,
-
-
 
     ];
 

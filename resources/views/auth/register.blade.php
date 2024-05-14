@@ -1,6 +1,4 @@
 <x-guest-layout>
-    protected $fillable = ['', '', '', '', 'dietista_id'];
-
     <form method="POST" action="{{ route('register') }}">
         @csrf
         <input type="hidden" value="2" name="tipo_usuario_id">
@@ -35,6 +33,8 @@
                      required />
             <x-input-error :messages="$errors->get('fecha_nacimiento')" class="mt-2" />
         </div>
+
+
 
 
 
@@ -73,36 +73,38 @@
                 <option value="femenino" @if (old('genero') == 'femenino') selected @endif>{{__('Femenino')}}</option>
                 <option value="otro" @if (old('genero') == 'otro') selected @endif>{{__('Otro')}}</option>
             </x-select>
+            <x-input-error :messages="$errors->get('genero')" class="mt-2" />
+
         </div>
 
 
 
         <!-- Password -->
         <div class="mt-4">
-            <x-input-label for="password" :value="__('Contraseña')" />
+            <x-input-label for="password" :value="__('Password')" />
 
             <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+                          type="password"
+                          name="password"
+                          required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password')" class="mt-2" />
         </div>
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirmar Contraseña')" />
+            <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
 
             <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+                          type="password"
+                          name="password_confirmation" required autocomplete="new-password" />
 
             <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
         </div>
 
         <!-- Alergia alimentaria -->
         <div>
-            <x-input-label for="alergias_alimentarias" :value="__('Nombre')" />
+            <x-input-label for="alergias_alimentarias" :value="__('Alergia alimentaria')" />
             <x-text-input id="alergias_alimentarias" class="block mt-1 w-full" type="text" name="alergias_alimentarias" :value="old('alergias_alimentarias')" required autocomplete="alergias_alimentarias" />
             <x-input-error :messages="$errors->get('alergias_alimentarias')" class="mt-2" />
         </div>
@@ -110,7 +112,7 @@
 
         <!-- Preferencias alimentarias -->
         <div>
-            <x-input-label for="preferencias_alimentarias" :value="__('Nombre')" />
+            <x-input-label for="preferencias_alimentarias" :value="__('Preferencias alimentarias')" />
             <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full" type="text" name="preferencias_alimentarias" :value="old('preferencias_alimentarias')" required autocomplete="preferencias_alimentarias" />
             <x-input-error :messages="$errors->get('preferencias_alimentarias')" class="mt-2" />
         </div>
@@ -119,13 +121,13 @@
 
         <!-- Motivo hospitalizacion -->
         <div>
-            <x-input-label for="motivo_hospitalizacion" :value="__('Nombre')" />
+            <x-input-label for="motivo_hospitalizacion" :value="__('Preferencias alimentarias')" />
             <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full" type="text" name="motivo_hospitalizacion" :value="old('motivo_hospitalizacion')" required autocomplete="motivo_hospitalizacion" />
             <x-input-error :messages="$errors->get('motivo_hospitalizacion')" class="mt-2" />
         </div>
 
 
-        <!-- Dietista -->
+        <!-- DIETISTA ID -->
 
         <div class="mt-4">
             <x-input-label for="dietista_id" :value="__('Dietista')" />
@@ -150,6 +152,8 @@
             </x-select>
             @endisset
         </div>
+
+
 
 
         <div class="flex items-center justify-end mt-4">

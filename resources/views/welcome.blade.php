@@ -36,8 +36,8 @@
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Registrarse</a>
                 @endif
-                @if (Route::has('register-medico'))
-                    <a href="{{ route('register-medico') }}" class="ml-4 text-sm text-gray-700 underline">Registrarse como médico</a>
+                @if (Route::has('register-dietista'))
+                    <a href="{{ route('register-dietista') }}" class="ml-4 text-sm text-gray-700 underline">Registrarse como dietista</a>
                 @endif
             @endauth
         </div>

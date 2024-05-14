@@ -77,7 +77,7 @@ class PacientePolicy
 
     public function attach_menu(User $user, Paciente $paciente)
     {
-        return $user->es_administrador || $this->esPacientePropio($user, $paciente); //$this->esCitaPropiaDeMedico($user, $cita)
+        return $user->es_administrador || $this->esPacientePropio($user, $paciente);
     }
 
     public function detach_menu(User $user, Paciente $paciente)

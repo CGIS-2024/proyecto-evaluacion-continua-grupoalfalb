@@ -78,7 +78,7 @@ class MenuPolicy
     }
     public function attach_plato(User $user, Menu $menu)
     {
-        return $user->es_administrador || $this->esMenuPropio($user, $menu); //$this->esCitaPropiaDeMedico($user, $cita)
+        return $user->es_administrador || $this->esMenuPropio($user, $menu);
     }
 
     public function detach_plato(User $user, menu $menu)
