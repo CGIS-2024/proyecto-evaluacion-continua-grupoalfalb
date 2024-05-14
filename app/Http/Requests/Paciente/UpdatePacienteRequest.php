@@ -24,10 +24,19 @@ class UpdatePacienteRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'required|string|max:255',
+            'apellidos' => 'required|string|max:255',
+            'fecha_nacimiento' => 'required|date',
+            'dni' => 'required|string|max:255',
+            'direccion' => 'required|string|max:255',
+            'email' => 'required|string|max:255',
+            'password' => 'required|string|confirmed|min:8',
+            'genero' => 'required|string|max:255',
             'alergias_alimentarias' => 'required|string|max:255',
             'preferencias_alimentarias' => 'required|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
             'nuhsa' => 'required|String|max:12',
+            'dietista_id' => 'required|String|max:12',
 
         ];
     }
