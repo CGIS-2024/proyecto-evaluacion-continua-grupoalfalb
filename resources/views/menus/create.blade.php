@@ -44,11 +44,6 @@
                             </div>
                         @endif
 
-
-
-
-
-
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
                                 <a href={{route('menus.index')}}>
