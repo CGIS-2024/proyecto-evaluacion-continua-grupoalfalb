@@ -102,6 +102,48 @@ class PlatoSeeder extends Seeder
                 'alergenos' => "lácteos",
                 'categoriaplato_id' => 2
             ],
+            [
+                'nombre' => "Gelatina de Frutas",
+                'descripcion' => "Gelatina suave y refrescante con trozos de frutas.",
+                'ingredientes' => "Gelatina, frutas variadas (como fresas, piña, melocotón), agua.",
+                'peso' => "100",
+                'calorias' => "80",
+                'proteinas' => "1",
+                'grasas' => "0",
+                'carbohidratos' => "20",
+                'fibra' => "1",
+                'azucares' => "15",
+                'alergenos' => "Puede no contener alérgenos comunes.",
+                'categoriaplato_id' => 3
+            ],
+            [
+                'nombre' => "Compota de Manzana",
+                'descripcion' => "Manzanas cocidas lentamente con un toque de canela y azúcar, hasta formar una compota suave.",
+                'ingredientes' => "Manzanas, canela, azúcar.",
+                'peso' => "120",
+                'calorias' => "100",
+                'proteinas' => "0",
+                'grasas' => "0",
+                'carbohidratos' => "25",
+                'fibra' => "2",
+                'azucares' => "20",
+                'alergenos' => "Puede no contener alérgenos comunes.",
+                'categoriaplato_id' => 3
+            ],
+            [
+                'nombre' => "Natillas",
+                'descripcion' => "Postre cremoso a base de leche, huevos y azúcar, con un toque de vainilla.",
+                'ingredientes' => "Leche, huevos, azúcar, vainilla.",
+                'peso' => "150",
+                'calorias' => "120",
+                'proteinas' => "4",
+                'grasas' => "5",
+                'carbohidratos' => "15",
+                'fibra' => "0",
+                'azucares' => "12",
+                'alergenos' => "Contiene lácteos y huevo.",
+                'categoriaplato_id' => 3
+            ],
 
 
 
