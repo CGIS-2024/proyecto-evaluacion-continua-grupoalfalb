@@ -42,6 +42,8 @@
                                     @endforeach
                                 </x-select>
                             </div>
+                        @else
+                            <input type="hidden" name="dietista_id" value="{{ Auth::user()->dietista->id }}">
                         @endif
 
                         <div class="flex items-center justify-end mt-4">

@@ -40,19 +40,22 @@ class MenuController extends Controller
 
     public function store(StoreMenuRequest $request)
     {
-        // Crear una nueva instancia de Menu con los datos validados del request
+        
+        $dietista_id = Auth::user()->dietista->id;
+        
         $menu = new Menu($request->validated());
-
-        // Verificar si el usuario autenticado es un dietista
-        if (Auth::user()->es_dietista) {
-            // Asignar el dietista_id del usuario autenticado
-            $menu->dietista_id = Auth::user()->dietista->id;
-        } else if (Auth::user()->es_administrador) {
+        if(Auth::user()->es_dietista)
+            $menu->dietista_id = $dietista_id;
+            $menu->save();
+        
+        if (Auth::user()->es_administrador) 
             // Verificar si la solicitud contiene un dietista_id
             $menu->dietista_id = $request->dietista_id;
-        }
+            $menu->save();
+        
+       
 
-        // Guardar el menú en la base de datos
+        
         $menu->save();
 
         // Crear un mensaje de éxito en la sesión
