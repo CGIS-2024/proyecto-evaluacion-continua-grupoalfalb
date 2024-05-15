@@ -40,22 +40,22 @@ class MenuController extends Controller
 
     public function store(StoreMenuRequest $request)
     {
-        
+
         $dietista_id = Auth::user()->dietista->id;
-        
+
         $menu = new Menu($request->validated());
         if(Auth::user()->es_dietista)
             $menu->dietista_id = $dietista_id;
             $menu->save();
-        
-        if (Auth::user()->es_administrador) 
+
+        if (Auth::user()->es_administrador)
             // Verificar si la solicitud contiene un dietista_id
             $menu->dietista_id = $request->dietista_id;
             $menu->save();
-        
-       
 
-        
+
+
+
         $menu->save();
 
         // Crear un mensaje de éxito en la sesión
@@ -123,18 +123,33 @@ class MenuController extends Controller
 
     public function attach_plato(Request $request, Menu $menu)
     {
-        // Valido en el controlador directamente en vez de en una form request separada porque necesito validar añadiendo un nombre al bag de errores.
-        // Necesito añadir un nombre al bag de attach porque la vista de edit tiene 2 formularios, cada uno pudiento tener errores de validación, así que asociamos un nombre a uno de ellos para poder diferenciar
-        // En la vista accederemos a los errores de validación de este formulario a través del nombre del bag
+        // Validar la solicitud
         $this->validateWithBag('attach', $request, [
             'plato_id' => 'required',
-
         ]);
-        $menu->platos()->attach($request->plato_id, [
 
-        ]);
+        // Obtener el plato seleccionado
+        $plato = Plato::findOrFail($request->plato_id);
+
+        // Verificar si el plato ya está asociado con el menú
+        if ($menu->platos->contains($plato)) {
+            return redirect()->route('menus.edit', $menu->id)
+                ->withErrors(['plato_id' => 'El plato ya está asociado con este menú.']);
+        }
+
+        // Verificar si se está intentando agregar más de un plato de la misma categoría
+        $platosEnMenu = $menu->platos->pluck('categoriaplato_id')->unique();
+        if ($platosEnMenu->contains($plato->categoriaplato_id)) {
+            return redirect()->route('menus.edit', $menu->id)
+                ->withErrors(['plato_id' => 'Ya hay un plato de esta categoría en el menú.']);
+        }
+
+        // Asociar el plato al menú
+        $menu->platos()->attach($plato);
+
         return redirect()->route('menus.edit', $menu->id);
     }
+
 
     public function detach_plato(Menu $menu, Plato $plato)
     {

@@ -119,14 +119,28 @@ class PacienteController extends Controller
             'fecha' => 'required|date',
         ]);
 
+        // Obtén el menú que se está intentando añadir
+        $menu = Menu::find($request->menu_id);
+
+        // Verifica si el menú contiene al menos un primer plato, un segundo plato y un postre
+        $primer_plato = $menu->platos()->where('categoriaplato_id', 1)->exists();
+        $segundo_plato = $menu->platos()->where('categoriaplato_id', 2)->exists();
+        $postre = $menu->platos()->where('categoriaplato_id', 3)->exists();
+
+        // Si el menú no contiene los tres tipos de platos, muestra un mensaje de error
+        if (!$primer_plato || !$segundo_plato || !$postre) {
+            return redirect()->back()->withErrors(['menu_id' => 'El menú debe contener al menos un primer plato, un segundo plato y un postre.'])->withInput();
+        }
+
         // Asocia el menú al paciente
-        $paciente->menus()->attach($request->menu_id, [
+        $paciente->menus()->attach($menu->id, [
             'fecha' => $request->fecha
         ]);
 
         // Redirige a la vista de edición del paciente con los menús
         return redirect()->route('pacientes.edit', $paciente->id);
     }
+
 
 
 
