@@ -15,10 +15,8 @@ class UpdatePacienteRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        $paciente = Paciente::find($this->route('paciente'))->first();
-        return $paciente && $this->user()->can('update', $paciente);
+        return $this ->route('paciente') && $this ->user()->can('update', $this ->route('paciente'));
     }
-
     /**
      * Get the validation rules that apply to the request.
      *
