@@ -12,9 +12,9 @@
                     <div class="flex items-center mt-4 ml-2">
                         <form method="GET" action="{{ route('menus.create') }}">
                             <x-primary-button type="subit" class="ml-4">
-                                
+
                                 {{ __('Crear Menu') }}
-                                
+
                             </x-primary-button>
                         </form>
                     </div>
@@ -24,25 +24,22 @@
                         <thead>
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">instrucciones especificas</th>
-                            
-                            <th></th>
-
+                            <th class="py-3 px-6 text-left">Instrucciones especificas</th>
+                            <th class="py-3 px-6 text-left">Fecha</th>
 
                         </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
 
                         @foreach ($menus as $menu)
-                            
+
                                     <tr class="border-b border-gray-200">
                                         <td class="py-3 px-6 text-left whitespace-nowrap">
                                             <div class="flex items-center">
                                                 <span class="font-medium">{{$menu->instrucciones_especificas}}</span>
                                             </div>
                                         </td>
-                                    
-                                        
+
                                         <td class="py-3 px-6 text-center">
                                             <div class="flex item-center justify-end">
                                                 <div class="w-4 mr-2 transform hover:text-purple-500 hover:scale-110">
@@ -76,12 +73,8 @@
                                                 @endif
                                             </div>
                                         </td>
-
-
-
-
                                     </tr>
-                                
+
                         @endforeach
 
                         </tbody>
