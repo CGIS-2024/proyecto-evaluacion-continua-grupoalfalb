@@ -12,9 +12,9 @@
                     <div class="flex items-center mt-4 ml-2">
                         <form method="GET" action="{{ route('pacientes.create') }}">
                             <x-primary-button type="subit" class="ml-4">
-                                
+
                                     {{ __('Crear Paciente') }}
-                                
+
                             </x-primary-button>
                         </form>
                     </div>
@@ -27,7 +27,7 @@
                             <th class="py-3 px-6 text-left">Nombre</th>
                             <th class="py-3 px-6 text-left">Apellidos</th>
                             <th class="py-3 px-6 text-left">DNI</th>
-                           
+
 
 
                             <th></th>
@@ -36,11 +36,11 @@
                         </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
-                        
-                        
+
+
                         @foreach ($pacientes as $paciente)
-                        @if (Auth::user()->es_dietista) 
-                            @if ($paciente->dietista_id == Auth::user()->dietista->id) 
+                        @if (Auth::user()->es_dietista)
+                            @if ($paciente->dietista_id == Auth::user()->dietista->id)
                                 <tr class="border-b border-gray-200">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
@@ -90,7 +90,7 @@
                                 </tr>
                             @endif
                         @endif
-                            @if (Auth::user()->es_administrador) 
+                            @if (Auth::user()->es_administrador)
                                 <tr class="border-b border-gray-200">
                                     <td class="py-3 px-6 text-left whitespace-nowrap">
                                         <div class="flex items-center">
