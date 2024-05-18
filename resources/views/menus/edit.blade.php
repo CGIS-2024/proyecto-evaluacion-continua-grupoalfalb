@@ -171,11 +171,6 @@
 
 
                         <div class="flex items-center justify-end mt-4">
-                            <x-danger-button type="button">
-                                <a href={{route('dietistas.index')}}>
-                                    {{ __('Cancelar') }}
-                                </a>
-                            </x-danger-button>
                             <x-primary-button class="ml-4">
                                 {{ __('Guardar') }}
                             </x-primary-button>

@@ -41,6 +41,18 @@
                                      :value="$menu->dietista->user->name"
                                      required />
                         </div>
+                        @if(Auth::user()->es_paciente)
+                            <div class="mt-4">
+                                <x-input-label for="fecha" :value="__('Fecha')" />
+
+                                <x-text-input id="fecha" class="block mt-1 w-full"
+                                        type="date"
+                                        name="fecha"
+                                        disabled
+                                        :value="$menu->pivot->fecha"
+                                        required />
+                            </div>
+                        @endif
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
