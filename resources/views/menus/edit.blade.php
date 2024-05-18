@@ -109,7 +109,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$plato->categoriaplato_id}} </span>
+                                        <span class="font-medium">{{$plato->categoriaplato->nombre}} </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
@@ -162,7 +162,7 @@
                                 <option value="">{{__('Elige un plato')}}</option>
                                 @foreach ($platos as $plato)
                                     <option value="{{$plato->id}}"
-                                            @if (old('plato_id') == $plato->id) selected @endif>{{$plato->nombre}}
+                                            @if (old('plato_id') == $plato->id) selected @endif>{{$plato->nombre}} ({{ $plato->categoriaplato->nombre}})
 
                                     </option>
                                 @endforeach
