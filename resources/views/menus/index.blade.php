@@ -20,14 +20,15 @@
                     </div>
                 @endif
                 <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="min-w-max w-full table-auto">
+                    <table class="min-w-max w-full table-auto"> 
                         <thead>
-                        <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
+                            <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
 
-                            <th class="py-3 px-6 text-left">Instrucciones especificas</th>
-                            <th class="py-3 px-6 text-left">Fecha</th>
+                                <th class="py-3 px-6 text-left">Instrucciones especificas</th>
+                                <th class="py-3 px-6 text-left"></th>
+                                
 
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody class="text-gray-600 text-sm font-light">
 

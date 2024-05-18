@@ -16,12 +16,15 @@ class MenuController extends Controller
 {
     public function index()
     {
+
         $this->authorize('viewAny', Menu::class);
         $menus = Menu::paginate(25); //AQUI SI PONEMOS  $menus = Menu::all(); no funciona, pero con paginate si, porqq????
         if(Auth::user()->es_dietista)
             $menus = Auth::user()->dietista->menus()->paginate(25);
         elseif(Auth::user()->es_paciente)
-            $menus = Auth::user()->paciente->menus()->paginate(25);
+            
+            $menus = Auth::user()->paciente->menus()->where('fecha', '>=', Carbon::today())->paginate(25);
+            #$menus = Auth::user()->paciente->menus();
         return view('/menus/index', ['menus' => $menus]);
     }
 
@@ -40,22 +43,15 @@ class MenuController extends Controller
 
     public function store(StoreMenuRequest $request)
     {
-
-        $dietista_id = Auth::user()->dietista->id;
-
         $menu = new Menu($request->validated());
-        if(Auth::user()->es_dietista)
+        if(Auth::user()->es_dietista){
+            $dietista_id = Auth::user()->dietista->id;
             $menu->dietista_id = $dietista_id;
             $menu->save();
-
-        if (Auth::user()->es_administrador)
-            // Verificar si la solicitud contiene un dietista_id
+        }else{
             $menu->dietista_id = $request->dietista_id;
             $menu->save();
-
-
-
-
+        }
         $menu->save();
 
         // Crear un mensaje de éxito en la sesión
