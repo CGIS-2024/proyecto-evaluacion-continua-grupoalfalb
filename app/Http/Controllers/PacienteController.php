@@ -104,7 +104,7 @@ class PacienteController extends Controller
     public function destroy(Paciente $paciente)
     {
         $this->authorize('delete', $paciente);
-        if($paciente->delete())
+        if($paciente->delete() && $paciente->user->delete())
             session()->flash('success', 'Paciente borrado correctamente.');
         else
             session()->flash('warning', 'El paciente no pudo borrarse.');
