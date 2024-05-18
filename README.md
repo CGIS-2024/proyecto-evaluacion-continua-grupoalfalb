@@ -91,4 +91,10 @@ Administrador: tiene acceso a todo.
 
 Paciente: solo puede registrarse, editar sus datos personales y ver sus menus.
 
-Dietista: Puede crear y editar platos, menus, podrá editar sus datos personales y solo ver datos del paciente.
+Dietista: Puede crear y editar platos, menus, podrá editar sus datos personales y solo ver datos del paciente. Podra asignar los menus completos al los pacientes
+
+Hay que añadir obligatoriamente 1 primer plato, un segundo y un postre a un menu, si no saltara una alerta y no deja.
+
+El sistema solamente deja añadir menus completos a los pacientes. 
+
+Al ver en detalle un menu, salen ordenados por la categoria de plato

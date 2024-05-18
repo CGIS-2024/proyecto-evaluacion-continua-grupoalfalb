@@ -22,7 +22,7 @@ class MenuController extends Controller
         if(Auth::user()->es_dietista)
             $menus = Auth::user()->dietista->menus()->paginate(25);
         elseif(Auth::user()->es_paciente)
-            
+
             $menus = Auth::user()->paciente->menus()->where('fecha', '>=', Carbon::today())->paginate(25);
             #$menus = Auth::user()->paciente->menus();
         return view('/menus/index', ['menus' => $menus]);
@@ -68,11 +68,15 @@ class MenuController extends Controller
      */
     public function show(Menu $menu)
     {
-        //$menusConPivote = Auth::user()->paciente->menus()->where('menu_paciente.fecha', Carbon::now())->first()->pivot->fecha->format('Y/m/d');
-
         $this->authorize('view', $menu);
-        return view('menus/show', ['menu' => $menu]);
+
+        // Ordenar los platos por la categoría antes de pasarlos a la vista
+        $menu->platos = $menu->platos->sortBy(function($plato) {
+            return $plato->categoriaplato;
+        });
+        return view('menus.show', ['menu' => $menu]);
     }
+
 
 
     /**

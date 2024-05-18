@@ -42,14 +42,14 @@ class PacienteSeeder extends Seeder
             [
                 'paciente_id' => 1,
                 'menu_id' => 1,
-                'fecha' => '2024-05-07 15:30:00',
+                'fecha' => '2025-05-07 15:30:00',
 
 
             ],
             [
                 'paciente_id' => 2,
                 'menu_id' => 2,
-                'fecha' => '2024-05-07 15:30:00',
+                'fecha' => '2025-05-07 15:30:00',
 
             ],
 

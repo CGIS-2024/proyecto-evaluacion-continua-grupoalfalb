@@ -44,15 +44,20 @@
                         @if(Auth::user()->es_paciente)
                             <div class="mt-4">
                                 <x-input-label for="fecha" :value="__('Fecha')" />
-
-                                <x-text-input id="fecha" class="block mt-1 w-full"
-                                        type="date"
-                                        name="fecha"
-                                        disabled
-                                        :value="$menu->pivot->fecha"
-                                        required />
+                                @if ($menu->pivot && $menu->pivot->fecha)
+                                    <x-text-input id="fecha" class="block mt-1 w-full"
+                                            type="date"
+                                            name="fecha"
+                                            disabled
+                                            :value="$menu->pivot->fecha"
+                                            required />
+                                @else
+                                    <p>No hay fecha asociada a este menú.</p>
+                                @endif
                             </div>
                         @endif
+
+
 
                         <div class="flex items-center justify-end mt-4">
                             <x-danger-button type="button">
@@ -66,39 +71,43 @@
         </div>
     </div>
 
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
-                    Platos
-                </div>
-                <div class="p-6 bg-white border-b border-gray-200">
-                    <table class="min-w-max w-full table-auto">
-                        <thead>
-                        <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
-                            <th class="py-3 px-6 text-left">Nombre</th>
-
-
-
-                        </tr>
-                        </thead>
-                        <tbody class="text-gray-600 text-sm font-light">
-                        @foreach ($menu->platos as $plato)
-                            <tr class="border-b border-gray-200 hover:bg-gray-100">
-                                <td class="py-3 px-6 text-left whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <span class="font-medium">{{$plato->nombre}} </span>
-                                    </div>
-                                </td>
+        <div class="py-12">
+            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                    <div class="font-semibold text-lg px-6 py-4 bg-white border-b border-gray-200">
+                        Platos
+                    </div>
+                    <div class="p-6 bg-white border-b border-gray-200">
+                        <table class="min-w-max w-full table-auto">
+                            <thead>
+                            <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
+                                <th class="py-3 px-6 text-left">Nombre</th>
+                                <th class="py-3 px-6 text-left">Categoría plato</th>
                             </tr>
+                            </thead>
+                            <tbody class="text-gray-600 text-sm font-light">
+                            @foreach ($menu->platos as $plato)
+                                <tr class="border-b border-gray-200 hover:bg-gray-100">
+                                    <td class="py-3 px-6 text-left whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="font-medium">{{$plato->nombre}} </span>
+                                        </div>
+                                    </td>
 
-                        @endforeach
+                                    <td class="py-3 px-6 text-center whitespace-nowrap">
+                                        <div class="flex items-center">
+                                            <span class="font-medium">{{$plato->categoriaplato->nombre}} </span>
+                                        </div>
+                                    </td>
+                                </tr>
 
-                        </tbody>
-                    </table>
+                            @endforeach
+
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-</x-app-layout>
+    </x-app-layout>
