@@ -22,6 +22,18 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 
 
 ## OBJETIVOS:
+
+El objetivo de la aplicación es mejorar la gestión de la alimentación en el entorno hospitalario al facilitar la administración y personalización de menús para pacientes hospitalizados, garantizando que estos sean adecuados a las necesidades dietéticas específicas de cada individuo. Además, busca optimizar la comunicación entre administradores, pacientes y dietistas al proporcionar una plataforma centralizada para el intercambio de información relevante sobre la alimentación y las preferencias de los pacientes, contribuyendo así a promover la salud y el bienestar de los pacientes, incrementar la eficiencia en la planificación de dietas hospitalarias, y mejorar la experiencia global de los usuarios dentro del hospital.
+
+**OBJ-1. Mejorar la Gestión de la Alimentación en el Hospital:**
+
+Facilitar la administración y personalización de menús para pacientes hospitalizados y asegurar que los menús sean adecuados para las necesidades dietéticas específicas de cada paciente.
+
+**OBJ-2. Optimizar la Comunicación entre Administradores, Pacientes y Dietistas::**
+
+Proporcionar una plataforma centralizada para el intercambio de información relevante sobre la alimentación y las preferencias de los pacientes.
+
+Mejorar la Gestión de la Alimentación en el Hospital:
 - Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores.
 - Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
 - Permitir que el sistema pueda elaborar un plan personalizado para cada paciente.
@@ -31,37 +43,72 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - Administrador 
 - Paciente
 - Dietista
-  
+ 
 
 ## Requisitos de información
-- **RI001. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género..(añadir mas)
-- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa, fecha de contratación..(añadir mas)
-- **RI003. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización..(añadir mas)
-- **RI004. Información sobre el menú del día**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y la fecha.
+
+- **RI001. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género y dirección
+- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa y fecha de contratación.
+- **RI003. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización y nuhsa.
+- **RI004. Información sobre el menú**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y también la fecha al asociarlo a un paciente.
 - **RI005. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, tipo (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
-(podriamos añadir la fecha de produccion del plato, para no usar un plato que lleve mas de dos días hecho)
+
 
   
 ## Requisitos funcionales
-- **RF1**: Para todos los usuarios: Queremos que el sistema nos permita  registrarnos con el correo electrónico y con una contraseña y acceder al sistema.
-- **RF2**: Como usuario principal, quiero crear, editar y eliminar perfiles.
-- **RF3**: Como dietista, quiero poder diseñar planes de alimentación personalizados para cada paciente, basandome en su estado de salud, alergias alimentarias y preferencias dietéticas.
-- **RF4**: Como dietista, quiero tener un listado con las diferentes restricciones alimentarias de los pacientes que gestiono.
-- **RF5**: Como dietista, quiero ver el contenido energético completo de un menú.
-- **RF6**: Como dietista, quiero consultar los alérgenos de un plato.
-- **RF7**: Como dietista, quiero filtrar los platos que tienen una determinada característica (cierto alérgeno, demasiadas kcal...)
-- **RF8**: Como dietista, quiero ver todos los pacientes que gestiono sus planes de alimentación.
-- **RF9**: Como dietista, quiero consultar los platos disponibles.
-- **RF10**: Como paciente, quiero poder realizar solicitudes de alimentos especiales a través del sistema, indicando mis preferencias o restricciones dietéticas. 
-- **RF11**: Como paciente, quiero ver un histórico de mis ingestas alimentarias con un resumen nutricional.
-  
+
+- **RF-001. Registro de usuarios: (todos los roles)**: Como usuario quiero que el sistema me permita registrarme con mis credenciales y acceder al sistema.
+- **RF-002. Visualización y modificación de perfiles (todos los roles)**: Como usuario quiero que el sistema me permita visualizar y modificar la información de mi perfil como nombre, email y contraseña.
+- **RF-003. Eliminación de cuenta (todos los roles)**: Como usuario quiero que el sistema me permita eliminar mi cuenta.
+
+
+**ADMINISTRADOR**
+
+- **RF4. Creación de pacientes**: Como administrador quiero poder crear un usuario paciente con sus credenciales y poder asociarle una contraseña.
+- **RF5. Edición de pacientes**: Como administrador quiero poder editar todos los datos de un usuario paciente.
+- **RF6. Eliminación de pacientes**: Como administrador quiero poder eliminar todos los datos de un usuario paciente.
+- **RF7. Visualización de pacientes**: Como administrador quiero poder ver toda la información de un paciente.
+- **RF8. Gestión de menús**: Como administrador quiero poder crear, eliminar y editar un menú, pudiendo modificar el dietista asociado a este.
+- **RF9. Gestión de platos**: Como administrador quiero poder crear, editar y eliminar un plato.
+- **RF10. Visualización de menús**: Como administrador quiero poder ver toda la información de un menú.
+- **RF11. Visualización de platos**: Como administrador quiero poder ver toda la información de un plato.
+- **RF12. Asociación de menú a paciente**: Como administrador quiero poder asociarle un menú a un paciente y añadirle una fecha.
+- **RF13. Disociar menú de paciente**: Como administrador quiero poder desasociar un menú de un paciente.
+- **RF14. Asociaciar un plato a un menú**: Como administrador quiero poder asociarle un plato a un menú.
+- **RF15. Disociar plato de menu**: Como administrador quiero poder desasociar un plato de un menú.
+
+**PACIENTE**
+
+- **RF16. Visualización de mis menús**: Como paciente quiero poder ver la información sobre mis menús.
+
+**DIETISTA**
+
+- **RF17. Edición de mis pacientes**: Como dietista quiero poder editar los datos de mis paciente.
+- **RF18. Eliminación de mis pacientes**: Como dietista quiero poder eliminar todos los datos de mis pacientes.
+- **RF19. Visualización de mis pacientes**: Como dietista quiero poder ver toda la información de mis paciente.
+- **RF20. Gestión de mis menús**: Como dietista quiero poder crear, eliminar y editar mis menús.
+- **RF21. Gestión de mis platos**: Como dietista quiero poder crear, editar y eliminar mis platos.
+- **RF22. Visualización de mis menús**: Como dietista quiero poder ver toda la información de mis menús.
+- **RF23. Visualización de mis platos**: Como dietista quiero poder ver toda la información de mis platos, entre ellas los alérgenos que contiene.
+- **RF24. Asociación de menú a mis paciente**: Como dietista quiero poder asociarle un menú a uno de mis pacientes y añadirle una fecha.
+- **RF25. Disociar menú de mis paciente**: Como dietista quiero poder desasociar un menú de uno de mis pacientes.
+- **RF26. Asociaciar un plato a mis menú**: Como dietista quiero poder asociarle un plato a uno de mis menús.
+- **RF27. Disociar plato de mis menu**: Como dietista quiero poder desasociar un plato de uno de mis menús.
 
 ## Reglas de Negocio
-- **RN1**: Los dietistas solo podrán tener a su cargo a 25 pacientes.
-- **RN2**: Los dietistas solo pueden acceder y modificar los planes de alimentación de los pacientes asignados a su cuidado y no a los pacientes de otro dietista.
-- **RN3**: Un menu tiene que contener un primer plato, un segundo y postre.
-- **RN4**: Un menu no podrá contener cierto alérgeno si el paciente tiene alergia a este.
-- **RN5**: El dietista es el único usuario que podrá crear y editar el menú del día.
+- **RN1**: Los dietistas solo podrán acceder a la información de sus pacientes.
+- **RN2**: Los dietistas solo podrán editar la información de sus pacientes.
+- **RN3**: Los dietistas solo podrán eliminar sus pacientes.
+- **RN4**: Los dietistas solo podrán acceder a la información de sus menús.
+- **RN5**: Los dietistas solo podrán asociar y desasociar menús a sus pacientes.
+- **RN6**: Los dietistas solo podrán asociar y desasociar platos a sus menús.
+- **RN7**: Los pacientes solo podrán ver sus menús asociados.
+- **RN8**: Para que un menú esté completo, debe contener un primero, un segundo y un postre.
+- **RN9**: Solo se podrá asociar un menú a un paciente si este está completo.
+- **RN10**: No se puede asociar un menú que ya está asociado al paciente, antes deberá ser eliminado.
+- **RN11**: Los dietistas solo podrán asociar y desasociar menús a sus pacientes.
+- **RN12**: Al editar y visualizar un menú, la categoría de los platos debe estar ordenada en orden de: Primero, Segundo y Postre.
+- **RN13**: Los Pacientes solo podrán ver los menús con fecha de hoy en adelante. 
 
 
 ## Requisitos No Funcionales 
@@ -69,10 +116,12 @@ La aplicación propuesta tiene como objetivo abordar estos desafíos proporciona
 - **RNF2**: El sistema debe ser seguro y proteger la privacidad de la información del paciente, cumpliendo con los estándares de seguridad y regulaciones de protección de datos.
 - **RNF3**: El sistema debe estar siempre disponible para garantizar un acceso continuo y sin interrupciones a las funciones del sistema durante todo el día.
 - **RNF4**: El sistema debe ser escalable para manejar un gran volumen de datos y usuarios simultáneos.
-- **RNF5**: Debe ser compatible con diferentes dispositivos y navegadores web para permitir el acceso desde múltiples plataformas y dispositivos.
-- **RNF6**: El tiempo de respuesta del sistema debe ser rápido y eficiente, asegurando una experiencia de usuario fluida.
-- **RNF7**: Debe ser fácilmente mantenible y actualizable para permitir la incorporación de nuevas funcionalidades y corrección de errores de manera oportuna.
-- **RNF8**: El sistema debe evitar la creación de un nuevo usuario con un email ya en uso.
+- **RNF5**: El tiempo de respuesta del sistema debe ser rápido y eficiente, asegurando una experiencia de usuario fluida.
+- **RNF6**: Debe ser fácilmente mantenible y actualizable para permitir la incorporación de nuevas funcionalidades y corrección de errores de manera oportuna.
+- **RNF7**: El sistema debe evitar la creación de un nuevo usuario con un email ya en uso.
+- **RNF8**: El sistema debe de tener una disponibilidad del 99,96%.
+
+
 
 
 ## Modelado conceptual en UML
@@ -91,10 +140,6 @@ Administrador: tiene acceso a todo.
 
 Paciente: solo puede registrarse, editar sus datos personales y ver sus menus.
 
-Dietista: Puede crear y editar platos, menus, podrá editar sus datos personales y solo ver datos del paciente. Podra asignar los menus completos al los pacientes
+Dietista: Puede crear, ver, editar y eliminar tanto sus platos como sus menus, podrá editar sus datos personales y  ver y eliminar sus paciente además de editar información relacionada con su estado (Nada de la información de usuario). Podra asignar los menus completos a los pacientes. Podrá asignar los platos a sus menús.
 
-Hay que añadir obligatoriamente 1 primer plato, un segundo y un postre a un menu, si no saltara una alerta y no deja.
 
-El sistema solamente deja añadir menus completos a los pacientes. 
-
-Al ver en detalle un menu, salen ordenados por la categoria de plato
