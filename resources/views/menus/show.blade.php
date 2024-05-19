@@ -44,16 +44,14 @@
                         @if(Auth::user()->es_paciente)
                             <div class="mt-4">
                                 <x-input-label for="fecha" :value="__('Fecha')" />
-                                @if ($menu->pivot && $menu->pivot->fecha)
-                                    <x-text-input id="fecha" class="block mt-1 w-full"
+
+                                <x-text-input id="fecha" class="block mt-1 w-full"
                                             type="date"
                                             name="fecha"
                                             disabled
                                             :value="$menu->pivot->fecha"
                                             required />
-                                @else
-                                    <p>No hay fecha asociada a este menú.</p>
-                                @endif
+                                
                             </div>
                         @endif
 
