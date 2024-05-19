@@ -51,7 +51,7 @@
                                             disabled
                                             :value="$menu->pivot->fecha"
                                             required />
-                                
+
                             </div>
                         @endif
 
