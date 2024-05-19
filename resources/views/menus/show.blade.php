@@ -42,17 +42,19 @@
                                      required />
                         </div>
                         @if(Auth::user()->es_paciente)
+                            
                             <div class="mt-4">
                                 <x-input-label for="fecha" :value="__('Fecha')" />
-
+                                
                                 <x-text-input id="fecha" class="block mt-1 w-full"
                                             type="date"
                                             name="fecha"
                                             disabled
-                                            :value="$menu->pivot->fecha"
+                                            :value="Auth::user()->paciente->menu->pivot->fecha ?? ''"
                                             required />
 
                             </div>
+                            <?php dd(Auth::user()->paciente->pivot->fecha); ?>
                         @endif
 
 

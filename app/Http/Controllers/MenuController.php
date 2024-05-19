@@ -71,7 +71,7 @@ class MenuController extends Controller
 
         $this->authorize('view', $menu);
 
-
+        dd(Auth::user()->paciente->pivot->fecha);
         // Ordenar los platos por la categoría antes de pasarlos a la vista
         $menu->platos = $menu->platos->sortBy(function($plato) {
             return $plato->categoriaplato;
