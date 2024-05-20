@@ -28,6 +28,18 @@ class DietistaSeeder extends Seeder
                 'user_id' => 4,
 
             ],
+            [
+                'nuhsa' => "AN73627362787",
+                'fecha_contratacion' => "11/11/2022",
+                'user_id' => 7,
+
+            ],
+            [
+                'nuhsa' => "AN1728394826",
+                'fecha_contratacion' => "30/10/2023",
+                'user_id' => 8,
+
+            ],
         ]);
     }
 }

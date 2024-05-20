@@ -25,6 +25,21 @@ class MenuSeeder extends Seeder
                 'dietista_id' => 2,
 
             ],
+            [
+                'instrucciones_especificas' => "Menú específico sin gluten",
+                'dietista_id' => 3,
+
+            ],
+            [
+                'instrucciones_especificas' => "Menú alto en proteínas",
+                'dietista_id' => 4,
+
+            ],
+            [
+                'instrucciones_especificas' => "Menú con pescado y verduras",
+                'dietista_id' => 4,
+
+            ],
         ]);
 
         DB::table('menu_plato')->insert([
@@ -36,6 +51,18 @@ class MenuSeeder extends Seeder
             [
                 'plato_id' => 2,
                 'menu_id' => 2
+            ],
+            [
+                'plato_id' => 3,
+                'menu_id' => 5
+            ],
+            [
+                'plato_id' => 1,
+                'menu_id' => 5
+            ],
+            [
+                'plato_id' => 7,
+                'menu_id' => 5
             ],
 
         ]);
