@@ -206,7 +206,7 @@
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center">
-                                        <span class="font-medium">{{$menu->pivot->fecha}} </span>
+                                        <span class="font-medium">{{$menu->pivot->fecha->format('d/m/Y')}} </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">

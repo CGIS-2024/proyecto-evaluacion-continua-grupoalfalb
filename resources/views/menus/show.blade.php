@@ -45,16 +45,14 @@
                             
                             <div class="mt-4">
                                 <x-input-label for="fecha" :value="__('Fecha')" />
-                                
                                 <x-text-input id="fecha" class="block mt-1 w-full"
                                             type="date"
                                             name="fecha"
                                             disabled
-                                            :value="Auth::user()->paciente->menu->pivot->fecha ?? ''"
+                                            value="{{Auth::user()->paciente->menus()->where('menu_id', $menu->id)->first()->pivot->fecha->format('Y-m-d')}}"
                                             required />
 
                             </div>
-                            <?php dd(Auth::user()->paciente->pivot->fecha); ?>
                         @endif
 
 
