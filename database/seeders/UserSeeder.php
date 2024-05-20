@@ -101,7 +101,7 @@ class UserSeeder extends Seeder
                 'apellidos' => 'Suero Collado',
                 'fecha_nacimiento' => '12/10/2000',
                 'dni' => '837324519L',
-                'direccion' => 'Mariana de pineda, 22',
+                'direccion' => 'Mariana de pineda, 23',
                 'genero' => "Mujer",
                 'email' => "Paula@paciente.com",
                 'password' => Hash::make('12345678'),
