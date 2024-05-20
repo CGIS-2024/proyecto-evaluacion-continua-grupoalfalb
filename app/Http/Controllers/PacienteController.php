@@ -133,6 +133,14 @@ class PacienteController extends Controller
             return redirect()->back()->withErrors(['menu_id' => 'El menú debe contener al menos un primer plato, un segundo plato y un postre.'])->withInput();
         }
 
+        $existingMenu = $paciente->menus()
+        ->where('menu_id', $menu->id)
+        ->exists();
+
+        if ($existingMenu) {
+            return redirect()->back()->withErrors(['menu_id' => 'Este menú ya está asociado al paciente, eliminalo antes de añadir el mismo.'])->withInput();
+        }
+
         // Asocia el menú al paciente
         $paciente->menus()->attach($menu->id, [
             'fecha' => $request->fecha,
