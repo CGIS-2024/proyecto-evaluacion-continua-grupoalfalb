@@ -27,7 +27,7 @@ class UpdatePlatoRequest extends FormRequest
     {
         return [
             'nombre' => 'required|string|max:255',
-            'alergenos' => 'required|string|max:255',
+            'alergenos' => 'string|max:255',
             'grasas' => 'required|numeric|min:0',
             'carbohidratos' => 'required|numeric|min:0',
             'proteinas' => 'required|numeric|min:0',

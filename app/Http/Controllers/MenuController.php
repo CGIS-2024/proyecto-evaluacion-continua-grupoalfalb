@@ -24,7 +24,7 @@ class MenuController extends Controller
         elseif(Auth::user()->es_paciente)
 
             $menus = Auth::user()->paciente->menus()->where('fecha', '>=', Carbon::today())->paginate(25);
-            #$menus = Auth::user()->paciente->menus();
+            
         return view('/menus/index', ['menus' => $menus]);
     }
 
