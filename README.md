@@ -48,7 +48,7 @@ Proporcionar una plataforma centralizada para el intercambio de información rel
 - **RI2. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa y fecha de contratación.
 - **RI3. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización y nuhsa.
 - **RI4. Información sobre el menú**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y también la fecha al asociarlo a un paciente.
-- **RI5. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, tipo (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
+- **RI5. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, categoria del plato (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
 
 
   
@@ -87,7 +87,7 @@ Proporcionar una plataforma centralizada para el intercambio de información rel
 - **RF21. Gestión de mis platos**: Como dietista quiero poder crear, editar y eliminar mis platos.
 - **RF22. Visualización de mis menús**: Como dietista quiero poder ver toda la información de mis menús.
 - **RF23. Visualización de mis platos**: Como dietista quiero poder ver toda la información de mis platos, entre ellas los alérgenos que contiene.
-- **RF24. Asociación de menú a mis paciente**: Como dietista quiero poder asociarle un menú a uno de mis pacientes y añadirle una fecha.
+- **RF24. Asociación de menú a mis paciente**: Como dietista quiero poder asociar menús a mis pacientes y añadirle una fecha.
 - **RF25. Disociar menú de mis paciente**: Como dietista quiero poder desasociar un menú de uno de mis pacientes.
 - **RF26. Asociaciar un plato a mis menú**: Como dietista quiero poder asociarle un plato a uno de mis menús.
 - **RF27. Disociar plato de mis menu**: Como dietista quiero poder desasociar un plato de uno de mis menús.
@@ -111,24 +111,14 @@ Proporcionar una plataforma centralizada para el intercambio de información rel
 ## Requisitos No Funcionales 
 - **RNF1**: La interfaz de usuario debe ser intuitiva y fácil de usar para facilitar la adopción por parte de los usuarios, independientemente de su nivel de habilidad técnica.
 - **RNF2**: El sistema debe ser seguro y proteger la privacidad de la información del paciente, cumpliendo con los estándares de seguridad y regulaciones de protección de datos.
-- **RNF3**: El sistema debe estar siempre disponible para garantizar un acceso continuo y sin interrupciones a las funciones del sistema durante todo el día.
+- **RNF3**: El sistema debe de tener una disponibilidad del 99,96%.
 - **RNF4**: El sistema debe ser escalable para manejar un gran volumen de datos y usuarios simultáneos.
 - **RNF5**: El tiempo de respuesta del sistema debe ser rápido y eficiente, asegurando una experiencia de usuario fluida.
 - **RNF6**: Debe ser fácilmente mantenible y actualizable para permitir la incorporación de nuevas funcionalidades y corrección de errores de manera oportuna.
 - **RNF7**: El sistema debe evitar la creación de un nuevo usuario con un email ya en uso.
-- **RNF8**: El sistema debe de tener una disponibilidad del 99,96%.
-
 
 
 
 ## Modelado conceptual en UML
 
 ![Modelado conceptual en UML](images/UML.drawioFinal.png)
-
-
-
-
-
-
-
-
