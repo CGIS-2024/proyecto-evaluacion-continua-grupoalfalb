@@ -33,10 +33,7 @@ Facilitar la administración y personalización de menús para pacientes hospita
 
 Proporcionar una plataforma centralizada para el intercambio de información relevante sobre la alimentación y las preferencias de los pacientes.
 
-Mejorar la Gestión de la Alimentación en el Hospital:
-- Facilitar la gestión del comedor, y optimizar los platos específicos a necesitar para cada paciente y evitar errores.
-- Permitir que el dietista pueda introducir en los datos del paciente sus alergías y/o dolencias alimentarias.
-- Permitir que el sistema pueda elaborar un plan personalizado para cada paciente.
+
 
 
 ## Usuarios del sistema
@@ -126,20 +123,12 @@ Mejorar la Gestión de la Alimentación en el Hospital:
 
 ## Modelado conceptual en UML
 
-![Modelado conceptual en UML](images/UML_def_20_feb.drawio.png)
+![Modelado conceptual en UML](images/UML.drawioFinal.png)
 
 
 
-## Manual de usuario con capturas. 
-- NO ES PARA LA PRIMERA ENTREGA
 
 
-## Policies (Sucio)
 
-Administrador: tiene acceso a todo.
-
-Paciente: solo puede registrarse, editar sus datos personales y ver sus menus.
-
-Dietista: Puede crear, ver, editar y eliminar tanto sus platos como sus menus, podrá editar sus datos personales y  ver y eliminar sus paciente además de editar información relacionada con su estado (Nada de la información de usuario). Podra asignar los menus completos a los pacientes. Podrá asignar los platos a sus menús.
 
 
