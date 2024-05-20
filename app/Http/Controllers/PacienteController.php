@@ -136,7 +136,7 @@ class PacienteController extends Controller
         // Asocia el menú al paciente
         $paciente->menus()->attach($menu->id, [
             'fecha' => $request->fecha,
-            'tipo' => $request->tipo
+            'tipo' => $request->tipo,
         ]);
 
         // Redirige a la vista de edición del paciente con los menús
