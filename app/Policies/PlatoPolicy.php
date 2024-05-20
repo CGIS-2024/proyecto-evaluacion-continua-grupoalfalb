@@ -22,7 +22,7 @@ class PlatoPolicy
      */
     public function view(User $user, Plato $plato): bool
     {
-        return true;
+        return $user->es_dietista || $user->es_administrador;
 
     }
 
