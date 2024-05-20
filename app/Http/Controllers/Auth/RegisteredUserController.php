@@ -45,8 +45,8 @@ class RegisteredUserController extends Controller
 
     private function getReglasValidacionRegistroPaciente(){
         return ['nuhsa' => 'required',
-            'alergias_alimentarias' => 'required|string|max:255',
-            'preferencias_alimentarias' => 'required|string|max:255',
+            'alergias_alimentarias' => 'nullable|string|max:255',
+            'preferencias_alimentarias' => 'nullable|string|max:255',
             'motivo_hospitalizacion' => 'required|string|max:255',
             'dietista_id' => 'required',
     ];

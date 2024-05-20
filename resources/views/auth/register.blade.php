@@ -105,7 +105,7 @@
         <!-- Alergia alimentaria -->
         <div>
             <x-input-label for="alergias_alimentarias" :value="__('Alergia alimentaria')" />
-            <x-text-input id="alergias_alimentarias" class="block mt-1 w-full" type="text" name="alergias_alimentarias" :value="old('alergias_alimentarias')" required autocomplete="alergias_alimentarias" />
+            <x-text-input id="alergias_alimentarias" class="block mt-1 w-full" type="text" name="alergias_alimentarias" :value="old('alergias_alimentarias')"  autocomplete="alergias_alimentarias" />
             <x-input-error :messages="$errors->get('alergias_alimentarias')" class="mt-2" />
         </div>
 
@@ -113,7 +113,7 @@
         <!-- Preferencias alimentarias -->
         <div>
             <x-input-label for="preferencias_alimentarias" :value="__('Preferencias alimentarias')" />
-            <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full" type="text" name="preferencias_alimentarias" :value="old('preferencias_alimentarias')" required autocomplete="preferencias_alimentarias" />
+            <x-text-input id="preferencias_alimentarias" class="block mt-1 w-full" type="text" name="preferencias_alimentarias" :value="old('preferencias_alimentarias')"  autocomplete="preferencias_alimentarias" />
             <x-input-error :messages="$errors->get('preferencias_alimentarias')" class="mt-2" />
         </div>
 
@@ -121,7 +121,7 @@
 
         <!-- Motivo hospitalizacion -->
         <div>
-            <x-input-label for="motivo_hospitalizacion" :value="__('Preferencias alimentarias')" />
+            <x-input-label for="motivo_hospitalizacion" :value="__('Motivo Hospitalización')" />
             <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full" type="text" name="motivo_hospitalizacion" :value="old('motivo_hospitalizacion')" required autocomplete="motivo_hospitalizacion" />
             <x-input-error :messages="$errors->get('motivo_hospitalizacion')" class="mt-2" />
         </div>

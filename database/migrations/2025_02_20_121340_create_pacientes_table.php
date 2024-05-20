@@ -14,8 +14,8 @@ return new class extends Migration
         Schema::create('pacientes', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('alergias_alimentarias');
-            $table->string('preferencias_alimentarias');
+            $table->string('alergias_alimentarias')->nullable();
+            $table->string('preferencias_alimentarias')->nullable();
             $table->string('motivo_hospitalizacion');
             $table->string('nuhsa');
             $table->foreignId('user_id')->unique()->constrained()->onDelete('cascade');
