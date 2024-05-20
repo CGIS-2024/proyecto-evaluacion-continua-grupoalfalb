@@ -19,10 +19,8 @@ class MenuController extends Controller
 
         $this->authorize('viewAny', Menu::class);
         $menus = Menu::paginate(25); //AQUI SI PONEMOS  $menus = Menu::all(); no funciona, pero con paginate si, porqq????
-        if(Auth::user()->es_dietista)
-            $menus = Auth::user()->dietista->menus()->paginate(25);
-        elseif(Auth::user()->es_paciente)
-
+        
+        if(Auth::user()->es_paciente)
             $menus = Auth::user()->paciente->menus()->where('fecha', '>=', Carbon::today())->paginate(25);
             
         return view('/menus/index', ['menus' => $menus]);
