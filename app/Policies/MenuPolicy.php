@@ -46,7 +46,7 @@ class MenuPolicy
      */
     public function update(User $user, Menu $menu): bool
     {
-        return true;
+        return $user->es_administrador || $this->esMenuPropio($user, $menu);
 
     }
 
@@ -54,8 +54,8 @@ class MenuPolicy
      * Determine whether the user can delete the model.
      */
     public function delete(User $user, Menu $menu): bool
-    {
-        return true;
+    {   
+        return $user->es_administrador || $this->esMenuPropio($user, $menu);
 
     }
 
