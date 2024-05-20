@@ -7,7 +7,7 @@ use App\Models\Dietista;
 use App\Models\Paciente;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
-use App\Rules\Nuhsa;
+use App\Rules\Dni;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -59,9 +59,9 @@ class RegisteredUserController extends Controller
             'name' => 'required|string|max:255',
             'apellidos' => 'required|string|max:255',
             'fecha_nacimiento' => 'required|date',
-            'dni' => 'required|string|max:255',
+            'dni' => ['required', 'unique:users', 'string', 'max:9', 'min:9', new Dni],
             'direccion' => 'required|string|max:255',
-            'email' => 'required|string|max:255',
+            'email' => 'required|string|max:255|unique:users',
             'password' => 'required|string|confirmed|min:8',
             'genero' => 'required', //es de tipo option
             'tipo_usuario_id' => 'required|numeric'

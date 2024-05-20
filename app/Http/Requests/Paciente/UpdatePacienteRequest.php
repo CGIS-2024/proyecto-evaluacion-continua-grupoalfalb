@@ -6,6 +6,8 @@ use Illuminate\Foundation\Http\FormRequest;
 use App\Models\Paciente;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Auth;
+use App\Rules\Dni;
+
 
 
 class UpdatePacienteRequest extends FormRequest
@@ -29,7 +31,7 @@ class UpdatePacienteRequest extends FormRequest
                 'name' => 'required|string|max:255',
                 'apellidos' => 'required|string|max:255',
                 'fecha_nacimiento' => 'required|date_format:d/m/Y',
-                'dni' => 'required|string|max:255',
+                'dni' => ['required', 'unique:users', 'string', 'max:9', 'min:9', new Dni],
                 'direccion' => 'required|string|max:255',
                 'email' => 'required|string|max:255',
                 'genero' => 'required|string|max:255',
