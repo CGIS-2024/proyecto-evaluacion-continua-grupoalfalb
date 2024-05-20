@@ -16,7 +16,7 @@ class Menu extends Model
         return $this->belongsToMany(Plato::class)->using(MenuPlato::class);
     }
     public function pacientes(){
-        return $this->belongsToMany(Paciente::class)->using(MenuPaciente::class)->withPivot('fecha');
+        return $this->belongsToMany(Paciente::class)->using(MenuPaciente::class)->withPivot('fecha','tipo');
     }
 
 

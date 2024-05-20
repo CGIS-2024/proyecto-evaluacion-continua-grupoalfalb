@@ -17,6 +17,6 @@ class Paciente extends Model
         return $this->belongsTo(Dietista::class);
     }
     public function menus(){
-        return $this->belongsToMany(Menu::class)->using(MenuPaciente::class)->withPivot('fecha');
+        return $this->belongsToMany(Menu::class)->using(MenuPaciente::class)->withPivot('fecha','tipo');
     }
 }

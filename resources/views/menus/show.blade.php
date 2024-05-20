@@ -53,6 +53,16 @@
                                             required />
 
                             </div>
+                            <div class="mt-4">
+                                <x-input-label for="tipo" :value="__('Tipo')" />
+                                <x-text-input id="tipo" class="block mt-1 w-full"
+                                            type="string"
+                                            name="tipo"
+                                            disabled
+                                            value="{{Auth::user()->paciente->menus()->where('menu_id', $menu->id)->first()->pivot->tipo}}"
+                                            required />
+
+                            </div>
                         @endif
 
 

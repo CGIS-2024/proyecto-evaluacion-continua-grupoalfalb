@@ -117,6 +117,7 @@ class PacienteController extends Controller
         $this->validateWithBag('attach', $request, [
             'menu_id' => 'required',
             'fecha' => 'required|date',
+            'tipo' => 'required|string',
         ]);
 
         // Obtén el menú que se está intentando añadir
@@ -134,7 +135,8 @@ class PacienteController extends Controller
 
         // Asocia el menú al paciente
         $paciente->menus()->attach($menu->id, [
-            'fecha' => $request->fecha
+            'fecha' => $request->fecha,
+            'tipo' => $request->tipo
         ]);
 
         // Redirige a la vista de edición del paciente con los menús

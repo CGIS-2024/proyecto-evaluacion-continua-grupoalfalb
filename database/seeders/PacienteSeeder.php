@@ -73,6 +73,7 @@ class PacienteSeeder extends Seeder
                 'paciente_id' => 1,
                 'menu_id' => 1,
                 'fecha' => '2025-05-07',
+                'tipo' => 'Almuerzo',
 
 
             ],
@@ -80,6 +81,7 @@ class PacienteSeeder extends Seeder
                 'paciente_id' => 2,
                 'menu_id' => 2,
                 'fecha' => '2025-05-07',
+                'tipo' => 'Cena',
 
             ],
 

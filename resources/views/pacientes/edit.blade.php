@@ -192,6 +192,7 @@
                         <tr class="bg-gray-200 text-gray-900 uppercase text-sm leading-normal">
                             <th class="py-3 px-6 text-left">Instrucciones especificas</th>
                             <th class="py-3 px-6 text-left">Fecha</th>
+                            <th class="py-3 px-6 text-left">Tipo</th>
                             <th class="py-3 px-6 text-center">Acciones</th>
                         </tr>
                         </thead>
@@ -207,6 +208,11 @@
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
                                     <div class="flex items-center">
                                         <span class="font-medium">{{$menu->pivot->fecha->format('d/m/Y')}} </span>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-6 text-center whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <span class="font-medium">{{$menu->pivot->tipo}} </span>
                                     </div>
                                 </td>
                                 <td class="py-3 px-6 text-center whitespace-nowrap">
@@ -274,6 +280,17 @@
                                           name="fecha"
                                           :value="old('fecha')"
                                           required/>
+                        </div>
+
+                        <div class="mt-4">
+                            <x-input-label for="tipo" :value="__('Tipo')" />
+
+                            <x-select id="tipo" name="tipo" required>
+                                <option value="">{{__('Elige una opción')}}</option>
+                                <option value="Almuerzo" @if (old('tipo') == 'Almuerzo') selected @endif>{{__('Almuerzo')}}</option>
+                                <option value="Cena" @if (old('tipo') == 'Cena') selected @endif>{{__('Cena')}}</option>
+                                
+                            </x-select>
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
