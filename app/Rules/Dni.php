@@ -30,7 +30,7 @@ class Dni implements ValidationRule
     public function validate(string $attribute, mixed $value, Closure $fail): void
     {
         if (!$this->isDniFormatValid($value)) {
-            $fail("El DNI debe tener 8 números seguidos de una letra mayúscula.");
+            $fail("");
         }
     }
 }

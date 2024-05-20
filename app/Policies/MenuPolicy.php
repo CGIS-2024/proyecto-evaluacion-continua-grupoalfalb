@@ -46,7 +46,7 @@ class MenuPolicy
      */
     public function update(User $user, Menu $menu): bool
     {
-        return $user->es_administrador || $this->esMenuPropio($user, $menu);
+        return $user->es_administrador || $user->es_dietista;
 
     }
 

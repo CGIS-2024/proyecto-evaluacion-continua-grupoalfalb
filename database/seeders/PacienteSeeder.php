@@ -37,7 +37,7 @@ class PacienteSeeder extends Seeder
 
             ],
             [
-                'alergias_alimentarias' => "",
+                'alergias_alimentarias' => "Nada",
                 'preferencias_alimentarias' => "Hamburguesa con patatas. De postre helado.",
                 'motivo_hospitalizacion' => "Infección de la vesícula",
                 'nuhsa' => "AN8679034339",
@@ -57,7 +57,7 @@ class PacienteSeeder extends Seeder
 
             ],
             [
-                'alergias_alimentarias' => "",
+                'alergias_alimentarias' => "Nada",
                 'preferencias_alimentarias' => "Lentejas. De postre fruta.",
                 'motivo_hospitalizacion' => "Fimosis",
                 'nuhsa' => "AN7283726152",

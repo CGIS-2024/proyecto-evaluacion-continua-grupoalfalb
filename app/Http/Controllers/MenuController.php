@@ -88,7 +88,8 @@ class MenuController extends Controller
         $this->authorize('update', $menu);
         $dietistas = Dietista::all();
         $menus = Menu::all();
-        $platos = Plato::all();
+        $platos = Plato::orderBy('categoriaplato_id')->get();
+
 
 
         if(Auth::user()->es_dietista){

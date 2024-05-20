@@ -121,7 +121,7 @@
 
         <!-- Motivo hospitalizacion -->
         <div>
-            <x-input-label for="motivo_hospitalizacion" :value="__('Preferencias alimentarias')" />
+            <x-input-label for="motivo_hospitalizacion" :value="__('Motivo Hospitalización')" />
             <x-text-input id="motivo_hospitalizacion" class="block mt-1 w-full" type="text" name="motivo_hospitalizacion" :value="old('motivo_hospitalizacion')" required autocomplete="motivo_hospitalizacion" />
             <x-input-error :messages="$errors->get('motivo_hospitalizacion')" class="mt-2" />
         </div>
