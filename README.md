@@ -18,7 +18,7 @@ Los principales desafíos que enfrenta el sistema de gestión del comedor incluy
 
 Además, el sistema debe ser capaz de adaptarse a las necesidades cambiantes de los pacientes, como dietas especiales para pacientes en recuperación de cirugías o procedimientos médicos, así como también permitir la inclusión de preferencias dietéticas religiosas y alergias alimentarias.
 
-La aplicación propuesta tiene como objetivo abordar estos desafíos proporcionando una plataforma centralizada y fácil de usar e intuitiva para todo tipo de personas, que permita a los diferentes usuarios del sistema colaborar eficientemente en la gestión del comedor hospitalario. Al permitir la introducción de datos sobre alergias y dolencias alimentarias por parte del dietista, así como la elaboración de planes personalizados para cada paciente, el sistema garantizará una atención nutricional adecuada y segura para todos los pacientes.
+La aplicación propuesta tiene como objetivo abordar estos desafíos proporcionando una plataforma centralizada y fácil de usar e intuitiva para todo tipo de personas, que permita a los diferentes usuarios del sistema colaborar eficientemente en la gestión del comedor hospitalario. Al permitir la introducción de datos sobre alergias y dolencias alimentarias por parte del paciente. El sistema garantizará una atención nutricional adecuada y segura para todos los pacientes.
 
 
 ## OBJETIVOS:
@@ -44,19 +44,19 @@ Proporcionar una plataforma centralizada para el intercambio de información rel
 
 ## Requisitos de información
 
-- **RI001. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género y dirección
-- **RI002. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa y fecha de contratación.
-- **RI003. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización y nuhsa.
-- **RI004. Información sobre el menú**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y también la fecha al asociarlo a un paciente.
-- **RI005. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, tipo (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
+- **RI1. Información sobre los usuarios**: El sistema deberá almacenar datos personales sobre todos los usuarios del sistema: correo electrónico, contraseña, nombre, edad, fecha de nacimiento, DNI, género y dirección
+- **RI2. Información sobre los dietistas**: El sistema deberá almacenar datos específicos de los dietistas: nuhsa y fecha de contratación.
+- **RI3. Información sobre los pacientes**: El sistema deberá almacenar datos específicos de los pacientes: alergias alimentarias, preferencias alimentarias, motivo de hospitalización y nuhsa.
+- **RI4. Información sobre el menú**: El sistema deberá almacenar información sobre los diferentes menús, como las instrucciones específicas y también la fecha al asociarlo a un paciente.
+- **RI5. Información sobre el plato**: El sistema deberá almacenar información sobre cada plato: nombre, tipo (primero, segundo o postre), descripción, ingredientes, peso, calorías, proteínas, grasas, carbohidratos, fibra, azúcares, alérgenos.
 
 
   
 ## Requisitos funcionales
 
-- **RF-001. Registro de usuarios: (todos los roles)**: Como usuario quiero que el sistema me permita registrarme con mis credenciales y acceder al sistema.
-- **RF-002. Visualización y modificación de perfiles (todos los roles)**: Como usuario quiero que el sistema me permita visualizar y modificar la información de mi perfil como nombre, email y contraseña.
-- **RF-003. Eliminación de cuenta (todos los roles)**: Como usuario quiero que el sistema me permita eliminar mi cuenta.
+- **RF1. Registro de usuarios: (todos los roles)**: Como usuario quiero que el sistema me permita registrarme con mis credenciales y acceder al sistema.
+- **RF2. Visualización y modificación de perfiles (todos los roles)**: Como usuario quiero que el sistema me permita visualizar y modificar la información de mi perfil como nombre, email y contraseña.
+- **RF3. Eliminación de cuenta (todos los roles)**: Como usuario quiero que el sistema me permita eliminar mi cuenta.
 
 
 **ADMINISTRADOR**
