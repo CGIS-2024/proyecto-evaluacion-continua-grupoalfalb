@@ -83,10 +83,10 @@ Proporcionar una plataforma centralizada para el intercambio de información rel
 - **RF17. Edición de mis pacientes**: Como dietista quiero poder editar los datos de mis paciente.
 - **RF18. Eliminación de mis pacientes**: Como dietista quiero poder eliminar todos los datos de mis pacientes.
 - **RF19. Visualización de mis pacientes**: Como dietista quiero poder ver toda la información de mis paciente.
-- **RF20. Gestión de mis menús**: Como dietista quiero poder crear, eliminar y editar mis menús.
-- **RF21. Gestión de mis platos**: Como dietista quiero poder crear, editar y eliminar mis platos.
-- **RF22. Visualización de mis menús**: Como dietista quiero poder ver toda la información de mis menús.
-- **RF23. Visualización de mis platos**: Como dietista quiero poder ver toda la información de mis platos, entre ellas los alérgenos que contiene.
+- **RF20. Gestión de mis menús**: Como dietista quiero poder crear, eliminar y editar mis menús. 
+- **RF21. Gestión de los platos**: Como dietista quiero poder crear, editar y eliminar todos los platos.
+- **RF22. Visualización de todos los menús**: Como dietista quiero poder ver toda la información de todos los menús.
+- **RF23. Visualización de todos los platos**: Como dietista quiero poder ver toda la información de todos los platos, entre ellas los alérgenos que contiene.
 - **RF24. Asociación de menú a mis paciente**: Como dietista quiero poder asociar menús a mis pacientes y añadirle una fecha.
 - **RF25. Disociar menú de mis paciente**: Como dietista quiero poder desasociar un menú de uno de mis pacientes.
 - **RF26. Asociaciar un plato a mis menú**: Como dietista quiero poder asociarle un plato a uno de mis menús.
